@@ -1,13 +1,23 @@
 import React from 'react'
 import ExampleComponents from './example_components.jsx'
 import HeroExample from './hero_example.jsx'
+import DateTimePicker from './vcc_example.jsx'
 
 export default React.createClass({
   displayName: 'Root',
 
   render () {
+    var testStyle = {
+      textAlign: 'center',
+      padding: '30px',
+      minHeight: '500px'
+    };
     return (
       <div>
+        <div className="test" style={testStyle}>
+          <h1>TEST</h1>
+          <DateTimePicker />
+        </div>
         <div className="hero">
           <div className="hero__content">
             <h1 className="hero__title">

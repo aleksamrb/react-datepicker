@@ -1,0 +1,106 @@
+.react-datepicker__time{
+    text-align: center;
+    min-width: 276px;
+
+    .react-datepicker__hour-select, .react-datepicker__minute-select {
+      width: 70px;
+      padding: 3px;
+      padding: 5px;
+      border: solid 1px #626262;
+      border-radius: 0px;
+       margin-right: 5px;
+   }
+
+   .grid{
+     display: flex;
+     flex-direction: row;
+     padding: 2%;
+   }
+
+   .grid__column{
+     display: flex;
+     flex-direction: column;
+     flex: 3;
+     align-self: center;
+
+     &--small{
+       flex: 1;
+       align-self: center;
+     }
+   }
+
+   .grid__item{
+     flex: 1;
+     text-align: center;
+     align-self: center;
+     padding-top: 10px;
+     padding-bottom: 10px;
+   }
+
+   .triangle-up-time {
+   	width: 0;
+   	height: 0;
+   	border-left: 10px solid transparent;
+   	border-right: 10px solid transparent;
+   	border-bottom: 10px solid $color-profile-1;
+     cursor: pointer;
+     display: inline-block;
+   }
+
+
+   .triangle-down-time {
+   	width: 0;
+   	height: 0;
+   	border-left: 10px solid transparent;
+   	border-right: 10px solid transparent;
+   	border-top: 10px solid $color-profile-1;
+     cursor: pointer;
+     display: inline-block;
+   }
+
+   .time-dropdown_main{
+     position: relative;
+   }
+
+   .time-dropdown_dropdown{
+     min-height: 100px;
+
+     width: 200%;
+     position: absolute;
+     margin-left: auto;
+     margin-right: auto;
+     top: 25px;
+     left: -12px;
+     right: 0;
+
+     z-index: 10000;
+     max-height: 200px;
+     overflow-y: auto;
+     background-color: #fff;
+     text-align: center;
+     border-radius: 2px;
+     border: 1px solid $background-color;
+
+     &:hover {
+       cursor: pointer;
+     }
+   }
+
+   .time-dropdown_label, .amPm-label, .grid__column--small span{
+     font-weight: bold;
+     font-size: 2rem;
+     cursor: pointer;
+   }
+
+   .time-dropdown_option{
+     cursor: pointer;
+     width: 100%;
+     display: block;
+
+     &--selected{
+       background: $color-profile-1;
+       color: #fff;
+       font-weight: bold;
+     }
+   }
+}

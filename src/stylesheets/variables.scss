@@ -10,3 +10,34 @@ $day-margin: 2px;
 $triangle-size: 8px;
 $datepicker__margin: 5px;
 $navigation-size: 6px;
+
+
+/*** COLORS ***********************************************************************************************************/
+$color-profile-1:       #F27200; // orange
+$color-profile-2:       #55a3c3; // blue
+$color-profile-3:       #666666; // gray
+$color-profile-4:       #4a90e2; // selection
+$color-profile-5:       #55bd00; // green
+$color-profile-6:       #b2b2b2; // border gray
+$color-profile-7:       #cbe4ef; // list selection
+$color-profile-8:       #f07201;
+$color-profile-9:       #C1C1C1; //material input label
+
+$color-bg:              #eeeeee;
+$color-fg:              $color-profile-3;
+$color-border:          #eaeaea;
+$color-sidebar-bg:      #dddddd;
+$color-input-bg:        #ffffff;
+$color-selection:       $color-profile-4;
+$color-list-selection:  $color-profile-7;
+$color-link-hover:      $color-profile-2;
+$color-error:           #ff3333;
+$color-toolbar-hover:   #fafafa;
+$color-icon:            #444444;
+$color-icon-hover:      white;
+$color-error:           #FF434A;
+
+$color-button:          $color-profile-2;
+$color-button-large:    $color-profile-1;
+$color-button-small:    $color-profile-3;
+$color-button-fg:       #ffffff;
