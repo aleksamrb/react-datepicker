@@ -16,7 +16,6 @@ var YearDropdown = React.createClass({
   },
 
   increaseYear () {
-    console.log('increase');
     this.props.onChange(this.props.year + 1);
   },
 

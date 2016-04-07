@@ -43,17 +43,17 @@
 .react-datepicker__header {
   color: #fff;
   text-align: center;
-  background-color: #626262;
+  background-color: $color-profile-10;
   border: none;
   border-radius: 0;
   padding-top: 8px;
   position: relative;
 
   .react-datepicker__day {
-      color: #ccc;
+      color: $color-profile-12;
 
       &:hover {
-        background: #525252;
+        background: $color-profile-11;
       }
     }
 }
@@ -81,19 +81,19 @@
 
   &--previous {
     left: 10px;
-    border-right-color: $muted-color;
+    border-right-color: $color-profile-12;
 
     &:hover {
-      border-right-color: darken($muted-color, 10%);
+      border-right-color: darken($color-profile-12, 10%);
     }
   }
 
   &--next {
     right: 10px;
-    border-left-color: $muted-color;
+    border-left-color: $color-profile-12;
 
     &:hover {
-      border-left-color: darken($muted-color, 10%);
+      border-left-color: darken($color-profile-12, 10%);
     }
   }
 
@@ -106,26 +106,26 @@
 
     &-previous {
       top: 4px;
-      border-top-color: $muted-color;
+      border-top-color: $color-profile-10;
 
       &:hover {
-        border-top-color: darken($muted-color, 10%);
+        border-top-color: darken($color-profile-10, 10%);
       }
     }
 
     &-upcoming {
       top: -4px;
-      border-bottom-color: $muted-color;
+      border-bottom-color: $color-profile-10;
 
       &:hover {
-        border-bottom-color: darken($muted-color, 10%);
+        border-bottom-color: darken($color-profile-10, 10%);
       }
     }
   }
 }
 
 .react-datepicker__week-day {
-  color: $muted-color;
+  color: $color-profile-12;
   display: inline-block;
   width: $item-size + (2 * $day-margin);
   line-height: $item-size;
@@ -168,7 +168,7 @@
 
   &--disabled {
     cursor: default;
-    color: $muted-color;
+    color: $color-profile-12;
 
     &:hover {
       background-color: transparent;
@@ -195,7 +195,7 @@
     cursor: pointer;
 
     .react-datepicker__year-read-view--down-arrow {
-      border-top-color: darken($muted-color, 10%);
+      border-top-color: darken($color-profile-12, 10%);
     }
   }
 
@@ -215,32 +215,32 @@
 
   &--previous{
     left: 10px;
-    border-right-color: $muted-color;
+    border-right-color: $color-profile-12;
 
     &:hover {
-      border-right-color: darken($muted-color, 10%);
+      border-right-color: darken($color-profile-12, 10%);
     }
   }
 
   &--next {
     right: 10px;
-    border-left-color: $muted-color;
+    border-left-color: $color-profile-12;
 
     &:hover {
-      border-left-color: darken($muted-color, 10%);
+      border-left-color: darken($color-profile-12, 10%);
     }
   }
 }
 
 .react-datepicker__year-dropdown {
-  background-color: $background-color;
+  background-color: #fff;
   position: absolute;
   width: 50%;
   left: 25%;
   top: 35px;
   text-align: center;
   border-radius: 0;
-  border: 1px solid $border-color;
+  border: 1px solid $color-profile-10;
 
   &:hover {
     cursor: pointer;
@@ -253,7 +253,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  color: #626262;
+  color: $color-profile-10;
 
   &:first-of-type {
     border-top-left-radius: $border-radius;
@@ -270,15 +270,7 @@
   }
 
   &:hover {
-    background-color: $muted-color;
-
-    .react-datepicker__navigation--years-upcoming {
-      border-bottom-color: darken($muted-color, 10%);
-    }
-
-    .react-datepicker__navigation--years-previous {
-      border-top-color: darken($muted-color, 10%);
-    }
+    background-color: $color-profile-12;
   }
 
   &--selected {
@@ -319,8 +311,9 @@
 }
 
 .react-datepicker__today-button, .react-datepicker__now-button{
-  background: $background-color;
-   border-top: 1px solid $border-color;
+   background: $color-profile-12;
+   border-top: 1px solid #909090;
+   color: $color-profile-11;
    cursor: pointer;
    text-align: center;
    font-weight: bold;
@@ -375,11 +368,15 @@
   }
 
   .react-datepicker__cancel-btn{
-      color: #626262;
+      color: $color-profile-11;
       background: #ffffff;
-      border: solid #000000 1px;
+      border: solid $color-profile-11 1px;
       text-decoration: none;
       margin-right: 15px;
+
+      &:hover{
+        background: darken(#ffffff, 5%);
+      }
   }
 
   .react-datepicker__ok-btn{
@@ -387,5 +384,9 @@
     background: $color-profile-1;
     border: solid $color-profile-1 1px;
     width: 100px;
+
+    &:hover{
+      background: lighten($color-profile-1, 5%);;
+    }
   }
 }

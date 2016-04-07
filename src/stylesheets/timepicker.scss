@@ -1,20 +1,28 @@
 .react-datepicker__time{
     text-align: center;
     min-width: 276px;
+    color: $color-profile-11;
 
     .react-datepicker__hour-select, .react-datepicker__minute-select {
       width: 70px;
       padding: 3px;
       padding: 5px;
-      border: solid 1px #626262;
+      border: solid 1px $color-profile-10;
       border-radius: 0px;
-       margin-right: 5px;
+      margin-right: 5px;
+   }
+
+   .react-datepicker__time-label{
+     margin: 4%;
+     font-size: 1.1em;
+
    }
 
    .grid{
      display: flex;
      flex-direction: row;
      padding: 2%;
+     margin: 5% 1%;
    }
 
    .grid__column{
@@ -63,14 +71,14 @@
    }
 
    .time-dropdown_dropdown{
-     min-height: 100px;
+     height: 700%;
 
-     width: 200%;
+     width: 250%;
      position: absolute;
      margin-left: auto;
      margin-right: auto;
-     top: 25px;
-     left: -12px;
+     top: 30px;
+     left: -20px;
      right: 0;
 
      z-index: 10000;
@@ -96,6 +104,10 @@
      cursor: pointer;
      width: 100%;
      display: block;
+
+     &:hover{
+       background: $color-profile-12;
+     }
 
      &--selected{
        background: $color-profile-1;

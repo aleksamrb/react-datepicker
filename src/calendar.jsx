@@ -14,7 +14,8 @@ var Calendar = React.createClass({
   displayName: 'Calendar',
 
   propTypes: {
-    dateFormat: React.PropTypes.string.isRequired,
+    dateFormat: React.PropTypes.string,
+    dateFormatCalendar: React.PropTypes.string.isRequired,
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
@@ -174,7 +175,7 @@ var Calendar = React.createClass({
     }
     return (
       <div className={classes.join(' ')}>
-        {this.state.date.format(this.props.dateFormat)}
+        {this.state.date.format(this.props.dateFormatCalendar)}
       </div>
     )
   },
@@ -209,6 +210,7 @@ var Calendar = React.createClass({
       return (
         <TimePicker
           date={this.props.selected}
+          dateFormat={this.props.dateFormat}
           hour24={this.props.hour24}
           onChangeTime={this.handleChangeTime}
           showSeconds={this.props.showSeconds}

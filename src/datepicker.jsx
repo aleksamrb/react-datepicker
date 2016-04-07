@@ -56,7 +56,6 @@ var DatePicker = React.createClass({
   getDefaultProps () {
     return {
       dateFormatCalendar: 'MMMM YYYY',
-      hour24: false,
       onChange () {},
       disabled: false,
       onFocus () {},
@@ -64,9 +63,6 @@ var DatePicker = React.createClass({
       popoverAttachment: 'top left',
       popoverTargetAttachment: 'bottom left',
       popoverTargetOffset: '10px 0',
-      showConfirmButtons: false,
-      showTime: false,
-      showSeconds: false,
       tetherConstraints: [
         {
           to: 'window',
@@ -93,16 +89,15 @@ var DatePicker = React.createClass({
   },
 
   handleBlur (event) {
-    this.props.onBlur(event);
-    /*if (this.state.open) {
+    if (this.state.open) {
       this.refs.input.focus()
     } else {
       this.props.onBlur(event)
-    }*/
+    }
   },
 
   handleCalendarClickOutside (event) {
-    this.setState({selected: this.props.selected.clone()});
+    this.setState({selected: this.props.selected || Moment()});
     this.setOpen(false)
   },
 
@@ -111,14 +106,12 @@ var DatePicker = React.createClass({
 
     if(!this.props.showConfirmButtons){
       this.setSelected(date)
-      this.setOpen(false)
+      //this.setOpen(false)
     }
   },
 
   setSelected (date) {
-    //if (!isSameDay(this.props.selected, date)) {
       this.props.onChange(date);
-    //}
   },
   onInputClick () {
     this.setOpen(true)
@@ -141,7 +134,7 @@ var DatePicker = React.createClass({
     this.setOpen(false)
   },
   handleCancelClick (){
-    this.setState({selected: this.props.selected.clone()});
+    this.setState({selected: this.props.selected || Moment()});
     this.setOpen(false);
   },
   renderCalendar () {
@@ -151,7 +144,8 @@ var DatePicker = React.createClass({
     return <Calendar
         ref="calendar"
         locale={this.props.locale}
-        dateFormat={this.props.dateFormatCalendar}
+        dateFormat={this.props.dateFormat}
+        dateFormatCalendar={this.props.dateFormatCalendar}
         selected={this.state.selected}
         onSelect={this.handleSelect}
         minDate={this.props.minDate}
