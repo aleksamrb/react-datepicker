@@ -1,30 +1,23 @@
 import React from 'react'
-import DatePicker from 'react-datepicker'
+import DateTimePicker from '../../src/datetimepicker'
 import moment from 'moment'
 
 export default React.createClass({
-  displayName: 'DateTimePicker',
-
-  getInitialState () {
-    return {
-      currentDate: moment()
-    }
-  },
+  displayName: 'VccExample',
   handleChange (date) {
-    this.setState({
-      currentDate: date
-    })
+    console.log('on change: ' + date);
   },
   render () {
     return (
     <div>
-      <div style={{marginBottom: '10px'}}> Dato: {this.state.currentDate ? this.state.currentDate.format('MMMM Do YYYY, h:mm:ss a') : false}</div>
-      <DatePicker
-          selected={this.state.currentDate}
-          onChange={this.handleChange}
+      <DateTimePicker
+          date={moment()}
+          onDateChange={this.handleChange}
           dateFormatCalendar="MMMM"
           dateFormat={"DD/MM/YYYY h:mm:ss a"}
           locale='en-gb'
+          
+          showConfirmButtons
           showSeconds
           showTime
           showYearDropdown

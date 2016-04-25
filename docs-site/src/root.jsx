@@ -1,7 +1,7 @@
 import React from 'react'
 import ExampleComponents from './example_components.jsx'
 import HeroExample from './hero_example.jsx'
-import DateTimePicker from './vcc_example.jsx'
+import VccExample from './vcc_example.jsx'
 
 export default React.createClass({
   displayName: 'Root',
@@ -16,7 +16,7 @@ export default React.createClass({
       <div>
         <div className="test" style={testStyle}>
           <h1>TEST</h1>
-          <DateTimePicker />
+          <VccExample/>
         </div>
         <div className="hero">
           <div className="hero__content">
