@@ -18,8 +18,14 @@ var Month = React.createClass({
   },
 
   handleDayClick (day) {
+    day.set({
+      'hour': this.props.day.hour(),
+      'minute': this.props.day.minute(),
+      'second': this.props.day.second(),
+      'millisecond': this.props.day.millisecond()
+    });
     if (this.props.onDayClick) {
-      this.props.onDayClick(day)
+      this.props.onDayClick(day);
     }
   },
 

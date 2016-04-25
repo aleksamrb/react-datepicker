@@ -1,6 +1,6 @@
 import moment from 'moment'
 import React from 'react'
-import { isSameDay, isDayDisabled } from './date_utils'
+import { isSameDay, isDayDisabled, isSameTime } from './date_utils'
 
 var DateInput = React.createClass({
   displayName: 'DateInput',
@@ -17,12 +17,14 @@ var DateInput = React.createClass({
     minDate: React.PropTypes.object,
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func,
-    onChangeDate: React.PropTypes.func
+    onChangeDate: React.PropTypes.func,
+    showTime: React.PropTypes.bool
   },
 
   getDefaultProps () {
     return {
-      dateFormat: 'L'
+      dateFormat: 'L',
+      showTime: false
     }
   },
 
@@ -33,12 +35,23 @@ var DateInput = React.createClass({
   },
 
   componentWillReceiveProps (newProps) {
-    if (!isSameDay(newProps.date, this.props.date) ||
-          newProps.locale !== this.props.locale ||
-          newProps.dateFormat !== this.props.dateFormat) {
-      this.setState({
-        maybeDate: this.safeDateFormat(newProps)
-      })
+    if(this.props.showTime){
+      if (!isSameTime(newProps.date, this.props.date) ||
+            newProps.locale !== this.props.locale ||
+            newProps.dateFormat !== this.props.dateFormat) {
+        this.setState({
+          maybeDate: this.safeDateFormat(newProps)
+        })
+      }
+    }
+    else{
+      if (!isSameDay(newProps.date, this.props.date) ||
+            newProps.locale !== this.props.locale ||
+            newProps.dateFormat !== this.props.dateFormat) {
+        this.setState({
+          maybeDate: this.safeDateFormat(newProps)
+        })
+      }
     }
   },
 
