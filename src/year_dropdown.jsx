@@ -1,12 +1,17 @@
 import React from 'react'
 import YearDropdownOptions from './year_dropdown_options'
+import {allDaysDisabledBefore, allDaysDisabledAfter} from './date_utils'
 
 var YearDropdown = React.createClass({
   displayName: 'YearDropdown',
 
   propTypes: {
+    currentDate: React.PropTypes.object,
     onChange: React.PropTypes.func.isRequired,
-    year: React.PropTypes.number.isRequired
+    year: React.PropTypes.number.isRequired,
+    maxDate: React.PropTypes.object,
+    minDate: React.PropTypes.object,
+    includeDates: React.PropTypes.object
   },
 
   getInitialState () {
@@ -25,9 +30,10 @@ var YearDropdown = React.createClass({
   renderReadView () {
     return (
       <div className="react-datepicker__year-read-view">
-        <a className="react-datepicker__nav-year react-datepicker__nav-year--previous" onClick={this.decreaseYear}/>
-        <a className="react-datepicker__nav-year react-datepicker__nav-year--next"  onClick={this.increaseYear}/>
+        {!allDaysDisabledBefore(this.props.currentDate, 'year', this.props) ? <a className="react-datepicker__nav-year react-datepicker__nav-year--previous" onClick={this.decreaseYear}/> : false}
         <span className="react-datepicker__year-read-view--selected-year" onClick={this.toggleDropdown}>{this.props.year}</span>
+
+        {!allDaysDisabledAfter(this.props.currentDate, 'year', this.props) ? <a className="react-datepicker__nav-year react-datepicker__nav-year--next"  onClick={this.increaseYear}/> :false}
         {/*<span className="react-datepicker__year-read-view--down-arrow"></span>*/}
       </div>
     )

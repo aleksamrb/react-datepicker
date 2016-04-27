@@ -129,12 +129,17 @@ var Calendar = React.createClass({
     });
   },
   handleTodayClick(){
+    console.log('handle todayButton');
     if(this.props.showTime){
       var now = moment();
       var newDate = this.state.date.clone().year(now.year()).month(now.month()).date(now.date());
+      this.setState({
+        date: newDate
+      });
       this.props.onSelect(newDate);
     }
     else{
+        this.setState({date: moment()});
         this.props.onSelect(moment());
     }
   },
@@ -187,8 +192,12 @@ var Calendar = React.createClass({
     return (
       <div>
       <YearDropdown
+          currentDate={this.state.date}
           onChange={this.changeYear}
-          year={this.state.date.year()} />
+          year={this.state.date.year()}
+          minDate={this.props.minDate}
+          maxDate={this.props.maxDate}
+          includeDates={this.props.includeDates} />
       </div>
     )
   },

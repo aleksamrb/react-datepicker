@@ -1,6 +1,7 @@
 import DateInput from './date_input'
 import Calendar from './calendar'
 import React from 'react'
+import ReactDOM from 'react-dom'
 import TetherComponent from 'react-tether'
 import classnames from 'classnames'
 import { isSameDay } from './date_utils'
@@ -75,7 +76,17 @@ var DatePicker = React.createClass({
   getInitialState () {
     return {
       open: false,
-      selected: this.props.selected || Moment() // default to now
+      selected: this.props.selected || Moment(), // default to now
+      currentDate: this.props.selected
+    }
+  },
+
+  componentWillReceiveProps (newProps){
+    if(newProps.selected){
+      this.setState({selected: newProps.selected});
+    }
+    if(newProps.currentDate){
+      this.setState({currentDate: date});
     }
   },
 
@@ -97,7 +108,7 @@ var DatePicker = React.createClass({
   },
 
   handleCalendarClickOutside (event) {
-    this.setState({selected: this.props.selected || Moment()});
+    this.setState({selected: this.props.currentDate || Moment()});
     this.setOpen(false)
   },
 
@@ -106,12 +117,17 @@ var DatePicker = React.createClass({
 
     if(!this.props.showConfirmButtons){
       this.setSelected(date)
-      //this.setOpen(false)
+      if(!this.props.showTime){
+        this.setOpen(false)
+      }
     }
   },
 
   setSelected (date) {
-      this.props.onChange(date);
+    this.setState({
+      currentDate: date
+    })
+    this.props.onChange(date);
   },
   onInputClick () {
     if (!this.props.disabled) {
@@ -129,14 +145,14 @@ var DatePicker = React.createClass({
   },
   onClearClick (event) {
     event.preventDefault()
-    this.props.onChange(null)
+    this.setSelected(null);
   },
   handleOkClick (){
-    this.props.onChange(this.state.selected)
+    this.setSelected(this.state.selected);
     this.setOpen(false)
   },
   handleCancelClick (){
-    this.setState({selected: this.props.selected || Moment()});
+    this.setState({selected: this.props.currentDate || Moment()});
     this.setOpen(false);
   },
   renderCalendar () {
@@ -177,7 +193,7 @@ var DatePicker = React.createClass({
         ref='input'
         id={this.props.id}
         name={this.props.name}
-        date={this.props.selected}
+        date={this.state.currentDate}
         locale={this.props.locale}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}
@@ -201,7 +217,7 @@ var DatePicker = React.createClass({
   },
 
   renderClearButton () {
-    if (this.props.isClearable && this.props.selected != null) {
+    if (this.props.isClearable && this.state.currentDate != null) {
       return <a className="react-datepicker__close-icon" href="#" onClick={this.onClearClick}></a>
     } else {
       return null
@@ -227,3 +243,30 @@ var DatePicker = React.createClass({
 })
 
 module.exports = DatePicker
+
+window.insertDatepicker = function(onChangeCallback, date, options, el) {
+  ReactDOM.render(<DatePicker
+    onChange={onChangeCallback}
+    selected={date || null}
+    dateFormatCalendar={options.yearDropdown ? 'MMMM' : 'MMMM YYYY'}
+    dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
+    disabled={options.disabled || false}
+    endDate={options.endDate || null}
+    hour24={options.hour24 || false}
+    isClearable={options.isClearable || false}
+    locale={options.locale || Moment().locale()}
+    maxDate={options.maxDate || null}
+    minDate={options.minDate || null}
+    placeholderText={options.placeholder || 'Select date'}
+    popoverAttachment={options.popoverAttachment || 'top left'}
+    popoverTargetAttachment={options.popoverTargetAttachment || 'bottom left'}
+    popoverTargetOffset={options.popoverTargetOffset || '10px 0'}
+    showConfirmButtons={options.showConfirm || false}
+    showSeconds={options.showSeconds || false}
+    showTime={options.showTime || false}
+    showYearDropdown={options.yearDropdown || false}
+    startDate={options.startDate || null}
+    readOnly={options.readOnly || false}
+    todayButton={options.todayButton || null}
+  />, el);
+}

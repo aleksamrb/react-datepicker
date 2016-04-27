@@ -172,7 +172,7 @@
 
   &--disabled {
     cursor: default;
-    color: $color-profile-12;
+    color: $muted-color;
 
     &:hover {
       background-color: transparent;
@@ -183,6 +183,20 @@
 .react-datepicker__input-container {
   position: relative;
   display: inline-block;
+
+  input {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 1em;
+
+    &:focus{
+      border-bottom: solid 2px #969696;
+    }
+  }
+
+
 }
 
 .react-datepicker__year-read-view {
@@ -196,8 +210,6 @@
   font-size: 1.2rem;
 
   &:hover {
-    cursor: pointer;
-
     .react-datepicker__year-read-view--down-arrow {
       border-top-color: darken($color-profile-12, 10%);
     }
@@ -205,6 +217,10 @@
 
   &--selected-year {
     position: relative;
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 .react-datepicker__time{
     text-align: center;
-    min-width: 276px;
+    width: 280px;
     color: $color-profile-11;
 
     .react-datepicker__hour-select, .react-datepicker__minute-select {
@@ -19,7 +19,7 @@
    }
 
    .grid{
-     display: flex;
+     display: inline-flex;
      flex-direction: row;
      padding: 2%;
      margin: 5% 1%;
@@ -41,7 +41,7 @@
      flex: 1;
      text-align: center;
      align-self: center;
-     padding: 10 0;
+     padding: 10px 10px;
    }
 
    .triangle-up-time {

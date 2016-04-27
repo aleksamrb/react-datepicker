@@ -1,23 +1,21 @@
 import React from 'react'
-import DateTimePicker from '../../src/datetimepicker'
+import DatePicker from 'react-datepicker'
 import moment from 'moment'
 
 export default React.createClass({
   displayName: 'VccExample',
   handleChange (date) {
-    console.log('on change: ' + date);
+    console.log('on change test: ' + date.format());
   },
   render () {
     return (
     <div>
-      <DateTimePicker
-          date={moment()}
-          onDateChange={this.handleChange}
+      <DatePicker
+          selected={moment()}
+          onChange={this.handleChange}
           dateFormatCalendar="MMMM"
           dateFormat={"DD/MM/YYYY h:mm:ss a"}
           locale='en-gb'
-          
-          showConfirmButtons
           showSeconds
           showTime
           showYearDropdown
