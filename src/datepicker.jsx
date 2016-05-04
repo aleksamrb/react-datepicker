@@ -1,11 +1,11 @@
-import DateInput from './date_input'
-import Calendar from './calendar'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Calendar from './calendar'
+import DateInput from './date_input'
 import TetherComponent from 'react-tether'
+import moment from 'moment';
 import classnames from 'classnames'
 import { isSameDay } from './date_utils'
-import Moment from 'moment';
 
 var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
 
@@ -76,7 +76,7 @@ var DatePicker = React.createClass({
   getInitialState () {
     return {
       open: false,
-      selected: this.props.selected || Moment(), // default to now
+      selected: this.props.selected || moment(), // default to now
       currentDate: this.props.selected
     }
   },
@@ -108,12 +108,12 @@ var DatePicker = React.createClass({
   },
 
   handleCalendarClickOutside (event) {
-    this.setState({selected: this.props.currentDate || Moment()});
+    this.setState({selected: this.props.currentDate || moment()});
     this.setOpen(false)
   },
 
   handleSelect (date) {
-    this.setState({selected: new Moment(date)});
+    this.setState({selected: new moment(date)});
 
     if(!this.props.showConfirmButtons){
       this.setSelected(date)
@@ -152,7 +152,7 @@ var DatePicker = React.createClass({
     this.setOpen(false)
   },
   handleCancelClick (){
-    this.setState({selected: this.props.currentDate || Moment()});
+    this.setState({selected: this.props.currentDate || moment()});
     this.setOpen(false);
   },
   renderCalendar () {
@@ -242,9 +242,11 @@ var DatePicker = React.createClass({
   }
 })
 
-module.exports = DatePicker
+module.exports = DatePicker;
 
-window.insertDatepicker = function(onChangeCallback, date, options, el) {
+window.insertDatepicker = function(onChangeCallback, date, options, containerId) {
+  var el = document.getElementById(containerId);
+  //React.setIdAttributeName("data-my-own-private-reactid");
   ReactDOM.render(<DatePicker
     onChange={onChangeCallback}
     selected={date || null}
@@ -254,7 +256,7 @@ window.insertDatepicker = function(onChangeCallback, date, options, el) {
     endDate={options.endDate || null}
     hour24={options.hour24 || false}
     isClearable={options.isClearable || false}
-    locale={options.locale || Moment().locale()}
+    locale={options.locale || moment().locale()}
     maxDate={options.maxDate || null}
     minDate={options.minDate || null}
     placeholderText={options.placeholder || 'Select date'}

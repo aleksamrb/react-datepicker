@@ -245,8 +245,10 @@
     padding: 10px;
     border: none;
     border-bottom: solid 2px #c9c9c9;
-    transition: border 0.3s; }
-
+    transition: border 0.3s;
+    font-size: 1em; }
+    .react-datepicker__input-container input:focus {
+      border-bottom: solid 2px #969696; }
 
 .react-datepicker__year-read-view {
   width: 100%;

@@ -14,12 +14,12 @@
 
    .react-datepicker__time-label{
      margin: 4%;
-     font-size: 1.1em;
+     font-size: 0.7rem;
 
    }
 
    .grid{
-     display: inline-flex;
+     display: flex;
      flex-direction: row;
      padding: 2%;
      margin: 5% 1%;
@@ -41,7 +41,7 @@
      flex: 1;
      text-align: center;
      align-self: center;
-     padding: 10px 10px;
+     padding: 10px 0px;
    }
 
    .triangle-up-time {
@@ -95,7 +95,7 @@
 
    .time-dropdown_label, .amPm-label, .grid__column--small span{
      font-weight: bold;
-     font-size: 2rem;
+     font-size: 1.2rem;
      cursor: pointer;
    }
 

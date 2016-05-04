@@ -1,13 +1,13 @@
-import moment from 'moment'
-import YearDropdown from './year_dropdown'
-import Month from './month'
-import React from 'react'
-import TimePicker from './timepicker'
-import calendarIcon from './images/calendar.svg'
-import calendarIconWhite from './images/calendar_white.svg'
-import timeIcon from './images/clock.svg'
-import timeIconWhite from './images/clock_white.svg'
-import classnames from 'classnames'
+import React from 'react';
+import moment from 'moment';
+import TimePicker from './timepicker';
+import Month from './month';
+import YearDropdown from './year_dropdown';
+import calendarIcon from './images/calendar.svg';
+import calendarIconWhite from './images/calendar_white.svg';
+import timeIcon from './images/clock.svg';
+import timeIconWhite from './images/clock_white.svg';
+import classnames from 'classnames';
 import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
 var Calendar = React.createClass({

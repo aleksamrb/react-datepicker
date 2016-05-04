@@ -65,9 +65,10 @@
     "lodash": "^4.3.0",
     "mocha": "^2.2.5",
     "node-sass": "^3.4.2",
-    "react-addons-test-utils": "^0.14.0",
+    "react": "^15.0.2",
     "react-docgen": "^2.7.0",
-    "react-dom": "^0.14.0",
+    "react-dom": "^15.0.0",
+    "react-tether": "^0.5.1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
@@ -80,18 +81,17 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0"
+    "react": "^15.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.1",
     "moment": "^2.13.0",
     "react-onclickoutside": "^4.8.0",
-    "react-tether": "^0.3.3",
     "react-dropdown": "^1.0.3",
     "svg-inline-loader": "^0.4.1"
   },
   "scripts": {
-    "build": "NODE_ENV=production grunt build",
+    "build": "NODE_ENV=development grunt build",
     "start": "node server.js",
     "test": "NODE_ENV=test grunt travis",
     "eslint": "eslint **/*.jsx",

@@ -15,14 +15,6 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
-      },
-      {
           test: /\.svg$/,
           loader: 'svg-inline'
       }
