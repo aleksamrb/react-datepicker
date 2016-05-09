@@ -183,7 +183,7 @@ var TimePicker = React.createClass({
       <div className="react-datepicker__time">
         {this.renderGrid()}
         <div className="react-datepicker__time-label">{this.props.date.format(this.props.dateFormat)}</div>
-        <div className="react-datepicker__now-button" onClick={this.handleNowClick}>NOW</div>
+        <div className="react-datepicker__now-button" onClick={this.handleNowClick}>Now</div>
       </div>
     )
   }

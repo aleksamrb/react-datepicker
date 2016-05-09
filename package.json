@@ -64,6 +64,7 @@
     "karma-webpack": "^1.7.0",
     "lodash": "^4.3.0",
     "mocha": "^2.2.5",
+    "moment": "^2.12.0",
     "node-sass": "^3.4.2",
     "react": "^15.0.2",
     "react-docgen": "^2.7.0",
@@ -85,7 +86,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.1",
-    "moment": "^2.13.0",
     "react-onclickoutside": "^4.8.0",
     "react-dropdown": "^1.0.3",
     "svg-inline-loader": "^0.4.1"

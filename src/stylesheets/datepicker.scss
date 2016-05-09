@@ -62,7 +62,7 @@
   margin-top: 0;
   color: #fff;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding-bottom: 0px;
 
   &--hasYearDropdown {
@@ -139,12 +139,12 @@
 .react-datepicker__day-name,
 .react-datepicker__day {
   color: #444;
-  padding: 5px;
+  padding: 3px 5px;
   display: inline-block;
   width: $item-size;
   line-height: $item-size;
   text-align: center;
-  margin: $day-margin;
+  margin: 1px 4px;
 }
 
 .react-datepicker__day {
@@ -207,7 +207,7 @@
   margin-top: 0;
   color: #fff !important;
   font-weight: normal !important;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   &:hover {
     .react-datepicker__year-read-view--down-arrow {
@@ -336,8 +336,9 @@
    color: $color-profile-11;
    cursor: pointer;
    text-align: center;
-   font-weight: bold;
-   padding: 5px 0;
+   font-weight: normal;
+   padding: 1% 0;
+   font-size: 0.7rem;
 }
 
 .react-datepicker__tether-element {
@@ -354,14 +355,15 @@
 
     &-calIcon, &-timeIcon{
       svg{
-        height: 20px;
+        height: 15px;
       }
     }
 
     .react-datepicker__tab-calendar, .react-datepicker__tab-time{
       background-color: $background-color;
-      padding: 10px;
+      padding: 4% 0 2% 0;
       flex-grow: 1;
+      align-self: center;
 
       &:hover{
         cursor: pointer;
@@ -376,15 +378,15 @@
 .react-datepicker__confirm-btn{
   background: #626262;
   text-align: center;
-  padding: 15px;
+  padding: 12px;
 
   .react-datepicker__cancel-btn, .react-datepicker__ok-btn{
     cursor: pointer;
     font-weight: bold;
     width: 100px;
     text-decoration: none;
-    padding: 7px 15px 7px 15px;
-    font-size: 15px;
+    padding: 5px 12px 5px 12px;
+    font-size: 0.95rem;
   }
 
   .react-datepicker__cancel-btn{

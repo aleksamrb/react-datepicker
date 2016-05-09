@@ -83,10 +83,7 @@ var DatePicker = React.createClass({
 
   componentWillReceiveProps (newProps){
     if(newProps.selected){
-      this.setState({selected: newProps.selected});
-    }
-    if(newProps.currentDate){
-      this.setState({currentDate: date});
+      this.setState({selected: newProps.selected, currentDate: newProps.selected});
     }
   },
 
@@ -244,9 +241,7 @@ var DatePicker = React.createClass({
 
 module.exports = DatePicker;
 
-window.insertDatepicker = function(onChangeCallback, date, options, containerId) {
-  var el = document.getElementById(containerId);
-  //React.setIdAttributeName("data-my-own-private-reactid");
+window.insertDatepicker = function(onChangeCallback, date, options, el) {
   ReactDOM.render(<DatePicker
     onChange={onChangeCallback}
     selected={date || null}
@@ -269,6 +264,7 @@ window.insertDatepicker = function(onChangeCallback, date, options, containerId)
     showYearDropdown={options.yearDropdown || false}
     startDate={options.startDate || null}
     readOnly={options.readOnly || false}
+    tetherConstraints={options.tetherConstraints || [{to: 'window', attachment: 'together'}]}
     todayButton={options.todayButton || null}
   />, el);
 }
