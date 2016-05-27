@@ -8,8 +8,8 @@ import timeIcon from './images/time.svg';
 import classnames from 'classnames';
 import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
-var Calendar = React.createClass({
-  displayName: 'Calendar',
+var DateTimePicker = React.createClass({
+  displayName: 'DateTimePicker',
 
   propTypes: {
     dateFormat: React.PropTypes.string,
@@ -300,4 +300,4 @@ var Calendar = React.createClass({
   }
 })
 
-module.exports = Calendar
+module.exports = DateTimePicker

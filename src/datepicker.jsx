@@ -59,6 +59,7 @@ var DatePicker = React.createClass({
       dateFormatCalendar: 'MMMM YYYY',
       onChange () {},
       disabled: false,
+      locale: moment().locale(),
       onFocus () {},
       onBlur () {},
       popoverAttachment: 'top left',
@@ -76,8 +77,8 @@ var DatePicker = React.createClass({
   getInitialState () {
     return {
       open: false,
-      selected: this.props.selected || moment(), // default to now
-      currentDate: this.props.selected
+      selected: this.props.selected || moment(),
+      currentDate: this.props.selected || null
     }
   },
 
@@ -105,7 +106,7 @@ var DatePicker = React.createClass({
   },
 
   handleCalendarClickOutside (event) {
-    this.setState({selected: this.props.currentDate || moment()});
+    this.setState({selected: this.state.currentDate || moment()});
     this.setOpen(false)
   },
 
@@ -149,7 +150,7 @@ var DatePicker = React.createClass({
     this.setOpen(false)
   },
   handleCancelClick (){
-    this.setState({selected: this.props.currentDate || moment()});
+    this.setState({selected: this.state.currentDate || moment()});
     this.setOpen(false);
   },
   renderCalendar () {
@@ -244,7 +245,7 @@ module.exports = DatePicker;
 window.insertDatepicker = function(onChangeCallback, date, options, el) {
   ReactDOM.render(<DatePicker
     onChange={onChangeCallback}
-    selected={date || null}
+    selected={date ? moment(date) : null}
     dateFormatCalendar={options.yearDropdown ? 'MMMM' : 'MMMM YYYY'}
     dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
     disabled={options.disabled || false}

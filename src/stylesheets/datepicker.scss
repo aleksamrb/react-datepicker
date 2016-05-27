@@ -139,12 +139,11 @@
 .react-datepicker__day-name,
 .react-datepicker__day {
   color: #444;
-  padding: 3px 5px;
   display: inline-block;
   width: $item-size;
   line-height: $item-size;
   text-align: center;
-  margin: 1px 4px;
+  margin: $day-margin;
 }
 
 .react-datepicker__day {
@@ -353,25 +352,29 @@
     display: flex;
     display: -webkit-flex;
 
-    &-calIcon, &-timeIcon{
+    .react-datepicker__tab-calendar, .react-datepicker__tab-time{
+      background-color: $background-color;
+      padding: 10px;
+      flex-grow: 1;
+      align-self: center;
+      border-bottom: 1px solid $color-profile-10;
+
       svg{
         height: 15px;
       }
-    }
-
-    .react-datepicker__tab-calendar, .react-datepicker__tab-time{
-      background-color: $background-color;
-      padding: 4% 0 2% 0;
-      flex-grow: 1;
-      align-self: center;
 
       &:hover{
         cursor: pointer;
       }
 
       &--selected{
-        background: $color-profile-1;
+        background: $color-profile-10;
         color: #fff;
+
+        svg{
+          height: 15px;
+          fill: $color-profile-12;
+        }
       }
     }
 }

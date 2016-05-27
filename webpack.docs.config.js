@@ -7,7 +7,7 @@ module.exports = {
     './docs-site/src/boot'
   ],
   output: {
-    path: './dist/',
+    path: path.resolve('./docs-site/'),
     filename: 'bundle.js',
     publicPath: '/'
   },
