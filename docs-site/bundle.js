@@ -88,9 +88,9 @@
 
 	var _root2 = _interopRequireDefault(_root);
 
-	var _moment = __webpack_require__(327);
+	var _datetimepicker_example = __webpack_require__(459);
 
-	var _moment2 = _interopRequireDefault(_moment);
+	var _datetimepicker_example2 = _interopRequireDefault(_datetimepicker_example);
 
 	var _reactDatepicker = __webpack_require__(325);
 
@@ -98,8 +98,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//ReactDOM.render(<Root />, document.getElementById('app'))
-	window.insertDatepicker(function () {}, (0, _moment2.default)(), { dateFormat: 'L LT', locale: 'en_us', showTime: true, showSeconds: true, showConfirm: true, todayButton: 'Today', yearDropdown: true }, document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_datetimepicker_example2.default, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -20042,13 +20041,9 @@
 
 	var _example_components2 = _interopRequireDefault(_example_components);
 
-	var _hero_example = __webpack_require__(465);
+	var _hero_example = __webpack_require__(458);
 
 	var _hero_example2 = _interopRequireDefault(_hero_example);
-
-	var _vcc_example = __webpack_require__(466);
-
-	var _vcc_example2 = _interopRequireDefault(_vcc_example);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20056,24 +20051,9 @@
 	  displayName: 'Root',
 
 	  render: function render() {
-	    var testStyle = {
-	      textAlign: 'center',
-	      padding: '30px',
-	      minHeight: '500px'
-	    };
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'test', style: testStyle },
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'TEST'
-	        ),
-	        _react2.default.createElement(_vcc_example2.default, null)
-	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'hero' },
@@ -20195,77 +20175,85 @@
 
 	var _default2 = _interopRequireDefault(_default);
 
-	var _code_example_component = __webpack_require__(446);
+	var _code_example_component = __webpack_require__(437);
 
 	var _code_example_component2 = _interopRequireDefault(_code_example_component);
 
-	var _custom_date_format = __webpack_require__(447);
+	var _custom_date_format = __webpack_require__(438);
 
 	var _custom_date_format2 = _interopRequireDefault(_custom_date_format);
 
-	var _custom_class_name = __webpack_require__(448);
+	var _custom_class_name = __webpack_require__(439);
 
 	var _custom_class_name2 = _interopRequireDefault(_custom_class_name);
 
-	var _placeholder_text = __webpack_require__(449);
+	var _placeholder_text = __webpack_require__(440);
 
 	var _placeholder_text2 = _interopRequireDefault(_placeholder_text);
 
-	var _specific_date_range = __webpack_require__(450);
+	var _specific_date_range = __webpack_require__(441);
 
 	var _specific_date_range2 = _interopRequireDefault(_specific_date_range);
 
-	var _locale = __webpack_require__(451);
+	var _locale = __webpack_require__(442);
 
 	var _locale2 = _interopRequireDefault(_locale);
 
-	var _exclude_dates = __webpack_require__(452);
+	var _exclude_dates = __webpack_require__(443);
 
 	var _exclude_dates2 = _interopRequireDefault(_exclude_dates);
 
-	var _include_dates = __webpack_require__(453);
+	var _include_dates = __webpack_require__(444);
 
 	var _include_dates2 = _interopRequireDefault(_include_dates);
 
-	var _filter_dates = __webpack_require__(454);
+	var _filter_dates = __webpack_require__(445);
 
 	var _filter_dates2 = _interopRequireDefault(_filter_dates);
 
-	var _disabled = __webpack_require__(455);
+	var _disabled = __webpack_require__(446);
 
 	var _disabled2 = _interopRequireDefault(_disabled);
 
-	var _clear_input = __webpack_require__(456);
+	var _clear_input = __webpack_require__(447);
 
 	var _clear_input2 = _interopRequireDefault(_clear_input);
 
-	var _on_blur_callbacks = __webpack_require__(457);
+	var _on_blur_callbacks = __webpack_require__(448);
 
 	var _on_blur_callbacks2 = _interopRequireDefault(_on_blur_callbacks);
 
-	var _placement = __webpack_require__(458);
+	var _placement = __webpack_require__(449);
 
 	var _placement2 = _interopRequireDefault(_placement);
 
-	var _date_range = __webpack_require__(459);
+	var _date_range = __webpack_require__(450);
 
 	var _date_range2 = _interopRequireDefault(_date_range);
 
-	var _tab_index = __webpack_require__(460);
+	var _tab_index = __webpack_require__(451);
 
 	var _tab_index2 = _interopRequireDefault(_tab_index);
 
-	var _year_dropdown = __webpack_require__(461);
+	var _year_dropdown = __webpack_require__(452);
 
 	var _year_dropdown2 = _interopRequireDefault(_year_dropdown);
 
-	var _today = __webpack_require__(462);
+	var _today = __webpack_require__(453);
 
 	var _today2 = _interopRequireDefault(_today);
 
-	__webpack_require__(463);
+	var _inline = __webpack_require__(454);
 
-	__webpack_require__(464);
+	var _inline2 = _interopRequireDefault(_inline);
+
+	var _open_to_date = __webpack_require__(455);
+
+	var _open_to_date2 = _interopRequireDefault(_open_to_date);
+
+	__webpack_require__(456);
+
+	__webpack_require__(457);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20328,6 +20316,12 @@
 	  }, {
 	    title: 'Year dropdown',
 	    component: _react2.default.createElement(_year_dropdown2.default, null)
+	  }, {
+	    title: 'Inline version',
+	    component: _react2.default.createElement(_inline2.default, null)
+	  }, {
+	    title: 'Open to date',
+	    component: _react2.default.createElement(_open_to_date2.default, null)
 	  }],
 
 	  renderExamples: function renderExamples() {
@@ -36819,7 +36813,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -36874,35 +36868,35 @@
 
 	'use strict';
 
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
 	var _reactDom = __webpack_require__(33);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _calendar = __webpack_require__(326);
-
-	var _calendar2 = _interopRequireDefault(_calendar);
-
-	var _date_input = __webpack_require__(442);
-
-	var _date_input2 = _interopRequireDefault(_date_input);
-
-	var _reactTether = __webpack_require__(443);
-
-	var _reactTether2 = _interopRequireDefault(_reactTether);
-
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _classnames2 = __webpack_require__(427);
+	var _date_input = __webpack_require__(425);
+
+	var _date_input2 = _interopRequireDefault(_date_input);
+
+	var _calendar = __webpack_require__(427);
+
+	var _calendar2 = _interopRequireDefault(_calendar);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _tether_component = __webpack_require__(435);
+
+	var _tether_component2 = _interopRequireDefault(_tether_component);
+
+	var _classnames2 = __webpack_require__(431);
 
 	var _classnames3 = _interopRequireDefault(_classnames2);
 
-	var _date_utils = __webpack_require__(434);
+	var _date_utils = __webpack_require__(426);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36918,6 +36912,7 @@
 	  displayName: 'DatePicker',
 
 	  propTypes: {
+	    autoComplete: _react2.default.PropTypes.string,
 	    className: _react2.default.PropTypes.string,
 	    dateFormat: _react2.default.PropTypes.string,
 	    dateFormatCalendar: _react2.default.PropTypes.string,
@@ -36928,6 +36923,7 @@
 	    hour24: _react2.default.PropTypes.bool,
 	    id: _react2.default.PropTypes.string,
 	    includeDates: _react2.default.PropTypes.array,
+	    inline: _react2.default.PropTypes.bool,
 	    isClearable: _react2.default.PropTypes.bool,
 	    locale: _react2.default.PropTypes.string,
 	    maxDate: _react2.default.PropTypes.object,
@@ -36936,6 +36932,7 @@
 	    onBlur: _react2.default.PropTypes.func,
 	    onChange: _react2.default.PropTypes.func.isRequired,
 	    onFocus: _react2.default.PropTypes.func,
+	    openToDate: _react2.default.PropTypes.object,
 	    placeholderText: _react2.default.PropTypes.string,
 	    popoverAttachment: _react2.default.PropTypes.string,
 	    popoverTargetAttachment: _react2.default.PropTypes.string,
@@ -37046,16 +37043,16 @@
 	    this.setOpen(false);
 	  },
 	  renderCalendar: function renderCalendar() {
-	    if (!this.state.open || this.props.disabled) {
+	    if (!this.props.inline && (!this.state.open || this.props.disabled)) {
 	      return null;
 	    }
 	    return _react2.default.createElement(_calendar2.default, {
 	      ref: 'calendar',
 	      locale: this.props.locale,
-	      dateFormat: this.props.dateFormat,
-	      dateFormatCalendar: this.props.dateFormatCalendar,
+	      dateFormat: this.props.dateFormatCalendar,
 	      selected: this.state.selected,
 	      onSelect: this.handleSelect,
+	      openToDate: this.props.openToDate,
 	      minDate: this.props.minDate,
 	      maxDate: this.props.maxDate,
 	      startDate: this.props.startDate,
@@ -37095,6 +37092,7 @@
 	      onChangeDate: this.setSelected,
 	      placeholder: this.props.placeholderText,
 	      disabled: this.props.disabled,
+	      autoComplete: this.props.autoComplete,
 	      className: className,
 	      title: this.props.title,
 	      readOnly: this.props.readOnly,
@@ -37110,23 +37108,29 @@
 	    }
 	  },
 	  render: function render() {
-	    return _react2.default.createElement(
-	      _reactTether2.default,
-	      {
-	        classPrefix: "react-datepicker__tether",
-	        attachment: this.props.popoverAttachment,
-	        targetAttachment: this.props.popoverTargetAttachment,
-	        targetOffset: this.props.popoverTargetOffset,
-	        renderElementTo: this.props.renderCalendarTo,
-	        constraints: this.props.tetherConstraints },
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__input-container' },
-	        this.renderDateInput(),
-	        this.renderClearButton()
-	      ),
-	      this.renderCalendar()
-	    );
+	    var calendar = this.renderCalendar();
+
+	    if (this.props.inline) {
+	      return calendar;
+	    } else {
+	      return _react2.default.createElement(
+	        _tether_component2.default,
+	        {
+	          classPrefix: "react-datepicker__tether",
+	          attachment: this.props.popoverAttachment,
+	          targetAttachment: this.props.popoverTargetAttachment,
+	          targetOffset: this.props.popoverTargetOffset,
+	          renderElementTo: this.props.renderCalendarTo,
+	          constraints: this.props.tetherConstraints },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'react-datepicker__input-container' },
+	          this.renderDateInput(),
+	          this.renderClearButton()
+	        ),
+	        calendar
+	      );
+	    }
 	  }
 	});
 
@@ -37140,7 +37144,7 @@
 	    dateFormat: options.dateFormat || 'DD/MM/YYYY HH:mm:ss',
 	    disabled: options.disabled || false,
 	    endDate: options.endDate || null,
-	    hour24: options.hour24 || false,
+
 	    isClearable: options.isClearable || false,
 	    locale: options.locale || (0, _moment2.default)().locale(),
 	    maxDate: options.maxDate || null,
@@ -37162,352 +37166,6 @@
 
 /***/ },
 /* 326 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _moment = __webpack_require__(327);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	var _timepicker = __webpack_require__(426);
-
-	var _timepicker2 = _interopRequireDefault(_timepicker);
-
-	var _month = __webpack_require__(431);
-
-	var _month2 = _interopRequireDefault(_month);
-
-	var _year_dropdown = __webpack_require__(435);
-
-	var _year_dropdown2 = _interopRequireDefault(_year_dropdown);
-
-	var _calendar = __webpack_require__(437);
-
-	var _calendar2 = _interopRequireDefault(_calendar);
-
-	var _calendar3 = __webpack_require__(438);
-
-	var _calendar4 = _interopRequireDefault(_calendar3);
-
-	var _calendar_white = __webpack_require__(439);
-
-	var _calendar_white2 = _interopRequireDefault(_calendar_white);
-
-	var _clock = __webpack_require__(440);
-
-	var _clock2 = _interopRequireDefault(_clock);
-
-	var _clock_white = __webpack_require__(441);
-
-	var _clock_white2 = _interopRequireDefault(_clock_white);
-
-	var _classnames = __webpack_require__(427);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _date_utils = __webpack_require__(434);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Calendar = _react2.default.createClass({
-	  displayName: 'Calendar',
-
-	  propTypes: {
-	    dateFormat: _react2.default.PropTypes.string,
-	    dateFormatCalendar: _react2.default.PropTypes.string.isRequired,
-	    endDate: _react2.default.PropTypes.object,
-	    excludeDates: _react2.default.PropTypes.array,
-	    filterDate: _react2.default.PropTypes.func,
-	    hour24: _react2.default.PropTypes.bool,
-	    includeDates: _react2.default.PropTypes.array,
-	    locale: _react2.default.PropTypes.string,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    onChangeTime: _react2.default.PropTypes.func,
-	    onClickOutside: _react2.default.PropTypes.func.isRequired,
-	    onClickOk: _react2.default.PropTypes.func.isRequired,
-	    onClickCancel: _react2.default.PropTypes.func.isRequired,
-	    onSelect: _react2.default.PropTypes.func.isRequired,
-	    selected: _react2.default.PropTypes.object,
-	    showConfirmButtons: _react2.default.PropTypes.bool,
-	    showTime: _react2.default.PropTypes.bool,
-	    showSeconds: _react2.default.PropTypes.bool,
-	    showYearDropdown: _react2.default.PropTypes.bool,
-	    startDate: _react2.default.PropTypes.object,
-	    todayButton: _react2.default.PropTypes.string
-	  },
-
-	  mixins: [__webpack_require__(430)],
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      date: this.localizeMoment(this.getDateInView()),
-	      calendarActive: true
-	    };
-	  },
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      dateFormat: 'L',
-	      locale: (0, _moment2.default)().locale(),
-	      showTime: false
-	    };
-	  },
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    if (nextProps.selected && !(0, _date_utils.isSameDay)(nextProps.selected, this.props.selected) || nextProps.locale !== this.props.locale || nextProps.dateFormat !== this.props.dateFormat) {
-	      this.setState({
-	        date: this.localizeMoment(nextProps.selected)
-	      });
-	    }
-	  },
-	  handleClickOutside: function handleClickOutside(event) {
-	    this.props.onClickOutside(event);
-	  },
-	  getDateInView: function getDateInView() {
-	    var selected = this.props.selected;
-
-	    var minDate = (0, _date_utils.getEffectiveMinDate)(this.props);
-	    var maxDate = (0, _date_utils.getEffectiveMaxDate)(this.props);
-	    var current = (0, _moment2.default)();
-	    if (selected) {
-	      return selected;
-	    } else if (minDate && minDate.isAfter(current)) {
-	      return minDate;
-	    } else if (maxDate && maxDate.isBefore(current)) {
-	      return maxDate;
-	    } else {
-	      return current;
-	    }
-	  },
-	  localizeMoment: function localizeMoment(date) {
-	    return date.clone().locale(this.props.locale || _moment2.default.locale());
-	  },
-	  increaseMonth: function increaseMonth() {
-	    this.setState({
-	      date: this.state.date.clone().add(1, 'month')
-	    });
-	  },
-	  decreaseMonth: function decreaseMonth() {
-	    this.setState({
-	      date: this.state.date.clone().subtract(1, 'month')
-	    });
-	  },
-	  increaseYear: function increaseYear() {
-	    this.setState({
-	      date: this.state.date.clone().add(1, 'year')
-	    });
-	  },
-	  decreaseYear: function decreaseYear() {
-	    this.setState({
-	      date: this.state.date.clone().subtract(1, 'year')
-	    });
-	  },
-	  handleDayClick: function handleDayClick(day) {
-	    this.props.onSelect(day);
-	  },
-	  handleOkClick: function handleOkClick() {
-	    this.props.onClickOk();
-	  },
-	  handleCancelClick: function handleCancelClick() {
-	    this.props.onClickCancel();
-	  },
-	  handleChangeTime: function handleChangeTime(date) {
-	    this.props.onSelect(date);
-	  },
-	  changeYear: function changeYear(year) {
-	    this.setState({
-	      date: this.state.date.clone().set('year', year)
-	    });
-	  },
-	  handleCalendarTabClick: function handleCalendarTabClick() {
-	    this.setState({
-	      calendarActive: true
-	    });
-	  },
-	  handleCalendarTimeClick: function handleCalendarTimeClick() {
-	    this.setState({
-	      calendarActive: false
-	    });
-	  },
-	  handleTodayClick: function handleTodayClick() {
-	    if (this.props.showTime) {
-	      var now = (0, _moment2.default)();
-	      var newDate = this.state.date.clone().year(now.year()).month(now.month()).date(now.date());
-	      this.setState({
-	        date: newDate
-	      });
-	      this.props.onSelect(newDate);
-	    } else {
-	      this.setState({ date: (0, _moment2.default)() });
-	      this.props.onSelect((0, _moment2.default)());
-	    }
-	  },
-	  header: function header() {
-	    var startOfWeek = this.state.date.clone().startOf('week');
-	    return [0, 1, 2, 3, 4, 5, 6].map(function (offset) {
-	      var day = startOfWeek.clone().add(offset, 'days');
-	      return _react2.default.createElement(
-	        'div',
-	        { key: offset, className: 'react-datepicker__day-name' },
-	        day.localeData().weekdaysMin(day)
-	      );
-	    });
-	  },
-	  renderPreviousMonthButton: function renderPreviousMonthButton() {
-	    if ((0, _date_utils.allDaysDisabledBefore)(this.state.date, 'month', this.props)) {
-	      return;
-	    }
-	    return _react2.default.createElement('a', {
-	      className: 'react-datepicker__navigation react-datepicker__navigation--previous',
-	      onClick: this.decreaseMonth });
-	  },
-	  renderNextMonthButton: function renderNextMonthButton() {
-	    if ((0, _date_utils.allDaysDisabledAfter)(this.state.date, 'month', this.props)) {
-	      return;
-	    }
-	    return _react2.default.createElement('a', {
-	      className: 'react-datepicker__navigation react-datepicker__navigation--next',
-	      onClick: this.increaseMonth });
-	  },
-	  renderCurrentMonth: function renderCurrentMonth() {
-	    var classes = ['react-datepicker__current-month'];
-	    if (this.props.showYearDropdown) {
-	      classes.push('react-datepicker__current-month--hasYearDropdown');
-	    }
-	    return _react2.default.createElement(
-	      'div',
-	      { className: classes.join(' ') },
-	      this.state.date.format(this.props.dateFormatCalendar)
-	    );
-	  },
-	  renderYearDropdown: function renderYearDropdown() {
-	    if (!this.props.showYearDropdown) {
-	      return;
-	    }
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_year_dropdown2.default, {
-	        currentDate: this.state.date,
-	        onChange: this.changeYear,
-	        year: this.state.date.year(),
-	        minDate: this.props.minDate,
-	        maxDate: this.props.maxDate,
-	        includeDates: this.props.includeDates })
-	    );
-	  },
-	  renderTodayButton: function renderTodayButton() {
-	    if (!this.props.todayButton) {
-	      return;
-	    }
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__today-button', onClick: this.handleTodayClick },
-	      this.props.todayButton
-	    );
-	  },
-	  renderTime: function renderTime() {
-	    if (!this.props.showTime) {
-	      return;
-	    } else {
-	      return _react2.default.createElement(_timepicker2.default, {
-	        date: this.props.selected,
-	        dateFormat: this.props.dateFormat,
-	        hour24: this.props.hour24,
-	        onChangeTime: this.handleChangeTime,
-	        showSeconds: this.props.showSeconds
-	      });
-	    }
-	  },
-	  renderConfirmButton: function renderConfirmButton() {
-	    if (this.props.showConfirmButtons) {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__confirm-btn' },
-	        _react2.default.createElement(
-	          'button',
-	          { className: 'react-datepicker__cancel-btn', onClick: this.handleCancelClick },
-	          'CANCEL'
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { className: 'react-datepicker__ok-btn', onClick: this.handleOkClick },
-	          'OK'
-	        )
-	      );
-	    } else {
-	      return;
-	    }
-	  },
-	  renderCalendarView: function renderCalendarView() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__header' },
-	        this.renderPreviousMonthButton(),
-	        this.renderCurrentMonth(),
-	        this.renderYearDropdown(),
-	        this.renderNextMonthButton(),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          this.header()
-	        )
-	      ),
-	      _react2.default.createElement(_month2.default, {
-	        day: this.state.date,
-	        onDayClick: this.handleDayClick,
-	        minDate: this.props.minDate,
-	        maxDate: this.props.maxDate,
-	        excludeDates: this.props.excludeDates,
-	        includeDates: this.props.includeDates,
-	        filterDate: this.props.filterDate,
-	        selected: this.props.selected,
-	        startDate: this.props.startDate,
-	        endDate: this.props.endDate }),
-	      this.renderTodayButton()
-	    );
-	  },
-	  getClassNames: function getClassNames() {
-	    return (0, _classnames2.default)('react-datepicker__day', {
-	      'react-datepicker__day--disabled': this.isDisabled()
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker' },
-	      _react2.default.createElement('div', { className: 'react-datepicker__triangle' }),
-	      this.props.showTime ? _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__tabs' },
-	        _react2.default.createElement(
-	          'span',
-	          { className: (0, _classnames2.default)('react-datepicker__tab-calendar', { 'react-datepicker__tab-calendar--selected': this.state.calendarActive }), onClick: this.handleCalendarTabClick },
-	          _react2.default.createElement('span', { className: 'react-datepicker__tabs-calIcon', dangerouslySetInnerHTML: { __html: _calendar2.default } })
-	        ),
-	        _react2.default.createElement(
-	          'span',
-	          { className: (0, _classnames2.default)('react-datepicker__tab-time', { 'react-datepicker__tab-time--selected': !this.state.calendarActive }), onClick: this.handleCalendarTimeClick },
-	          _react2.default.createElement('span', { className: 'react-datepicker__tabs-timeIcon', dangerouslySetInnerHTML: this.state.calendarActive ? { __html: _clock2.default } : { __html: _clock_white2.default } })
-	        )
-	      ) : false,
-	      this.state.calendarActive ? this.renderCalendarView() : this.renderTime(),
-	      this.renderConfirmButton()
-	    );
-	  }
-	});
-
-	module.exports = Calendar;
-
-/***/ },
-/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
@@ -37786,7 +37444,7 @@
 	                module && module.exports) {
 	            try {
 	                oldLocale = globalLocale._abbr;
-	                __webpack_require__(329)("./" + name);
+	                __webpack_require__(328)("./" + name);
 	                // because defineLocale currently also sets the global locale, we
 	                // want to undo that for lazy loaded locales
 	                locale_locales__getSetGlobalLocale(oldLocale);
@@ -41116,10 +40774,10 @@
 	    return _moment;
 
 	}));
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(328)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(327)(module)))
 
 /***/ },
-/* 328 */
+/* 327 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -41135,202 +40793,202 @@
 
 
 /***/ },
-/* 329 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 330,
-		"./af.js": 330,
-		"./ar": 331,
-		"./ar-ma": 332,
-		"./ar-ma.js": 332,
-		"./ar-sa": 333,
-		"./ar-sa.js": 333,
-		"./ar-tn": 334,
-		"./ar-tn.js": 334,
-		"./ar.js": 331,
-		"./az": 335,
-		"./az.js": 335,
-		"./be": 336,
-		"./be.js": 336,
-		"./bg": 337,
-		"./bg.js": 337,
-		"./bn": 338,
-		"./bn.js": 338,
-		"./bo": 339,
-		"./bo.js": 339,
-		"./br": 340,
-		"./br.js": 340,
-		"./bs": 341,
-		"./bs.js": 341,
-		"./ca": 342,
-		"./ca.js": 342,
-		"./cs": 343,
-		"./cs.js": 343,
-		"./cv": 344,
-		"./cv.js": 344,
-		"./cy": 345,
-		"./cy.js": 345,
-		"./da": 346,
-		"./da.js": 346,
-		"./de": 347,
-		"./de-at": 348,
-		"./de-at.js": 348,
-		"./de.js": 347,
-		"./dv": 349,
-		"./dv.js": 349,
-		"./el": 350,
-		"./el.js": 350,
-		"./en-au": 351,
-		"./en-au.js": 351,
-		"./en-ca": 352,
-		"./en-ca.js": 352,
-		"./en-gb": 353,
-		"./en-gb.js": 353,
-		"./en-ie": 354,
-		"./en-ie.js": 354,
-		"./en-nz": 355,
-		"./en-nz.js": 355,
-		"./eo": 356,
-		"./eo.js": 356,
-		"./es": 357,
-		"./es.js": 357,
-		"./et": 358,
-		"./et.js": 358,
-		"./eu": 359,
-		"./eu.js": 359,
-		"./fa": 360,
-		"./fa.js": 360,
-		"./fi": 361,
-		"./fi.js": 361,
-		"./fo": 362,
-		"./fo.js": 362,
-		"./fr": 363,
-		"./fr-ca": 364,
-		"./fr-ca.js": 364,
-		"./fr-ch": 365,
-		"./fr-ch.js": 365,
-		"./fr.js": 363,
-		"./fy": 366,
-		"./fy.js": 366,
-		"./gd": 367,
-		"./gd.js": 367,
-		"./gl": 368,
-		"./gl.js": 368,
-		"./he": 369,
-		"./he.js": 369,
-		"./hi": 370,
-		"./hi.js": 370,
-		"./hr": 371,
-		"./hr.js": 371,
-		"./hu": 372,
-		"./hu.js": 372,
-		"./hy-am": 373,
-		"./hy-am.js": 373,
-		"./id": 374,
-		"./id.js": 374,
-		"./is": 375,
-		"./is.js": 375,
-		"./it": 376,
-		"./it.js": 376,
-		"./ja": 377,
-		"./ja.js": 377,
-		"./jv": 378,
-		"./jv.js": 378,
-		"./ka": 379,
-		"./ka.js": 379,
-		"./kk": 380,
-		"./kk.js": 380,
-		"./km": 381,
-		"./km.js": 381,
-		"./ko": 382,
-		"./ko.js": 382,
-		"./lb": 383,
-		"./lb.js": 383,
-		"./lo": 384,
-		"./lo.js": 384,
-		"./lt": 385,
-		"./lt.js": 385,
-		"./lv": 386,
-		"./lv.js": 386,
-		"./me": 387,
-		"./me.js": 387,
-		"./mk": 388,
-		"./mk.js": 388,
-		"./ml": 389,
-		"./ml.js": 389,
-		"./mr": 390,
-		"./mr.js": 390,
-		"./ms": 391,
-		"./ms-my": 392,
-		"./ms-my.js": 392,
-		"./ms.js": 391,
-		"./my": 393,
-		"./my.js": 393,
-		"./nb": 394,
-		"./nb.js": 394,
-		"./ne": 395,
-		"./ne.js": 395,
-		"./nl": 396,
-		"./nl.js": 396,
-		"./nn": 397,
-		"./nn.js": 397,
-		"./pl": 398,
-		"./pl.js": 398,
-		"./pt": 399,
-		"./pt-br": 400,
-		"./pt-br.js": 400,
-		"./pt.js": 399,
-		"./ro": 401,
-		"./ro.js": 401,
-		"./ru": 402,
-		"./ru.js": 402,
-		"./se": 403,
-		"./se.js": 403,
-		"./si": 404,
-		"./si.js": 404,
-		"./sk": 405,
-		"./sk.js": 405,
-		"./sl": 406,
-		"./sl.js": 406,
-		"./sq": 407,
-		"./sq.js": 407,
-		"./sr": 408,
-		"./sr-cyrl": 409,
-		"./sr-cyrl.js": 409,
-		"./sr.js": 408,
-		"./sv": 410,
-		"./sv.js": 410,
-		"./sw": 411,
-		"./sw.js": 411,
-		"./ta": 412,
-		"./ta.js": 412,
-		"./te": 413,
-		"./te.js": 413,
-		"./th": 414,
-		"./th.js": 414,
-		"./tl-ph": 415,
-		"./tl-ph.js": 415,
-		"./tlh": 416,
-		"./tlh.js": 416,
-		"./tr": 417,
-		"./tr.js": 417,
-		"./tzl": 418,
-		"./tzl.js": 418,
-		"./tzm": 419,
-		"./tzm-latn": 420,
-		"./tzm-latn.js": 420,
-		"./tzm.js": 419,
-		"./uk": 421,
-		"./uk.js": 421,
-		"./uz": 422,
-		"./uz.js": 422,
-		"./vi": 423,
-		"./vi.js": 423,
-		"./zh-cn": 424,
-		"./zh-cn.js": 424,
-		"./zh-tw": 425,
-		"./zh-tw.js": 425
+		"./af": 329,
+		"./af.js": 329,
+		"./ar": 330,
+		"./ar-ma": 331,
+		"./ar-ma.js": 331,
+		"./ar-sa": 332,
+		"./ar-sa.js": 332,
+		"./ar-tn": 333,
+		"./ar-tn.js": 333,
+		"./ar.js": 330,
+		"./az": 334,
+		"./az.js": 334,
+		"./be": 335,
+		"./be.js": 335,
+		"./bg": 336,
+		"./bg.js": 336,
+		"./bn": 337,
+		"./bn.js": 337,
+		"./bo": 338,
+		"./bo.js": 338,
+		"./br": 339,
+		"./br.js": 339,
+		"./bs": 340,
+		"./bs.js": 340,
+		"./ca": 341,
+		"./ca.js": 341,
+		"./cs": 342,
+		"./cs.js": 342,
+		"./cv": 343,
+		"./cv.js": 343,
+		"./cy": 344,
+		"./cy.js": 344,
+		"./da": 345,
+		"./da.js": 345,
+		"./de": 346,
+		"./de-at": 347,
+		"./de-at.js": 347,
+		"./de.js": 346,
+		"./dv": 348,
+		"./dv.js": 348,
+		"./el": 349,
+		"./el.js": 349,
+		"./en-au": 350,
+		"./en-au.js": 350,
+		"./en-ca": 351,
+		"./en-ca.js": 351,
+		"./en-gb": 352,
+		"./en-gb.js": 352,
+		"./en-ie": 353,
+		"./en-ie.js": 353,
+		"./en-nz": 354,
+		"./en-nz.js": 354,
+		"./eo": 355,
+		"./eo.js": 355,
+		"./es": 356,
+		"./es.js": 356,
+		"./et": 357,
+		"./et.js": 357,
+		"./eu": 358,
+		"./eu.js": 358,
+		"./fa": 359,
+		"./fa.js": 359,
+		"./fi": 360,
+		"./fi.js": 360,
+		"./fo": 361,
+		"./fo.js": 361,
+		"./fr": 362,
+		"./fr-ca": 363,
+		"./fr-ca.js": 363,
+		"./fr-ch": 364,
+		"./fr-ch.js": 364,
+		"./fr.js": 362,
+		"./fy": 365,
+		"./fy.js": 365,
+		"./gd": 366,
+		"./gd.js": 366,
+		"./gl": 367,
+		"./gl.js": 367,
+		"./he": 368,
+		"./he.js": 368,
+		"./hi": 369,
+		"./hi.js": 369,
+		"./hr": 370,
+		"./hr.js": 370,
+		"./hu": 371,
+		"./hu.js": 371,
+		"./hy-am": 372,
+		"./hy-am.js": 372,
+		"./id": 373,
+		"./id.js": 373,
+		"./is": 374,
+		"./is.js": 374,
+		"./it": 375,
+		"./it.js": 375,
+		"./ja": 376,
+		"./ja.js": 376,
+		"./jv": 377,
+		"./jv.js": 377,
+		"./ka": 378,
+		"./ka.js": 378,
+		"./kk": 379,
+		"./kk.js": 379,
+		"./km": 380,
+		"./km.js": 380,
+		"./ko": 381,
+		"./ko.js": 381,
+		"./lb": 382,
+		"./lb.js": 382,
+		"./lo": 383,
+		"./lo.js": 383,
+		"./lt": 384,
+		"./lt.js": 384,
+		"./lv": 385,
+		"./lv.js": 385,
+		"./me": 386,
+		"./me.js": 386,
+		"./mk": 387,
+		"./mk.js": 387,
+		"./ml": 388,
+		"./ml.js": 388,
+		"./mr": 389,
+		"./mr.js": 389,
+		"./ms": 390,
+		"./ms-my": 391,
+		"./ms-my.js": 391,
+		"./ms.js": 390,
+		"./my": 392,
+		"./my.js": 392,
+		"./nb": 393,
+		"./nb.js": 393,
+		"./ne": 394,
+		"./ne.js": 394,
+		"./nl": 395,
+		"./nl.js": 395,
+		"./nn": 396,
+		"./nn.js": 396,
+		"./pl": 397,
+		"./pl.js": 397,
+		"./pt": 398,
+		"./pt-br": 399,
+		"./pt-br.js": 399,
+		"./pt.js": 398,
+		"./ro": 400,
+		"./ro.js": 400,
+		"./ru": 401,
+		"./ru.js": 401,
+		"./se": 402,
+		"./se.js": 402,
+		"./si": 403,
+		"./si.js": 403,
+		"./sk": 404,
+		"./sk.js": 404,
+		"./sl": 405,
+		"./sl.js": 405,
+		"./sq": 406,
+		"./sq.js": 406,
+		"./sr": 407,
+		"./sr-cyrl": 408,
+		"./sr-cyrl.js": 408,
+		"./sr.js": 407,
+		"./sv": 409,
+		"./sv.js": 409,
+		"./sw": 410,
+		"./sw.js": 410,
+		"./ta": 411,
+		"./ta.js": 411,
+		"./te": 412,
+		"./te.js": 412,
+		"./th": 413,
+		"./th.js": 413,
+		"./tl-ph": 414,
+		"./tl-ph.js": 414,
+		"./tlh": 415,
+		"./tlh.js": 415,
+		"./tr": 416,
+		"./tr.js": 416,
+		"./tzl": 417,
+		"./tzl.js": 417,
+		"./tzm": 418,
+		"./tzm-latn": 419,
+		"./tzm-latn.js": 419,
+		"./tzm.js": 418,
+		"./uk": 420,
+		"./uk.js": 420,
+		"./uz": 421,
+		"./uz.js": 421,
+		"./vi": 422,
+		"./vi.js": 422,
+		"./zh-cn": 423,
+		"./zh-cn.js": 423,
+		"./zh-tw": 424,
+		"./zh-tw.js": 424
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -41343,11 +41001,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 329;
+	webpackContext.id = 328;
 
 
 /***/ },
-/* 330 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41355,7 +41013,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41424,7 +41082,7 @@
 	}));
 
 /***/ },
-/* 331 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41434,7 +41092,7 @@
 	//! Native plural forms: forabi https://github.com/forabi
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41564,7 +41222,7 @@
 	}));
 
 /***/ },
-/* 332 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41573,7 +41231,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41627,7 +41285,7 @@
 	}));
 
 /***/ },
-/* 333 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41635,7 +41293,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41734,14 +41392,14 @@
 	}));
 
 /***/ },
-/* 334 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale  : Tunisian Arabic (ar-tn)
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41795,7 +41453,7 @@
 	}));
 
 /***/ },
-/* 335 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41803,7 +41461,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -41903,7 +41561,7 @@
 	}));
 
 /***/ },
-/* 336 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -41913,7 +41571,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42041,7 +41699,7 @@
 	}));
 
 /***/ },
-/* 337 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42049,7 +41707,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42135,7 +41793,7 @@
 	}));
 
 /***/ },
-/* 338 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42143,7 +41801,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42252,7 +41910,7 @@
 	}));
 
 /***/ },
-/* 339 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42260,7 +41918,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42366,7 +42024,7 @@
 	}));
 
 /***/ },
-/* 340 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42374,7 +42032,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42477,7 +42135,7 @@
 	}));
 
 /***/ },
-/* 341 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42486,7 +42144,7 @@
 	//! based on (hr) translation by Bojan Marković
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42622,7 +42280,7 @@
 	}));
 
 /***/ },
-/* 342 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42630,7 +42288,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42705,7 +42363,7 @@
 	}));
 
 /***/ },
-/* 343 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42713,7 +42371,7 @@
 	//! author : petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42880,7 +42538,7 @@
 	}));
 
 /***/ },
-/* 344 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42888,7 +42546,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -42947,7 +42605,7 @@
 	}));
 
 /***/ },
-/* 345 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -42955,7 +42613,7 @@
 	//! author : Robert Allen
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43030,7 +42688,7 @@
 	}));
 
 /***/ },
-/* 346 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43038,7 +42696,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43094,7 +42752,7 @@
 	}));
 
 /***/ },
-/* 347 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43104,7 +42762,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43174,7 +42832,7 @@
 	}));
 
 /***/ },
-/* 348 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43185,7 +42843,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43255,7 +42913,7 @@
 	}));
 
 /***/ },
-/* 349 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43263,7 +42921,7 @@
 	//! author : Jawish Hameed : https://github.com/jawish
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43358,7 +43016,7 @@
 	}));
 
 /***/ },
-/* 350 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43366,7 +43024,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43460,14 +43118,14 @@
 	}));
 
 /***/ },
-/* 351 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale : australian english (en-au)
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43530,7 +43188,7 @@
 	}));
 
 /***/ },
-/* 352 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43538,7 +43196,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43597,7 +43255,7 @@
 	}));
 
 /***/ },
-/* 353 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43605,7 +43263,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43668,7 +43326,7 @@
 	}));
 
 /***/ },
-/* 354 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43676,7 +43334,7 @@
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43739,14 +43397,14 @@
 	}));
 
 /***/ },
-/* 355 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale : New Zealand english (en-nz)
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43809,7 +43467,7 @@
 	}));
 
 /***/ },
-/* 356 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43819,7 +43477,7 @@
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43886,7 +43544,7 @@
 	}));
 
 /***/ },
-/* 357 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43894,7 +43552,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -43969,7 +43627,7 @@
 	}));
 
 /***/ },
-/* 358 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -43978,7 +43636,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44053,7 +43711,7 @@
 	}));
 
 /***/ },
-/* 359 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44061,7 +43719,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44121,7 +43779,7 @@
 	}));
 
 /***/ },
-/* 360 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44129,7 +43787,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44230,7 +43888,7 @@
 	}));
 
 /***/ },
-/* 361 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44238,7 +43896,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44341,7 +43999,7 @@
 	}));
 
 /***/ },
-/* 362 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44349,7 +44007,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44405,7 +44063,7 @@
 	}));
 
 /***/ },
-/* 363 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44413,7 +44071,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44471,7 +44129,7 @@
 	}));
 
 /***/ },
-/* 364 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44479,7 +44137,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44533,7 +44191,7 @@
 	}));
 
 /***/ },
-/* 365 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44541,7 +44199,7 @@
 	//! author : Gaspard Bucher : https://github.com/gaspard
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44599,7 +44257,7 @@
 	}));
 
 /***/ },
-/* 366 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44607,7 +44265,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44674,7 +44332,7 @@
 	}));
 
 /***/ },
-/* 367 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44682,7 +44340,7 @@
 	//! author : Jon Ashdown : https://github.com/jonashdown
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44754,7 +44412,7 @@
 	}));
 
 /***/ },
-/* 368 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44762,7 +44420,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44833,7 +44491,7 @@
 	}));
 
 /***/ },
-/* 369 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44843,7 +44501,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -44919,7 +44577,7 @@
 	}));
 
 /***/ },
-/* 370 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -44927,7 +44585,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45046,7 +44704,7 @@
 	}));
 
 /***/ },
-/* 371 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45054,7 +44712,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45193,7 +44851,7 @@
 	}));
 
 /***/ },
-/* 372 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45201,7 +44859,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45306,7 +44964,7 @@
 	}));
 
 /***/ },
-/* 373 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45314,7 +44972,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45405,7 +45063,7 @@
 	}));
 
 /***/ },
-/* 374 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45414,7 +45072,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45492,7 +45150,7 @@
 	}));
 
 /***/ },
-/* 375 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45500,7 +45158,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45623,7 +45281,7 @@
 	}));
 
 /***/ },
-/* 376 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45632,7 +45290,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45697,7 +45355,7 @@
 	}));
 
 /***/ },
-/* 377 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45705,7 +45363,7 @@
 	//! author : LI Long : https://github.com/baryon
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45766,7 +45424,7 @@
 	}));
 
 /***/ },
-/* 378 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45775,7 +45433,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45853,7 +45511,7 @@
 	}));
 
 /***/ },
-/* 379 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45861,7 +45519,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -45946,7 +45604,7 @@
 	}));
 
 /***/ },
-/* 380 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45954,7 +45612,7 @@
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46037,7 +45695,7 @@
 	}));
 
 /***/ },
-/* 381 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46045,7 +45703,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46099,7 +45757,7 @@
 	}));
 
 /***/ },
-/* 382 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46111,7 +45769,7 @@
 	//! - Jeeeyul Lee <jeeeyul@gmail.com>
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46171,7 +45829,7 @@
 	}));
 
 /***/ },
-/* 383 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46179,7 +45837,7 @@
 	//! author : mweimerskirch : https://github.com/mweimerskirch, David Raison : https://github.com/kwisatz
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46309,7 +45967,7 @@
 	}));
 
 /***/ },
-/* 384 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46317,7 +45975,7 @@
 	//! author : Ryan Hart : https://github.com/ryanhart2
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46382,7 +46040,7 @@
 	}));
 
 /***/ },
-/* 385 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46390,7 +46048,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46501,7 +46159,7 @@
 	}));
 
 /***/ },
-/* 386 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46510,7 +46168,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46601,7 +46259,7 @@
 	}));
 
 /***/ },
-/* 387 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46609,7 +46267,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46714,7 +46372,7 @@
 	}));
 
 /***/ },
-/* 388 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46722,7 +46380,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46808,7 +46466,7 @@
 	}));
 
 /***/ },
-/* 389 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46816,7 +46474,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -46883,7 +46541,7 @@
 	}));
 
 /***/ },
-/* 390 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46892,7 +46550,7 @@
 	//! author : Vivek Athalye : https://github.com/vnathalye
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47045,7 +46703,7 @@
 	}));
 
 /***/ },
-/* 391 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47053,7 +46711,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47131,7 +46789,7 @@
 	}));
 
 /***/ },
-/* 392 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47139,7 +46797,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47217,7 +46875,7 @@
 	}));
 
 /***/ },
-/* 393 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47225,7 +46883,7 @@
 	//! author : Squar team, mysquar.com
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47314,7 +46972,7 @@
 	}));
 
 /***/ },
-/* 394 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47323,7 +46981,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47379,7 +47037,7 @@
 	}));
 
 /***/ },
-/* 395 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47387,7 +47045,7 @@
 	//! author : suvash : https://github.com/suvash
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47504,7 +47162,7 @@
 	}));
 
 /***/ },
-/* 396 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47512,7 +47170,7 @@
 	//! author : Joris Röling : https://github.com/jjupiter
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47579,7 +47237,7 @@
 	}));
 
 /***/ },
-/* 397 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47587,7 +47245,7 @@
 	//! author : https://github.com/mechuwind
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47643,7 +47301,7 @@
 	}));
 
 /***/ },
-/* 398 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47651,7 +47309,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47752,7 +47410,7 @@
 	}));
 
 /***/ },
-/* 399 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47760,7 +47418,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47820,7 +47478,7 @@
 	}));
 
 /***/ },
-/* 400 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47828,7 +47486,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47884,7 +47542,7 @@
 	}));
 
 /***/ },
-/* 401 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47893,7 +47551,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -47962,7 +47620,7 @@
 	}));
 
 /***/ },
-/* 402 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47971,7 +47629,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48132,7 +47790,7 @@
 	}));
 
 /***/ },
-/* 403 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48140,7 +47798,7 @@
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48197,7 +47855,7 @@
 	}));
 
 /***/ },
-/* 404 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48205,7 +47863,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48267,7 +47925,7 @@
 	}));
 
 /***/ },
-/* 405 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48276,7 +47934,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48421,7 +48079,7 @@
 	}));
 
 /***/ },
-/* 406 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48429,7 +48087,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48585,7 +48243,7 @@
 	}));
 
 /***/ },
-/* 407 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48595,7 +48253,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd (fixes)
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48658,7 +48316,7 @@
 	}));
 
 /***/ },
-/* 408 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48666,7 +48324,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48770,7 +48428,7 @@
 	}));
 
 /***/ },
-/* 409 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48778,7 +48436,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48882,7 +48540,7 @@
 	}));
 
 /***/ },
-/* 410 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48890,7 +48548,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -48953,7 +48611,7 @@
 	}));
 
 /***/ },
-/* 411 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48961,7 +48619,7 @@
 	//! author : Fahad Kassim : https://github.com/fadsel
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49015,7 +48673,7 @@
 	}));
 
 /***/ },
-/* 412 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49023,7 +48681,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49148,7 +48806,7 @@
 	}));
 
 /***/ },
-/* 413 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49156,7 +48814,7 @@
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49240,7 +48898,7 @@
 	}));
 
 /***/ },
-/* 414 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49248,7 +48906,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49309,7 +48967,7 @@
 	}));
 
 /***/ },
-/* 415 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49317,7 +48975,7 @@
 	//! author : Dan Hagman
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49375,7 +49033,7 @@
 	}));
 
 /***/ },
-/* 416 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49383,7 +49041,7 @@
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49498,7 +49156,7 @@
 	}));
 
 /***/ },
-/* 417 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49507,7 +49165,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49592,7 +49250,7 @@
 	}));
 
 /***/ },
-/* 418 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49600,7 +49258,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v with the help of Iustì Canun
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49683,7 +49341,7 @@
 	}));
 
 /***/ },
-/* 419 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49691,7 +49349,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49745,7 +49403,7 @@
 	}));
 
 /***/ },
-/* 420 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49753,7 +49411,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49807,7 +49465,7 @@
 	}));
 
 /***/ },
-/* 421 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49816,7 +49474,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -49957,7 +49615,7 @@
 	}));
 
 /***/ },
-/* 422 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49965,7 +49623,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50019,7 +49677,7 @@
 	}));
 
 /***/ },
-/* 423 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50027,7 +49685,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50089,7 +49747,7 @@
 	}));
 
 /***/ },
-/* 424 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50098,7 +49756,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50220,7 +49878,7 @@
 	}));
 
 /***/ },
-/* 425 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50228,7 +49886,7 @@
 	//! author : Ben : https://github.com/ben-lin
 
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(327)) :
+	    true ? factory(__webpack_require__(326)) :
 	   typeof define === 'function' && define.amd ? define(['moment'], factory) :
 	   factory(global.moment)
 	}(this, function (moment) { 'use strict';
@@ -50325,277 +49983,698 @@
 	}));
 
 /***/ },
-/* 426 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _moment = __webpack_require__(327);
-
-	var _moment2 = _interopRequireDefault(_moment);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(427);
+	var _moment = __webpack_require__(326);
 
-	var _classnames2 = _interopRequireDefault(_classnames);
+	var _moment2 = _interopRequireDefault(_moment);
 
-	var _time_dropdown = __webpack_require__(428);
-
-	var _time_dropdown2 = _interopRequireDefault(_time_dropdown);
+	var _date_utils = __webpack_require__(426);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var TimePicker = _react2.default.createClass({
-	  displayName: 'TimePicker',
+	var DateInput = _react2.default.createClass({
+	  displayName: 'DateInput',
+
 	  propTypes: {
 	    date: _react2.default.PropTypes.object,
 	    dateFormat: _react2.default.PropTypes.string,
-	    hour24: _react2.default.PropTypes.bool,
-	    onChangeTime: _react2.default.PropTypes.func.isRequired,
-	    showSeconds: _react2.default.PropTypes.bool
+	    disabled: _react2.default.PropTypes.bool,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    includeDates: _react2.default.PropTypes.array,
+	    locale: _react2.default.PropTypes.string,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    onBlur: _react2.default.PropTypes.func,
+	    onChange: _react2.default.PropTypes.func,
+	    onChangeDate: _react2.default.PropTypes.func,
+	    showTime: _react2.default.PropTypes.bool
 	  },
+
 	  getDefaultProps: function getDefaultProps() {
 	    return {
-	      date: (0, _moment2.default)(),
-	      dateFormat: "DD/MM/YYYY HH:mm:ss"
+	      dateFormat: 'L',
+	      locale: (0, _moment2.default)().locale(),
+	      showTime: false
 	    };
 	  },
 	  getInitialState: function getInitialState() {
-	    return {};
+	    return {
+	      value: this.safeDateFormat(this.props)
+	    };
 	  },
-	  handleNowClick: function handleNowClick() {
-	    var now = (0, _moment2.default)();
-	    var temp = this.props.date.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
-	    this.props.onChangeTime(temp);
-	  },
-	  onIncreaseHour: function onIncreaseHour() {
-	    if (this.props.hour24) {
-	      if (this.props.date.hour() < 23) {
-	        this.props.onChangeTime(this.props.date.clone().add(1, 'h'));
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    if (this.props.showTime) {
+	      if (!(0, _date_utils.isSameTime)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
+	        this.setState({
+	          maybeDate: this.safeDateFormat(newProps)
+	        });
 	      }
 	    } else {
-	      if (this.props.date.format('hh') < 12) {
-	        if (this.props.date.hour() === 11) {
-	          this.props.onChangeTime(this.props.date.clone().hour(0));
-	        } else if (this.props.date.hour() === 23) {
-	          this.props.onChangeTime(this.props.date.clone().hour(12));
-	        } else {
-	          this.props.onChangeTime(this.props.date.clone().add(1, 'h'));
-	        }
+	      if (!(0, _date_utils.isSameDay)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
+	        this.setState({
+	          maybeDate: this.safeDateFormat(newProps)
+	        });
 	      }
 	    }
 	  },
-	  onDecreaseHour: function onDecreaseHour() {
-	    if (this.props.hour24) {
-	      if (this.props.date.hour() > 0) {
-	        this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
+	  handleChange: function handleChange(event) {
+	    if (this.props.onChange) {
+	      this.props.onChange(event);
+	    }
+	    if (!event.isDefaultPrevented()) {
+	      this.handleChangeDate(event.target.value);
+	    }
+	  },
+	  handleChangeDate: function handleChangeDate(value) {
+	    if (this.props.onChangeDate) {
+	      var date = (0, _moment2.default)(value, this.props.dateFormat, this.props.locale, true);
+	      if (date.isValid() && !(0, _date_utils.isDayDisabled)(date, this.props)) {
+	        this.props.onChangeDate(date);
+	      } else if (value === '') {
+	        this.props.onChangeDate(null);
 	      }
-	    } else {
-	      if (this.props.date.format('hh') > 1) {
-	        if (this.props.date.hour() === 12) {
-	          this.props.onChangeTime(this.props.date.clone().hour(23));
-	        } else if (this.props.date.hour() === 0) {
-	          this.props.onChangeTime(this.props.date.clone().hour(11));
-	        } else {
-	          this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
-	        }
-	      }
+	    }
+	    this.setState({ value: value });
+	  },
+	  safeDateFormat: function safeDateFormat(props) {
+	    return props.date && props.date.clone().locale(props.locale || _moment2.default.locale()).format(props.dateFormat) || '';
+	  },
+	  handleBlur: function handleBlur(event) {
+	    this.setState({
+	      value: this.safeDateFormat(this.props)
+	    });
+	    if (this.props.onBlur) {
+	      this.props.onBlur(event);
 	    }
 	  },
-	  onIncreaseMinute: function onIncreaseMinute() {
-	    if (this.props.date.minute() < 59) {
-	      this.props.onChangeTime(this.props.date.clone().add(1, 'm'));
-	    }
+	  focus: function focus() {
+	    this.refs.input.focus();
 	  },
-	  onDecreaseMinute: function onDecreaseMinute() {
-	    if (this.props.date.minute() > 0) {
-	      this.props.onChangeTime(this.props.date.clone().subtract(1, 'm'));
-	    }
-	  },
-	  onIncreaseSecond: function onIncreaseSecond() {
-	    if (this.props.date.second() < 59) {
-	      this.props.onChangeTime(this.props.date.clone().add(1, 's'));
-	    }
-	  },
-	  onDecreaseSecond: function onDecreaseSecond() {
-	    if (this.props.date.second() > 0) {
-	      this.props.onChangeTime(this.props.date.clone().subtract(1, 's'));
-	    }
-	  },
-	  onAmpmChange: function onAmpmChange() {
-	    if (this.props.date.hour() === 12) {
+	  render: function render() {
+	    return _react2.default.createElement('input', _extends({
+	      ref: 'input',
+	      type: 'text'
+	    }, this.props, {
+	      value: this.state.value,
+	      onBlur: this.handleBlur,
+	      onChange: this.handleChange }));
+	  }
+	});
 
-	      this.props.onChangeTime(this.props.date.clone().hour(0));
-	    } else if (this.props.date.hour() < 12) {
-	      this.props.onChangeTime(this.props.date.clone().add(12, 'h'));
-	    } else {
-	      this.props.onChangeTime(this.props.date.clone().subtract(12, 'h'));
+	module.exports = DateInput;
+
+/***/ },
+/* 426 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.isSameDay = isSameDay;
+	exports.isSameTime = isSameTime;
+	exports.isDayDisabled = isDayDisabled;
+	exports.allDaysDisabledBefore = allDaysDisabledBefore;
+	exports.allDaysDisabledAfter = allDaysDisabledAfter;
+	exports.getEffectiveMinDate = getEffectiveMinDate;
+	exports.getEffectiveMaxDate = getEffectiveMaxDate;
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function isSameDay(moment1, moment2) {
+	  if (moment1 && moment2) {
+	    return moment1.isSame(moment2, 'day');
+	  } else {
+	    return !moment1 && !moment2;
+	  }
+	}
+
+	function isSameTime(moment1, moment2) {
+	  if (moment1 && moment2) {
+	    return moment1.isSame(moment2, 'second');
+	  } else {
+	    return !moment1 && !moment2;
+	  }
+	}
+
+	function isDayDisabled(day) {
+	  var _ref = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+	  var minDate = _ref.minDate;
+	  var maxDate = _ref.maxDate;
+	  var excludeDates = _ref.excludeDates;
+	  var includeDates = _ref.includeDates;
+	  var filterDate = _ref.filterDate;
+
+	  return minDate && day.isBefore(minDate, 'day') || maxDate && day.isAfter(maxDate, 'day') || excludeDates && excludeDates.some(function (excludeDate) {
+	    return isSameDay(day, excludeDate);
+	  }) || includeDates && !includeDates.some(function (includeDate) {
+	    return isSameDay(day, includeDate);
+	  }) || filterDate && !filterDate(day.clone()) || false;
+	}
+
+	function allDaysDisabledBefore(day, unit) {
+	  var _ref2 = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+	  var minDate = _ref2.minDate;
+	  var includeDates = _ref2.includeDates;
+
+	  var dateBefore = day.clone().subtract(1, unit);
+	  return minDate && dateBefore.isBefore(minDate, unit) || includeDates && includeDates.every(function (includeDate) {
+	    return dateBefore.isBefore(includeDate, unit);
+	  }) || false;
+	}
+
+	function allDaysDisabledAfter(day, unit) {
+	  var _ref3 = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+	  var maxDate = _ref3.maxDate;
+	  var includeDates = _ref3.includeDates;
+
+	  var dateAfter = day.clone().add(1, unit);
+	  return maxDate && dateAfter.isAfter(maxDate, unit) || includeDates && includeDates.every(function (includeDate) {
+	    return dateAfter.isAfter(includeDate, unit);
+	  }) || false;
+	}
+
+	function getEffectiveMinDate(_ref4) {
+	  var minDate = _ref4.minDate;
+	  var includeDates = _ref4.includeDates;
+
+	  if (includeDates && minDate) {
+	    return _moment2.default.min(includeDates.filter(function (includeDate) {
+	      return minDate.isSameOrBefore(includeDate, 'day');
+	    }));
+	  } else if (includeDates) {
+	    return _moment2.default.min(includeDates);
+	  } else {
+	    return minDate;
+	  }
+	}
+
+	function getEffectiveMaxDate(_ref5) {
+	  var maxDate = _ref5.maxDate;
+	  var includeDates = _ref5.includeDates;
+
+	  if (includeDates && maxDate) {
+	    return _moment2.default.max(includeDates.filter(function (includeDate) {
+	      return maxDate.isSameOrAfter(includeDate, 'day');
+	    }));
+	  } else if (includeDates) {
+	    return _moment2.default.max(includeDates);
+	  } else {
+	    return maxDate;
+	  }
+	}
+
+/***/ },
+/* 427 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _month = __webpack_require__(428);
+
+	var _month2 = _interopRequireDefault(_month);
+
+	var _year_dropdown = __webpack_require__(432);
+
+	var _year_dropdown2 = _interopRequireDefault(_year_dropdown);
+
+	var _classnames = __webpack_require__(431);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _date_utils = __webpack_require__(426);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Calendar = _react2.default.createClass({
+	  displayName: 'Calendar',
+
+	  propTypes: {
+	    dateFormat: _react2.default.PropTypes.string.isRequired,
+	    endDate: _react2.default.PropTypes.object,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    includeDates: _react2.default.PropTypes.array,
+	    locale: _react2.default.PropTypes.string,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    onClickOutside: _react2.default.PropTypes.func.isRequired,
+	    onSelect: _react2.default.PropTypes.func.isRequired,
+	    openToDate: _react2.default.PropTypes.object,
+	    selected: _react2.default.PropTypes.object,
+	    showYearDropdown: _react2.default.PropTypes.bool,
+	    startDate: _react2.default.PropTypes.object,
+	    todayButton: _react2.default.PropTypes.string
+	  },
+
+	  mixins: [__webpack_require__(434)],
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      date: this.localizeMoment(this.getDateInView())
+	    };
+	  },
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      dateFormat: 'L',
+	      locale: (0, _moment2.default)().locale()
+	    };
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if (nextProps.selected && !(0, _date_utils.isSameDay)(nextProps.selected, this.props.selected) || nextProps.locale !== this.props.locale || nextProps.dateFormat !== this.props.dateFormat) {
+	      this.setState({
+	        date: this.localizeMoment(nextProps.selected)
+	      });
 	    }
 	  },
-	  onOptionHourChange: function onOptionHourChange(hour) {
-	    if (this.props.hour24) {
-	      this.props.onChangeTime(this.props.date.clone().hour(hour));
+	  handleClickOutside: function handleClickOutside(event) {
+	    this.props.onClickOutside(event);
+	  },
+	  getDateInView: function getDateInView() {
+	    var _props = this.props;
+	    var selected = _props.selected;
+	    var openToDate = _props.openToDate;
+
+	    var minDate = (0, _date_utils.getEffectiveMinDate)(this.props);
+	    var maxDate = (0, _date_utils.getEffectiveMaxDate)(this.props);
+	    var current = (0, _moment2.default)();
+	    if (selected) {
+	      return selected;
+	    } else if (minDate && minDate.isAfter(current)) {
+	      return minDate;
+	    } else if (maxDate && maxDate.isBefore(current)) {
+	      return maxDate;
+	    } else if (openToDate) {
+	      return openToDate;
 	    } else {
-	      if (this.props.date.hour() < 12) {
-	        //AM
-	        if (hour === 12) {
-	          this.props.onChangeTime(this.props.date.clone().hour(0));
-	        } else {
-	          this.props.onChangeTime(this.props.date.clone().hour(hour));
-	        }
-	      } else {
-	        //PM
-	        if (hour === 12) {
-	          this.props.onChangeTime(this.props.date.clone().hour(12));
-	        } else {
-	          this.props.onChangeTime(this.props.date.clone().hour(hour + 12));
-	        }
-	      }
+	      return current;
 	    }
 	  },
-	  onOptionMinuteChange: function onOptionMinuteChange(minute) {
-	    this.props.onChangeTime(this.props.date.clone().minute(minute));
+	  localizeMoment: function localizeMoment(date) {
+	    return date.clone().locale(this.props.locale || _moment2.default.locale());
 	  },
-	  onOptionSecondChange: function onOptionSecondChange(second) {
-	    this.props.onChangeTime(this.props.date.clone().second(second));
+	  increaseMonth: function increaseMonth() {
+	    this.setState({
+	      date: this.state.date.clone().add(1, 'month')
+	    });
 	  },
-	  renderGrid: function renderGrid() {
+	  decreaseMonth: function decreaseMonth() {
+	    this.setState({
+	      date: this.state.date.clone().subtract(1, 'month')
+	    });
+	  },
+	  increaseYear: function increaseYear() {
+	    this.setState({
+	      date: this.state.date.clone().add(1, 'year')
+	    });
+	  },
+	  decreaseYear: function decreaseYear() {
+	    this.setState({
+	      date: this.state.date.clone().subtract(1, 'year')
+	    });
+	  },
+	  handleDayClick: function handleDayClick(day) {
+	    this.props.onSelect(day);
+	  },
+	  handleChangeTime: function handleChangeTime(date) {
+	    this.props.onSelect(date);
+	  },
+	  changeYear: function changeYear(year) {
+	    this.setState({
+	      date: this.state.date.clone().set('year', year)
+	    });
+	  },
+	  header: function header() {
+	    var startOfWeek = this.state.date.clone().startOf('week');
+	    return [0, 1, 2, 3, 4, 5, 6].map(function (offset) {
+	      var day = startOfWeek.clone().add(offset, 'days');
+	      return _react2.default.createElement(
+	        'div',
+	        { key: offset, className: 'react-datepicker__day-name' },
+	        day.localeData().weekdaysMin(day)
+	      );
+	    });
+	  },
+	  renderPreviousMonthButton: function renderPreviousMonthButton() {
+	    if ((0, _date_utils.allDaysDisabledBefore)(this.state.date, 'month', this.props)) {
+	      return;
+	    }
+	    return _react2.default.createElement('a', {
+	      className: 'react-datepicker__navigation react-datepicker__navigation--previous',
+	      onClick: this.decreaseMonth });
+	  },
+	  renderNextMonthButton: function renderNextMonthButton() {
+	    if ((0, _date_utils.allDaysDisabledAfter)(this.state.date, 'month', this.props)) {
+	      return;
+	    }
+	    return _react2.default.createElement('a', {
+	      className: 'react-datepicker__navigation react-datepicker__navigation--next',
+	      onClick: this.increaseMonth });
+	  },
+	  renderCurrentMonth: function renderCurrentMonth() {
+	    var classes = ['react-datepicker__current-month'];
+	    if (this.props.showYearDropdown) {
+	      classes.push('react-datepicker__current-month--hasYearDropdown');
+	    }
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'grid' },
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseHour })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(_time_dropdown2.default, { value: this.props.hour24 ? parseInt(this.props.date.format('HH')) : parseInt(this.props.date.format('hh')), minValue: this.props.hour24 ? 0 : 1, maxValue: this.props.hour24 ? 23 : 12, onChange: this.onOptionHourChange })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseHour })
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column--small' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            ':'
-	          )
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseMinute })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(_time_dropdown2.default, { value: parseInt(this.props.date.format('mm')), minValue: 0, maxValue: 59, onChange: this.onOptionMinuteChange })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseMinute })
-	        )
-	      ),
-	      this.props.showSeconds ? _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column--small' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            ':'
-	          )
-	        )
-	      ) : false,
-	      this.props.showSeconds ? _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseSecond })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(_time_dropdown2.default, { value: parseInt(this.props.date.format('ss')), minValue: 0, maxValue: 59, onChange: this.onOptionSecondChange })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseSecond })
-	        )
-	      ) : false,
-	      !this.props.hour24 ? _react2.default.createElement(
-	        'div',
-	        { className: 'grid__column' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onAmpmChange })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'amPm-label' },
-	            this.props.date.hour() >= 12 ? "PM" : "AM"
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'grid__item' },
-	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onAmpmChange })
-	        )
-	      ) : false
+	      { className: classes.join(' ') },
+	      this.state.date.format(this.props.dateFormat)
+	    );
+	  },
+	  renderYearDropdown: function renderYearDropdown() {
+	    if (!this.props.showYearDropdown) {
+	      return;
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_year_dropdown2.default, {
+	        currentDate: this.state.date,
+	        onChange: this.changeYear,
+	        year: this.state.date.year(),
+	        minDate: this.props.minDate,
+	        maxDate: this.props.maxDate,
+	        includeDates: this.props.includeDates })
+	    );
+	  },
+	  renderTodayButton: function renderTodayButton() {
+	    var _this = this;
+
+	    if (!this.props.todayButton) {
+	      return;
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__today-button', onClick: function onClick() {
+	          return _this.props.onSelect((0, _moment2.default)());
+	        } },
+	      this.props.todayButton
 	    );
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'react-datepicker__time' },
-	      this.renderGrid(),
+	      { className: 'react-datepicker' },
+	      _react2.default.createElement('div', { className: 'react-datepicker__triangle' }),
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'react-datepicker__time-label' },
-	        this.props.date.format(this.props.dateFormat)
+	        { className: 'react-datepicker__header' },
+	        this.renderPreviousMonthButton(),
+	        this.renderCurrentMonth(),
+	        this.renderYearDropdown(),
+	        this.renderNextMonthButton(),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          this.header()
+	        )
 	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__now-button', onClick: this.handleNowClick },
-	        'Now'
-	      )
+	      _react2.default.createElement(_month2.default, {
+	        day: this.state.date,
+	        onDayClick: this.handleDayClick,
+	        minDate: this.props.minDate,
+	        maxDate: this.props.maxDate,
+	        excludeDates: this.props.excludeDates,
+	        includeDates: this.props.includeDates,
+	        filterDate: this.props.filterDate,
+	        selected: this.props.selected,
+	        startDate: this.props.startDate,
+	        endDate: this.props.endDate }),
+	      this.renderTodayButton()
 	    );
 	  }
 	});
-	module.exports = TimePicker;
+
+	module.exports = Calendar;
 
 /***/ },
-/* 427 */
+/* 428 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _week = __webpack_require__(429);
+
+	var _week2 = _interopRequireDefault(_week);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Month = _react2.default.createClass({
+	  displayName: 'Month',
+
+	  propTypes: {
+	    day: _react2.default.PropTypes.object.isRequired,
+	    endDate: _react2.default.PropTypes.object,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    includeDates: _react2.default.PropTypes.array,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    onDayClick: _react2.default.PropTypes.func,
+	    selected: _react2.default.PropTypes.object,
+	    startDate: _react2.default.PropTypes.object
+	  },
+
+	  handleDayClick: function handleDayClick(day) {
+	    day.hour(this.props.day.hour()).minute(this.props.day.minute()).second(this.props.day.second()).millisecond(this.props.day.millisecond());
+	    if (this.props.onDayClick) {
+	      this.props.onDayClick(day);
+	    }
+	  },
+	  isWeekInMonth: function isWeekInMonth(startOfWeek) {
+	    var day = this.props.day;
+	    var endOfWeek = startOfWeek.clone().add(6, 'days');
+	    return startOfWeek.isSame(day, 'month') || endOfWeek.isSame(day, 'month');
+	  },
+	  renderWeeks: function renderWeeks() {
+	    var _this = this;
+
+	    var startOfMonth = this.props.day.clone().startOf('month').startOf('week');
+	    return [0, 1, 2, 3, 4, 5].map(function (offset) {
+	      return startOfMonth.clone().add(offset, 'weeks');
+	    }).filter(function (startOfWeek) {
+	      return _this.isWeekInMonth(startOfWeek);
+	    }).map(function (startOfWeek, offset) {
+	      return _react2.default.createElement(_week2.default, {
+	        key: offset,
+	        day: startOfWeek,
+	        month: _this.props.day.month(),
+	        onDayClick: _this.handleDayClick,
+	        minDate: _this.props.minDate,
+	        maxDate: _this.props.maxDate,
+	        excludeDates: _this.props.excludeDates,
+	        includeDates: _this.props.includeDates,
+	        filterDate: _this.props.filterDate,
+	        selected: _this.props.selected,
+	        startDate: _this.props.startDate,
+	        endDate: _this.props.endDate });
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__month' },
+	      this.renderWeeks()
+	    );
+	  }
+	});
+
+	module.exports = Month;
+
+/***/ },
+/* 429 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _day = __webpack_require__(430);
+
+	var _day2 = _interopRequireDefault(_day);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Week = _react2.default.createClass({
+	  displayName: 'Week',
+
+	  propTypes: {
+	    day: _react2.default.PropTypes.object.isRequired,
+	    endDate: _react2.default.PropTypes.object,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    includeDates: _react2.default.PropTypes.array,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    month: _react2.default.PropTypes.number,
+	    onDayClick: _react2.default.PropTypes.func,
+	    selected: _react2.default.PropTypes.object,
+	    startDate: _react2.default.PropTypes.object
+	  },
+
+	  handleDayClick: function handleDayClick(day) {
+	    if (this.props.onDayClick) {
+	      this.props.onDayClick(day);
+	    }
+	  },
+	  renderDays: function renderDays() {
+	    var _this = this;
+
+	    var startOfWeek = this.props.day.clone().startOf('week');
+	    return [0, 1, 2, 3, 4, 5, 6].map(function (offset) {
+	      var day = startOfWeek.clone().add(offset, 'days');
+	      return _react2.default.createElement(_day2.default, {
+	        key: offset,
+	        day: day,
+	        month: _this.props.month,
+	        onClick: _this.handleDayClick.bind(_this, day),
+	        minDate: _this.props.minDate,
+	        maxDate: _this.props.maxDate,
+	        excludeDates: _this.props.excludeDates,
+	        includeDates: _this.props.includeDates,
+	        filterDate: _this.props.filterDate,
+	        selected: _this.props.selected,
+	        startDate: _this.props.startDate,
+	        endDate: _this.props.endDate });
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__week' },
+	      this.renderDays()
+	    );
+	  }
+	});
+
+	module.exports = Week;
+
+/***/ },
+/* 430 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _classnames = __webpack_require__(431);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _date_utils = __webpack_require__(426);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Day = _react2.default.createClass({
+	  displayName: 'Day',
+
+	  propTypes: {
+	    day: _react2.default.PropTypes.object.isRequired,
+	    endDate: _react2.default.PropTypes.object,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    includeDates: _react2.default.PropTypes.array,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    month: _react2.default.PropTypes.number,
+	    onClick: _react2.default.PropTypes.func,
+	    selected: _react2.default.PropTypes.object,
+	    startDate: _react2.default.PropTypes.object
+	  },
+
+	  handleClick: function handleClick(event) {
+	    if (!this.isDisabled() && this.props.onClick) {
+	      this.props.onClick(event);
+	    }
+	  },
+	  isSameDay: function isSameDay(other) {
+	    return (0, _date_utils.isSameDay)(this.props.day, other);
+	  },
+	  isDisabled: function isDisabled() {
+	    return (0, _date_utils.isDayDisabled)(this.props.day, this.props);
+	  },
+	  isInRange: function isInRange() {
+	    var _props = this.props;
+	    var day = _props.day;
+	    var startDate = _props.startDate;
+	    var endDate = _props.endDate;
+
+	    if (!startDate || !endDate) return false;
+
+	    var before = startDate.clone().startOf('day').subtract(1, 'seconds');
+	    var after = endDate.clone().startOf('day').add(1, 'seconds');
+	    return day.clone().startOf('day').isBetween(before, after);
+	  },
+	  isWeekend: function isWeekend() {
+	    var weekday = this.props.day.day();
+	    return weekday === 0 || weekday === 6;
+	  },
+	  isOutsideMonth: function isOutsideMonth() {
+	    return this.props.month !== undefined && this.props.month !== this.props.day.month();
+	  },
+	  getClassNames: function getClassNames() {
+	    return (0, _classnames2.default)('react-datepicker__day', {
+	      'react-datepicker__day--disabled': this.isDisabled(),
+	      'react-datepicker__day--selected': this.isSameDay(this.props.selected),
+	      'react-datepicker__day--in-range': this.isInRange(),
+	      'react-datepicker__day--today': this.isSameDay((0, _moment2.default)()),
+	      'react-datepicker__day--weekend': this.isWeekend(),
+	      'react-datepicker__day--outside-month': this.isOutsideMonth()
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: this.getClassNames(), onClick: this.handleClick },
+	      this.props.day.date()
+	    );
+	  }
+	});
+
+	module.exports = Day;
+
+/***/ },
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -50649,7 +50728,7 @@
 
 
 /***/ },
-/* 428 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50658,20 +50737,24 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _time_dropdown_options = __webpack_require__(429);
+	var _year_dropdown_options = __webpack_require__(433);
 
-	var _time_dropdown_options2 = _interopRequireDefault(_time_dropdown_options);
+	var _year_dropdown_options2 = _interopRequireDefault(_year_dropdown_options);
+
+	var _date_utils = __webpack_require__(426);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var TimeDropdown = _react2.default.createClass({
-	  displayName: 'TimeDropdown',
+	var YearDropdown = _react2.default.createClass({
+	  displayName: 'YearDropdown',
 
 	  propTypes: {
-	    minValue: _react2.default.PropTypes.number,
-	    maxValue: _react2.default.PropTypes.number,
+	    currentDate: _react2.default.PropTypes.object,
 	    onChange: _react2.default.PropTypes.func.isRequired,
-	    value: _react2.default.PropTypes.number.isRequired
+	    year: _react2.default.PropTypes.number.isRequired,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    includeDates: _react2.default.PropTypes.object
 	  },
 
 	  getInitialState: function getInitialState() {
@@ -50679,33 +50762,40 @@
 	      dropdownVisible: false
 	    };
 	  },
+	  increaseYear: function increaseYear() {
+	    this.props.onChange(this.props.year + 1);
+	  },
+	  decreaseYear: function decreaseYear() {
+	    this.props.onChange(this.props.year - 1);
+	  },
 	  renderReadView: function renderReadView() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: 'react-datepicker__year-read-view' },
+	      !(0, _date_utils.allDaysDisabledBefore)(this.props.currentDate, 'year', this.props) ? _react2.default.createElement('a', { className: 'react-datepicker__nav-year react-datepicker__nav-year--previous', onClick: this.decreaseYear }) : false,
 	      _react2.default.createElement(
 	        'span',
-	        { className: 'time-dropdown_label', onClick: this.toggleDropdown },
-	        this.props.value > 9 ? this.props.value.toString() : '0' + this.props.value.toString()
-	      )
+	        { className: 'react-datepicker__year-read-view--selected-year', onClick: this.toggleDropdown },
+	        this.props.year
+	      ),
+	      !(0, _date_utils.allDaysDisabledAfter)(this.props.currentDate, 'year', this.props) ? _react2.default.createElement('a', { className: 'react-datepicker__nav-year react-datepicker__nav-year--next', onClick: this.increaseYear }) : false
 	    );
 	  },
 	  renderDropdown: function renderDropdown() {
 	    if (!this.state.dropdownVisible) {
 	      return;
 	    } else {
-	      return _react2.default.createElement(_time_dropdown_options2.default, {
-	        value: this.props.value,
-	        minValue: this.props.minValue,
-	        maxValue: this.props.maxValue,
+	      return _react2.default.createElement(_year_dropdown_options2.default, {
+	        ref: 'options',
+	        year: this.props.year,
 	        onChange: this.onChange,
 	        onCancel: this.toggleDropdown });
 	    }
 	  },
-	  onChange: function onChange(option) {
+	  onChange: function onChange(year) {
 	    this.toggleDropdown();
-	    if (option === this.props.value) return;
-	    this.props.onChange(option);
+	    if (year === this.props.year) return;
+	    this.props.onChange(year);
 	  },
 	  toggleDropdown: function toggleDropdown() {
 	    this.setState({
@@ -50715,17 +50805,17 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'time-dropdown_main' },
+	      { className: 'react-datepicker__year' },
 	      this.renderReadView(),
 	      this.renderDropdown()
 	    );
 	  }
 	});
 
-	module.exports = TimeDropdown;
+	module.exports = YearDropdown;
 
 /***/ },
-/* 429 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50736,100 +50826,101 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function generateOptions(min, max) {
+	function generateYears(year) {
 	  var list = [];
-	  for (var i = min; i <= max; i++) {
-	    list.push(i);
+	  for (var i = 0; i < 10; i++) {
+	    list.push(year - i);
 	  }
 	  return list;
 	}
 
-	var TimeDropdownOptions = _react2.default.createClass({
-	  displayName: 'TimeDropdownOptions',
+	var YearDropdownOptions = _react2.default.createClass({
+	  displayName: 'YearDropdownOptions',
 
 	  propTypes: {
-	    minValue: _react2.default.PropTypes.number,
-	    maxValue: _react2.default.PropTypes.number,
 	    onCancel: _react2.default.PropTypes.func.isRequired,
 	    onChange: _react2.default.PropTypes.func.isRequired,
-	    value: _react2.default.PropTypes.number.isRequired
+	    year: _react2.default.PropTypes.number.isRequired
 	  },
 
-	  mixins: [__webpack_require__(430)],
+	  mixins: [__webpack_require__(434)],
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      optionsList: generateOptions(this.props.minValue, this.props.maxValue)
+	      yearsList: generateYears(this.props.year)
 	    };
 	  },
 	  renderOptions: function renderOptions() {
 	    var _this = this;
 
-	    var selectedValue = this.props.value;
-	    var options = this.state.optionsList.map(function (option) {
+	    var selectedYear = this.props.year;
+	    var options = this.state.yearsList.map(function (year) {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: selectedValue === option ? "time-dropdown_option--selected" : "time-dropdown_option",
-	          key: option,
-	          onClick: _this.onChange.bind(_this, option) },
-	        option
+	        { className: 'react-datepicker__year-option',
+	          key: year,
+	          onClick: _this.onChange.bind(_this, year) },
+	        selectedYear === year ? _react2.default.createElement(
+	          'span',
+	          { className: 'react-datepicker__year-option--selected' },
+	          '✓'
+	        ) : '',
+	        year
 	      );
 	    });
 
-	    /*options.unshift(
-	      <div className="react-datepicker__year-option"
-	          ref={"upcoming"}
-	          key={"upcoming"}
-	          onClick={this.incrementYears}>
-	        <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming"></a>
-	      </div>
-	    )
-	    options.push(
-	      <div className="react-datepicker__year-option"
-	          ref={"previous"}
-	          key={"previous"}
-	          onClick={this.decrementYears}>
-	        <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous"></a>
-	      </div>
-	    )*/
+	    options.unshift(_react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__year-option',
+	        ref: "upcoming",
+	        key: "upcoming",
+	        onClick: this.incrementYears },
+	      _react2.default.createElement('a', { className: 'react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming' })
+	    ));
+	    options.push(_react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__year-option',
+	        ref: "previous",
+	        key: "previous",
+	        onClick: this.decrementYears },
+	      _react2.default.createElement('a', { className: 'react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous' })
+	    ));
 	    return options;
 	  },
-	  onChange: function onChange(value) {
-	    this.props.onChange(value);
+	  onChange: function onChange(year) {
+	    this.props.onChange(year);
 	  },
 	  handleClickOutside: function handleClickOutside() {
 	    this.props.onCancel();
 	  },
-
-
-	  /*shiftYears (amount) {
+	  shiftYears: function shiftYears(amount) {
 	    var years = this.state.yearsList.map(function (year) {
-	      return year + amount
-	    })
-	     this.setState({
-	      yearsList: years
-	    })
-	  },
-	   incrementYears () {
-	    return this.shiftYears(1)
-	  },
-	   decrementYears () {
-	    return this.shiftYears(-1)
-	  },*/
+	      return year + amount;
+	    });
 
+	    this.setState({
+	      yearsList: years
+	    });
+	  },
+	  incrementYears: function incrementYears() {
+	    return this.shiftYears(1);
+	  },
+	  decrementYears: function decrementYears() {
+	    return this.shiftYears(-1);
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'time-dropdown_dropdown' },
+	      { className: 'react-datepicker__year-dropdown' },
 	      this.renderOptions()
 	    );
 	  }
 	});
 
-	module.exports = TimeDropdownOptions;
+	module.exports = YearDropdownOptions;
 
 /***/ },
-/* 430 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -50967,730 +51058,12 @@
 
 
 /***/ },
-/* 431 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _week = __webpack_require__(432);
-
-	var _week2 = _interopRequireDefault(_week);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Month = _react2.default.createClass({
-	  displayName: 'Month',
-
-	  propTypes: {
-	    day: _react2.default.PropTypes.object.isRequired,
-	    endDate: _react2.default.PropTypes.object,
-	    excludeDates: _react2.default.PropTypes.array,
-	    filterDate: _react2.default.PropTypes.func,
-	    includeDates: _react2.default.PropTypes.array,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    onDayClick: _react2.default.PropTypes.func,
-	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
-	  },
-
-	  handleDayClick: function handleDayClick(day) {
-	    day.hour(this.props.day.hour()).minute(this.props.day.minute()).second(this.props.day.second()).millisecond(this.props.day.millisecond());
-	    if (this.props.onDayClick) {
-	      this.props.onDayClick(day);
-	    }
-	  },
-	  isWeekInMonth: function isWeekInMonth(startOfWeek) {
-	    var day = this.props.day;
-	    var endOfWeek = startOfWeek.clone().add(6, 'days');
-	    return startOfWeek.isSame(day, 'month') || endOfWeek.isSame(day, 'month');
-	  },
-	  renderWeeks: function renderWeeks() {
-	    var _this = this;
-
-	    var startOfMonth = this.props.day.clone().startOf('month').startOf('week');
-	    return [0, 1, 2, 3, 4, 5].map(function (offset) {
-	      return startOfMonth.clone().add(offset, 'weeks');
-	    }).filter(function (startOfWeek) {
-	      return _this.isWeekInMonth(startOfWeek);
-	    }).map(function (startOfWeek, offset) {
-	      return _react2.default.createElement(_week2.default, {
-	        key: offset,
-	        day: startOfWeek,
-	        month: _this.props.day.month(),
-	        onDayClick: _this.handleDayClick,
-	        minDate: _this.props.minDate,
-	        maxDate: _this.props.maxDate,
-	        excludeDates: _this.props.excludeDates,
-	        includeDates: _this.props.includeDates,
-	        filterDate: _this.props.filterDate,
-	        selected: _this.props.selected,
-	        startDate: _this.props.startDate,
-	        endDate: _this.props.endDate });
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__month' },
-	      this.renderWeeks()
-	    );
-	  }
-	});
-
-	module.exports = Month;
-
-/***/ },
-/* 432 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _day = __webpack_require__(433);
-
-	var _day2 = _interopRequireDefault(_day);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Week = _react2.default.createClass({
-	  displayName: 'Week',
-
-	  propTypes: {
-	    day: _react2.default.PropTypes.object.isRequired,
-	    endDate: _react2.default.PropTypes.object,
-	    excludeDates: _react2.default.PropTypes.array,
-	    filterDate: _react2.default.PropTypes.func,
-	    includeDates: _react2.default.PropTypes.array,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    month: _react2.default.PropTypes.number,
-	    onDayClick: _react2.default.PropTypes.func,
-	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
-	  },
-
-	  handleDayClick: function handleDayClick(day) {
-	    if (this.props.onDayClick) {
-	      this.props.onDayClick(day);
-	    }
-	  },
-	  renderDays: function renderDays() {
-	    var _this = this;
-
-	    var startOfWeek = this.props.day.clone().startOf('week');
-	    return [0, 1, 2, 3, 4, 5, 6].map(function (offset) {
-	      var day = startOfWeek.clone().add(offset, 'days');
-	      return _react2.default.createElement(_day2.default, {
-	        key: offset,
-	        day: day,
-	        month: _this.props.month,
-	        onClick: _this.handleDayClick.bind(_this, day),
-	        minDate: _this.props.minDate,
-	        maxDate: _this.props.maxDate,
-	        excludeDates: _this.props.excludeDates,
-	        includeDates: _this.props.includeDates,
-	        filterDate: _this.props.filterDate,
-	        selected: _this.props.selected,
-	        startDate: _this.props.startDate,
-	        endDate: _this.props.endDate });
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__week' },
-	      this.renderDays()
-	    );
-	  }
-	});
-
-	module.exports = Week;
-
-/***/ },
-/* 433 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _moment = __webpack_require__(327);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	var _classnames = __webpack_require__(427);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _date_utils = __webpack_require__(434);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Day = _react2.default.createClass({
-	  displayName: 'Day',
-
-	  propTypes: {
-	    day: _react2.default.PropTypes.object.isRequired,
-	    endDate: _react2.default.PropTypes.object,
-	    excludeDates: _react2.default.PropTypes.array,
-	    filterDate: _react2.default.PropTypes.func,
-	    includeDates: _react2.default.PropTypes.array,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    month: _react2.default.PropTypes.number,
-	    onClick: _react2.default.PropTypes.func,
-	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
-	  },
-
-	  handleClick: function handleClick(event) {
-	    if (!this.isDisabled() && this.props.onClick) {
-	      this.props.onClick(event);
-	    }
-	  },
-	  isSameDay: function isSameDay(other) {
-	    return (0, _date_utils.isSameDay)(this.props.day, other);
-	  },
-	  isDisabled: function isDisabled() {
-	    return (0, _date_utils.isDayDisabled)(this.props.day, this.props);
-	  },
-	  isInRange: function isInRange() {
-	    var _props = this.props;
-	    var day = _props.day;
-	    var startDate = _props.startDate;
-	    var endDate = _props.endDate;
-
-	    if (!startDate || !endDate) return false;
-
-	    var before = startDate.clone().startOf('day').subtract(1, 'seconds');
-	    var after = endDate.clone().startOf('day').add(1, 'seconds');
-	    return day.clone().startOf('day').isBetween(before, after);
-	  },
-	  isWeekend: function isWeekend() {
-	    var weekday = this.props.day.day();
-	    return weekday === 0 || weekday === 6;
-	  },
-	  isOutsideMonth: function isOutsideMonth() {
-	    return this.props.month !== undefined && this.props.month !== this.props.day.month();
-	  },
-	  getClassNames: function getClassNames() {
-	    return (0, _classnames2.default)('react-datepicker__day', {
-	      'react-datepicker__day--disabled': this.isDisabled(),
-	      'react-datepicker__day--selected': this.isSameDay(this.props.selected),
-	      'react-datepicker__day--in-range': this.isInRange(),
-	      'react-datepicker__day--today': this.isSameDay((0, _moment2.default)()),
-	      'react-datepicker__day--weekend': this.isWeekend(),
-	      'react-datepicker__day--outside-month': this.isOutsideMonth()
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.getClassNames(), onClick: this.handleClick },
-	      this.props.day.date()
-	    );
-	  }
-	});
-
-	module.exports = Day;
-
-/***/ },
-/* 434 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.isSameDay = isSameDay;
-	exports.isSameTime = isSameTime;
-	exports.isDayDisabled = isDayDisabled;
-	exports.allDaysDisabledBefore = allDaysDisabledBefore;
-	exports.allDaysDisabledAfter = allDaysDisabledAfter;
-	exports.getEffectiveMinDate = getEffectiveMinDate;
-	exports.getEffectiveMaxDate = getEffectiveMaxDate;
-
-	var _moment = __webpack_require__(327);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function isSameDay(moment1, moment2) {
-	  if (moment1 && moment2) {
-	    return moment1.isSame(moment2, 'day');
-	  } else {
-	    return !moment1 && !moment2;
-	  }
-	}
-
-	function isSameTime(moment1, moment2) {
-	  if (moment1 && moment2) {
-	    return moment1.isSame(moment2, 'second');
-	  } else {
-	    return !moment1 && !moment2;
-	  }
-	}
-
-	function isDayDisabled(day) {
-	  var _ref = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-	  var minDate = _ref.minDate;
-	  var maxDate = _ref.maxDate;
-	  var excludeDates = _ref.excludeDates;
-	  var includeDates = _ref.includeDates;
-	  var filterDate = _ref.filterDate;
-
-	  return minDate && day.isBefore(minDate, 'day') || maxDate && day.isAfter(maxDate, 'day') || excludeDates && excludeDates.some(function (excludeDate) {
-	    return isSameDay(day, excludeDate);
-	  }) || includeDates && !includeDates.some(function (includeDate) {
-	    return isSameDay(day, includeDate);
-	  }) || filterDate && !filterDate(day.clone()) || false;
-	}
-
-	function allDaysDisabledBefore(day, unit) {
-	  var _ref2 = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-	  var minDate = _ref2.minDate;
-	  var includeDates = _ref2.includeDates;
-
-	  var dateBefore = day.clone().subtract(1, unit);
-	  return minDate && dateBefore.isBefore(minDate, unit) || includeDates && includeDates.every(function (includeDate) {
-	    return dateBefore.isBefore(includeDate, unit);
-	  }) || false;
-	}
-
-	function allDaysDisabledAfter(day, unit) {
-	  var _ref3 = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-	  var maxDate = _ref3.maxDate;
-	  var includeDates = _ref3.includeDates;
-
-	  var dateAfter = day.clone().add(1, unit);
-	  return maxDate && dateAfter.isAfter(maxDate, unit) || includeDates && includeDates.every(function (includeDate) {
-	    return dateAfter.isAfter(includeDate, unit);
-	  }) || false;
-	}
-
-	function getEffectiveMinDate(_ref4) {
-	  var minDate = _ref4.minDate;
-	  var includeDates = _ref4.includeDates;
-
-	  if (includeDates && minDate) {
-	    return _moment2.default.min(includeDates.filter(function (includeDate) {
-	      return minDate.isSameOrBefore(includeDate, 'day');
-	    }));
-	  } else if (includeDates) {
-	    return _moment2.default.min(includeDates);
-	  } else {
-	    return minDate;
-	  }
-	}
-
-	function getEffectiveMaxDate(_ref5) {
-	  var maxDate = _ref5.maxDate;
-	  var includeDates = _ref5.includeDates;
-
-	  if (includeDates && maxDate) {
-	    return _moment2.default.max(includeDates.filter(function (includeDate) {
-	      return maxDate.isSameOrAfter(includeDate, 'day');
-	    }));
-	  } else if (includeDates) {
-	    return _moment2.default.max(includeDates);
-	  } else {
-	    return maxDate;
-	  }
-	}
-
-/***/ },
 /* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _year_dropdown_options = __webpack_require__(436);
-
-	var _year_dropdown_options2 = _interopRequireDefault(_year_dropdown_options);
-
-	var _date_utils = __webpack_require__(434);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var YearDropdown = _react2.default.createClass({
-	  displayName: 'YearDropdown',
-
-	  propTypes: {
-	    currentDate: _react2.default.PropTypes.object,
-	    onChange: _react2.default.PropTypes.func.isRequired,
-	    year: _react2.default.PropTypes.number.isRequired,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    includeDates: _react2.default.PropTypes.object
-	  },
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      dropdownVisible: false
-	    };
-	  },
-	  increaseYear: function increaseYear() {
-	    this.props.onChange(this.props.year + 1);
-	  },
-	  decreaseYear: function decreaseYear() {
-	    this.props.onChange(this.props.year - 1);
-	  },
-	  renderReadView: function renderReadView() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__year-read-view' },
-	      !(0, _date_utils.allDaysDisabledBefore)(this.props.currentDate, 'year', this.props) ? _react2.default.createElement('a', { className: 'react-datepicker__nav-year react-datepicker__nav-year--previous', onClick: this.decreaseYear }) : false,
-	      _react2.default.createElement(
-	        'span',
-	        { className: 'react-datepicker__year-read-view--selected-year', onClick: this.toggleDropdown },
-	        this.props.year
-	      ),
-	      !(0, _date_utils.allDaysDisabledAfter)(this.props.currentDate, 'year', this.props) ? _react2.default.createElement('a', { className: 'react-datepicker__nav-year react-datepicker__nav-year--next', onClick: this.increaseYear }) : false
-	    );
-	  },
-	  renderDropdown: function renderDropdown() {
-	    if (!this.state.dropdownVisible) {
-	      return;
-	    } else {
-	      return _react2.default.createElement(_year_dropdown_options2.default, {
-	        ref: 'options',
-	        year: this.props.year,
-	        onChange: this.onChange,
-	        onCancel: this.toggleDropdown });
-	    }
-	  },
-	  onChange: function onChange(year) {
-	    this.toggleDropdown();
-	    if (year === this.props.year) return;
-	    this.props.onChange(year);
-	  },
-	  toggleDropdown: function toggleDropdown() {
-	    this.setState({
-	      dropdownVisible: !this.state.dropdownVisible
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__year' },
-	      this.renderReadView(),
-	      this.renderDropdown()
-	    );
-	  }
-	});
-
-	module.exports = YearDropdown;
-
-/***/ },
-/* 436 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function generateYears(year) {
-	  var list = [];
-	  for (var i = 0; i < 10; i++) {
-	    list.push(year - i);
-	  }
-	  return list;
-	}
-
-	var YearDropdownOptions = _react2.default.createClass({
-	  displayName: 'YearDropdownOptions',
-
-	  propTypes: {
-	    onCancel: _react2.default.PropTypes.func.isRequired,
-	    onChange: _react2.default.PropTypes.func.isRequired,
-	    year: _react2.default.PropTypes.number.isRequired
-	  },
-
-	  mixins: [__webpack_require__(430)],
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      yearsList: generateYears(this.props.year)
-	    };
-	  },
-	  renderOptions: function renderOptions() {
-	    var _this = this;
-
-	    var selectedYear = this.props.year;
-	    var options = this.state.yearsList.map(function (year) {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'react-datepicker__year-option',
-	          key: year,
-	          onClick: _this.onChange.bind(_this, year) },
-	        selectedYear === year ? _react2.default.createElement(
-	          'span',
-	          { className: 'react-datepicker__year-option--selected' },
-	          '✓'
-	        ) : '',
-	        year
-	      );
-	    });
-
-	    options.unshift(_react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__year-option',
-	        ref: "upcoming",
-	        key: "upcoming",
-	        onClick: this.incrementYears },
-	      _react2.default.createElement('a', { className: 'react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming' })
-	    ));
-	    options.push(_react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__year-option',
-	        ref: "previous",
-	        key: "previous",
-	        onClick: this.decrementYears },
-	      _react2.default.createElement('a', { className: 'react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous' })
-	    ));
-	    return options;
-	  },
-	  onChange: function onChange(year) {
-	    this.props.onChange(year);
-	  },
-	  handleClickOutside: function handleClickOutside() {
-	    this.props.onCancel();
-	  },
-	  shiftYears: function shiftYears(amount) {
-	    var years = this.state.yearsList.map(function (year) {
-	      return year + amount;
-	    });
-
-	    this.setState({
-	      yearsList: years
-	    });
-	  },
-	  incrementYears: function incrementYears() {
-	    return this.shiftYears(1);
-	  },
-	  decrementYears: function decrementYears() {
-	    return this.shiftYears(-1);
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'react-datepicker__year-dropdown' },
-	      this.renderOptions()
-	    );
-	  }
-	});
-
-	module.exports = YearDropdownOptions;
-
-/***/ },
-/* 437 */
-/***/ function(module, exports) {
-
-	module.exports = "<svg fill=\"#444444\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z\"></path></svg>"
-
-/***/ },
-/* 438 */
-/***/ function(module, exports) {
-
-	module.exports = "<svg viewBox=\"0 0 20 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><title>calendar</title><desc>Created with Sketch.</desc><defs></defs><g id=\"Editorial\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g id=\"Artboard-33\" transform=\"translate(-62.000000, -21.000000)\" fill=\"#494949\"><g id=\"calendar\" transform=\"translate(62.000000, 21.000000)\"><path d=\"M0,6.08695652 L0,20 C0,20.4347826 0.434782609,20.8695652 0.869565217,20.8695652 L19.1304348,20.8695652 C19.5652174,20.8695652 20,20.4347826 20,20 L20,6.08695652 L0,6.08695652 L0,6.08695652 Z M4.34782609,19.1304348 L1.73913043,19.1304348 L1.73913043,16.5217391 L4.34782609,16.5217391 L4.34782609,19.1304348 L4.34782609,19.1304348 Z M4.34782609,15.6521739 L1.73913043,15.6521739 L1.73913043,13.0434783 L4.34782609,13.0434783 L4.34782609,15.6521739 L4.34782609,15.6521739 Z M4.34782609,12.173913 L1.73913043,12.173913 L1.73913043,9.56521739 L4.34782609,9.56521739 L4.34782609,12.173913 L4.34782609,12.173913 Z M7.82608696,19.1304348 L5.2173913,19.1304348 L5.2173913,16.5217391 L7.82608696,16.5217391 L7.82608696,19.1304348 L7.82608696,19.1304348 Z M7.82608696,15.6521739 L5.2173913,15.6521739 L5.2173913,13.0434783 L7.82608696,13.0434783 L7.82608696,15.6521739 L7.82608696,15.6521739 Z M7.82608696,12.173913 L5.2173913,12.173913 L5.2173913,9.56521739 L7.82608696,9.56521739 L7.82608696,12.173913 L7.82608696,12.173913 Z M11.3043478,19.1304348 L8.69565217,19.1304348 L8.69565217,16.5217391 L11.3043478,16.5217391 L11.3043478,19.1304348 L11.3043478,19.1304348 Z M11.3043478,15.6521739 L8.69565217,15.6521739 L8.69565217,13.0434783 L11.3043478,13.0434783 L11.3043478,15.6521739 L11.3043478,15.6521739 Z M11.3043478,12.173913 L8.69565217,12.173913 L8.69565217,9.56521739 L11.3043478,9.56521739 L11.3043478,12.173913 L11.3043478,12.173913 Z M14.7826087,19.1304348 L12.173913,19.1304348 L12.173913,16.5217391 L14.7826087,16.5217391 L14.7826087,19.1304348 L14.7826087,19.1304348 Z M14.7826087,15.6521739 L12.173913,15.6521739 L12.173913,13.0434783 L14.7826087,13.0434783 L14.7826087,15.6521739 L14.7826087,15.6521739 Z M14.7826087,12.173913 L12.173913,12.173913 L12.173913,9.56521739 L14.7826087,9.56521739 L14.7826087,12.173913 L14.7826087,12.173913 Z M18.2608696,19.1304348 L15.6521739,19.1304348 L15.6521739,16.5217391 L18.2608696,16.5217391 L18.2608696,19.1304348 L18.2608696,19.1304348 Z M18.2608696,15.6521739 L15.6521739,15.6521739 L15.6521739,13.0434783 L18.2608696,13.0434783 L18.2608696,15.6521739 L18.2608696,15.6521739 Z M18.2608696,12.173913 L15.6521739,12.173913 L15.6521739,9.56521739 L18.2608696,9.56521739 L18.2608696,12.173913 L18.2608696,12.173913 Z M20,2.60869565 L20,5.2173913 L0,5.2173913 L0,2.60869565 C0,2.17391304 0.434782609,1.73913043 0.869565217,1.73913043 L2.60869565,1.73913043 L2.60869565,0.869565217 C2.60869565,0.434782609 3.04347826,0 3.47826087,0 L4.34782609,0 C4.7826087,0 5.2173913,0.434782609 5.2173913,0.869565217 L5.2173913,1.73913043 L14.7826087,1.73913043 L14.7826087,0.869565217 C14.7826087,0.434782609 15.2173913,0 15.6521739,0 L16.5217391,0 C16.9565217,0 17.3913043,0.434782609 17.3913043,0.869565217 L17.3913043,1.73913043 L19.1304348,1.73913043 C19.5652174,1.73913043 20,2.17391304 20,2.60869565 L20,2.60869565 Z\" id=\"Shape\"></path></g></g></g></svg>"
-
-/***/ },
-/* 439 */
-/***/ function(module, exports) {
-
-	module.exports = "<svg viewBox=\"0 0 20 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><title>calendar</title><desc>Created with Sketch.</desc><defs></defs><g id=\"Editorial\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g id=\"Artboard-33\" transform=\"translate(-62.000000, -21.000000)\" fill=\"#f9f9f9\"><g id=\"calendar\" transform=\"translate(62.000000, 21.000000)\"><path d=\"M0,6.08695652 L0,20 C0,20.4347826 0.434782609,20.8695652 0.869565217,20.8695652 L19.1304348,20.8695652 C19.5652174,20.8695652 20,20.4347826 20,20 L20,6.08695652 L0,6.08695652 L0,6.08695652 Z M4.34782609,19.1304348 L1.73913043,19.1304348 L1.73913043,16.5217391 L4.34782609,16.5217391 L4.34782609,19.1304348 L4.34782609,19.1304348 Z M4.34782609,15.6521739 L1.73913043,15.6521739 L1.73913043,13.0434783 L4.34782609,13.0434783 L4.34782609,15.6521739 L4.34782609,15.6521739 Z M4.34782609,12.173913 L1.73913043,12.173913 L1.73913043,9.56521739 L4.34782609,9.56521739 L4.34782609,12.173913 L4.34782609,12.173913 Z M7.82608696,19.1304348 L5.2173913,19.1304348 L5.2173913,16.5217391 L7.82608696,16.5217391 L7.82608696,19.1304348 L7.82608696,19.1304348 Z M7.82608696,15.6521739 L5.2173913,15.6521739 L5.2173913,13.0434783 L7.82608696,13.0434783 L7.82608696,15.6521739 L7.82608696,15.6521739 Z M7.82608696,12.173913 L5.2173913,12.173913 L5.2173913,9.56521739 L7.82608696,9.56521739 L7.82608696,12.173913 L7.82608696,12.173913 Z M11.3043478,19.1304348 L8.69565217,19.1304348 L8.69565217,16.5217391 L11.3043478,16.5217391 L11.3043478,19.1304348 L11.3043478,19.1304348 Z M11.3043478,15.6521739 L8.69565217,15.6521739 L8.69565217,13.0434783 L11.3043478,13.0434783 L11.3043478,15.6521739 L11.3043478,15.6521739 Z M11.3043478,12.173913 L8.69565217,12.173913 L8.69565217,9.56521739 L11.3043478,9.56521739 L11.3043478,12.173913 L11.3043478,12.173913 Z M14.7826087,19.1304348 L12.173913,19.1304348 L12.173913,16.5217391 L14.7826087,16.5217391 L14.7826087,19.1304348 L14.7826087,19.1304348 Z M14.7826087,15.6521739 L12.173913,15.6521739 L12.173913,13.0434783 L14.7826087,13.0434783 L14.7826087,15.6521739 L14.7826087,15.6521739 Z M14.7826087,12.173913 L12.173913,12.173913 L12.173913,9.56521739 L14.7826087,9.56521739 L14.7826087,12.173913 L14.7826087,12.173913 Z M18.2608696,19.1304348 L15.6521739,19.1304348 L15.6521739,16.5217391 L18.2608696,16.5217391 L18.2608696,19.1304348 L18.2608696,19.1304348 Z M18.2608696,15.6521739 L15.6521739,15.6521739 L15.6521739,13.0434783 L18.2608696,13.0434783 L18.2608696,15.6521739 L18.2608696,15.6521739 Z M18.2608696,12.173913 L15.6521739,12.173913 L15.6521739,9.56521739 L18.2608696,9.56521739 L18.2608696,12.173913 L18.2608696,12.173913 Z M20,2.60869565 L20,5.2173913 L0,5.2173913 L0,2.60869565 C0,2.17391304 0.434782609,1.73913043 0.869565217,1.73913043 L2.60869565,1.73913043 L2.60869565,0.869565217 C2.60869565,0.434782609 3.04347826,0 3.47826087,0 L4.34782609,0 C4.7826087,0 5.2173913,0.434782609 5.2173913,0.869565217 L5.2173913,1.73913043 L14.7826087,1.73913043 L14.7826087,0.869565217 C14.7826087,0.434782609 15.2173913,0 15.6521739,0 L16.5217391,0 C16.9565217,0 17.3913043,0.434782609 17.3913043,0.869565217 L17.3913043,1.73913043 L19.1304348,1.73913043 C19.5652174,1.73913043 20,2.17391304 20,2.60869565 L20,2.60869565 Z\" id=\"Shape\"></path></g></g></g></svg>"
-
-/***/ },
-/* 440 */
-/***/ function(module, exports) {
-
-	module.exports = "<svg viewBox=\"0 0 20 20\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><title>clock_1_</title><desc>Created with Sketch.</desc><defs></defs><g id=\"Editorial\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g id=\"Artboard-33\" transform=\"translate(-19.000000, -22.000000)\" fill=\"#494949\"><g id=\"clock_1_\" transform=\"translate(19.000000, 22.000000)\"><g id=\"clock\"><path d=\"M10,0 C4.5,0 0,4.5 0,10 C0,15.5 4.5,20 10,20 C15.5,20 20,15.5 20,10 C20,4.5 15.5,0 10,0 L10,0 Z M14.3333333,6.25 C14.5,6.41666667 14.5,6.66666667 14.3333333,6.83333333 L11.5833333,9.58333333 C11.5833333,9.75 11.6666667,9.83333333 11.6666667,10 C11.6666667,10.9166667 10.9166667,11.6666667 10,11.6666667 C9.41666667,11.6666667 8.83333333,11.25 8.58333333,10.8333333 L6.25,10.8333333 C6,10.8333333 5.83333333,10.6666667 5.83333333,10.4166667 L5.83333333,9.58333333 C5.83333333,9.33333333 6,9.16666667 6.25,9.16666667 L8.58333333,9.16666667 C8.83333333,8.75 9.41666667,8.33333333 10,8.33333333 C10.1666667,8.33333333 10.3333333,8.33333333 10.5,8.41666667 L13.1666667,5.75 C13.3333333,5.58333333 13.5833333,5.58333333 13.75,5.75 L14.3333333,6.25 L14.3333333,6.25 Z M10,17.5 C5.83333333,17.5 2.5,14.1666667 2.5,10 C2.5,5.83333333 5.83333333,2.5 10,2.5 C14.1666667,2.5 17.5,5.83333333 17.5,10 C17.5,14.1666667 14.1666667,17.5 10,17.5 L10,17.5 Z\" id=\"Shape\"></path></g></g></g></g></svg>"
-
-/***/ },
-/* 441 */
-/***/ function(module, exports) {
-
-	module.exports = "<svg viewBox=\"0 0 20 20\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><title>clock_1_</title><desc>Created with Sketch.</desc><defs></defs><g id=\"Editorial\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g id=\"Artboard-33\" transform=\"translate(-19.000000, -22.000000)\" fill=\"#f9f9f9\"><g id=\"clock_1_\" transform=\"translate(19.000000, 22.000000)\"><g id=\"clock\"><path d=\"M10,0 C4.5,0 0,4.5 0,10 C0,15.5 4.5,20 10,20 C15.5,20 20,15.5 20,10 C20,4.5 15.5,0 10,0 L10,0 Z M14.3333333,6.25 C14.5,6.41666667 14.5,6.66666667 14.3333333,6.83333333 L11.5833333,9.58333333 C11.5833333,9.75 11.6666667,9.83333333 11.6666667,10 C11.6666667,10.9166667 10.9166667,11.6666667 10,11.6666667 C9.41666667,11.6666667 8.83333333,11.25 8.58333333,10.8333333 L6.25,10.8333333 C6,10.8333333 5.83333333,10.6666667 5.83333333,10.4166667 L5.83333333,9.58333333 C5.83333333,9.33333333 6,9.16666667 6.25,9.16666667 L8.58333333,9.16666667 C8.83333333,8.75 9.41666667,8.33333333 10,8.33333333 C10.1666667,8.33333333 10.3333333,8.33333333 10.5,8.41666667 L13.1666667,5.75 C13.3333333,5.58333333 13.5833333,5.58333333 13.75,5.75 L14.3333333,6.25 L14.3333333,6.25 Z M10,17.5 C5.83333333,17.5 2.5,14.1666667 2.5,10 C2.5,5.83333333 5.83333333,2.5 10,2.5 C14.1666667,2.5 17.5,5.83333333 17.5,10 C17.5,14.1666667 14.1666667,17.5 10,17.5 L10,17.5 Z\" id=\"Shape\"></path></g></g></g></g></svg>"
-
-/***/ },
-/* 442 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _moment = __webpack_require__(327);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	var _date_utils = __webpack_require__(434);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var DateInput = _react2.default.createClass({
-	  displayName: 'DateInput',
-
-	  propTypes: {
-	    date: _react2.default.PropTypes.object,
-	    dateFormat: _react2.default.PropTypes.string,
-	    disabled: _react2.default.PropTypes.bool,
-	    excludeDates: _react2.default.PropTypes.array,
-	    filterDate: _react2.default.PropTypes.func,
-	    includeDates: _react2.default.PropTypes.array,
-	    locale: _react2.default.PropTypes.string,
-	    maxDate: _react2.default.PropTypes.object,
-	    minDate: _react2.default.PropTypes.object,
-	    onBlur: _react2.default.PropTypes.func,
-	    onChange: _react2.default.PropTypes.func,
-	    onChangeDate: _react2.default.PropTypes.func,
-	    showTime: _react2.default.PropTypes.bool
-	  },
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      dateFormat: 'L',
-	      locale: (0, _moment2.default)().locale(),
-	      showTime: false
-	    };
-	  },
-	  getInitialState: function getInitialState() {
-	    return {
-	      maybeDate: this.safeDateFormat(this.props)
-	    };
-	  },
-	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	    if (this.props.showTime) {
-	      if (!(0, _date_utils.isSameTime)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
-	        this.setState({
-	          maybeDate: this.safeDateFormat(newProps)
-	        });
-	      }
-	    } else {
-	      if (!(0, _date_utils.isSameDay)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
-	        this.setState({
-	          maybeDate: this.safeDateFormat(newProps)
-	        });
-	      }
-	    }
-	  },
-	  handleChange: function handleChange(event) {
-	    if (this.props.onChange) {
-	      this.props.onChange(event);
-	    }
-	    if (!event.isDefaultPrevented()) {
-	      this.handleChangeDate(event.target.value);
-	    }
-	  },
-	  handleChangeDate: function handleChangeDate(value) {
-	    if (this.props.onChangeDate) {
-	      var date = (0, _moment2.default)(value, this.props.dateFormat, this.props.locale, true);
-	      if (date.isValid() && !(0, _date_utils.isDayDisabled)(date, this.props)) {
-	        this.props.onChangeDate(date);
-	      } else if (value === '') {
-	        this.props.onChangeDate(null);
-	      }
-	    }
-	    this.setState({
-	      maybeDate: value
-	    });
-	  },
-	  safeDateFormat: function safeDateFormat(props) {
-	    return props.date && props.date.clone().locale(props.locale || (0, _moment2.default)().locale()).format(props.dateFormat) || '';
-	  },
-	  handleBlur: function handleBlur(event) {
-	    this.setState({
-	      maybeDate: this.safeDateFormat(this.props)
-	    });
-	    if (this.props.onBlur) {
-	      this.props.onBlur(event);
-	    }
-	  },
-	  focus: function focus() {
-	    this.refs.input.focus();
-	  },
-	  render: function render() {
-	    return _react2.default.createElement('input', _extends({
-	      ref: 'input',
-	      type: 'text'
-	    }, this.props, {
-	      value: this.state.maybeDate,
-	      onBlur: this.handleBlur,
-	      onChange: this.handleChange }));
-	  }
-	});
-
-	module.exports = DateInput;
-
-/***/ },
-/* 443 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _TetherComponent = __webpack_require__(444);
-
-	var _TetherComponent2 = _interopRequireDefault(_TetherComponent);
-
-	exports['default'] = _TetherComponent2['default'];
-	module.exports = exports['default'];
-
-/***/ },
-/* 444 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(2);
 
@@ -51700,15 +51073,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _tether = __webpack_require__(445);
+	var _tether = __webpack_require__(436);
 
 	var _tether2 = _interopRequireDefault(_tether);
 
-	if (!_tether2['default']) {
-	  console.error('It looks like Tether has not been included. Please load this dependency first https://github.com/HubSpot/tether');
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var childrenPropType = function childrenPropType(_ref, propName, componentName) {
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function childrenPropType(_ref, propName, componentName) {
 	  var children = _ref.children;
 
 	  var childCount = _react.Children.count(children);
@@ -51717,210 +51090,148 @@
 	  } else if (childCount > 2) {
 	    return new Error('Only a max of two children allowed in ' + componentName + '.');
 	  }
-	};
+	}
 
 	var attachmentPositions = ['top left', 'top center', 'top right', 'middle left', 'middle center', 'middle right', 'bottom left', 'bottom center', 'bottom right'];
 
-	var TetherComponent = (function (_Component) {
-	  _inherits(TetherComponent, _Component);
+	var TetherComponent = _react2.default.createClass({
+	  displayName: 'TetherComponent',
 
-	  function TetherComponent() {
-	    _classCallCheck(this, TetherComponent);
+	  propTypes: {
+	    attachment: _react.PropTypes.oneOf(attachmentPositions).isRequired,
+	    children: childrenPropType,
+	    className: _react.PropTypes.string,
+	    classPrefix: _react.PropTypes.string,
+	    classes: _react.PropTypes.object,
+	    constraints: _react.PropTypes.array,
+	    enabled: _react.PropTypes.bool,
+	    id: _react.PropTypes.string,
+	    offset: _react.PropTypes.string,
+	    optimizations: _react.PropTypes.object,
+	    renderElementTag: _react.PropTypes.string,
+	    renderElementTo: _react.PropTypes.any,
+	    style: _react.PropTypes.object,
+	    targetAttachment: _react.PropTypes.oneOf(attachmentPositions),
+	    targetModifier: _react.PropTypes.string,
+	    targetOffset: _react.PropTypes.string
+	  },
 
-	    _get(Object.getPrototypeOf(TetherComponent.prototype), 'constructor', this).apply(this, arguments);
-
-	    this._targetNode = null;
-	    this._elementParentNode = null;
-	    this._tether = false;
-	  }
-
-	  _createClass(TetherComponent, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this._targetNode = _reactDom2['default'].findDOMNode(this);
-	      this._renderNode = document.querySelector(this.props.renderElementTo) || document.body;
-	      this._update();
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps) {
-	      var renderElementTo = this.props.renderElementTo;
-
-	      if (prevProps.renderElementTo !== renderElementTo) {
-	        this._renderNode = document.querySelector(renderElementTo) || document.body;
-	      }
-
-	      this._update();
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      this._destroy();
-	    }
-	  }, {
-	    key: 'disable',
-	    value: function disable() {
-	      this._tether.disable();
-	    }
-	  }, {
-	    key: 'enable',
-	    value: function enable() {
-	      this._tether.enable();
-	    }
-	  }, {
-	    key: 'position',
-	    value: function position() {
-	      this._tether.position();
-	    }
-	  }, {
-	    key: '_destroy',
-	    value: function _destroy() {
-	      if (this._elementParentNode) {
-	        _reactDom2['default'].unmountComponentAtNode(this._elementParentNode);
-	        this._elementParentNode.parentNode.removeChild(this._elementParentNode);
-	      }
-
-	      if (this._tether) {
-	        this._tether.destroy();
-	      }
-
-	      this._elementParentNode = null;
-	      this._tether = null;
-	    }
-	  }, {
-	    key: '_update',
-	    value: function _update() {
-	      var _this = this;
-
-	      var _props = this.props;
-	      var children = _props.children;
-	      var renderElementTag = _props.renderElementTag;
-	      var renderElementTo = _props.renderElementTo;
-
-	      var elementComponent = children[1];
-
-	      // if no element component provided, bail out
-	      if (!elementComponent) {
-	        // destroy Tether elements if they have been created
-	        if (this._tether) {
-	          this._destroy();
-	        }
-	        return;
-	      }
-
-	      // create element node container if it hasn't been yet
-	      if (!this._elementParentNode) {
-	        // create a node that we can stick our content Component in
-	        this._elementParentNode = document.createElement(renderElementTag);
-
-	        // append node to the render node
-	        this._renderNode.appendChild(this._elementParentNode);
-	      }
-
-	      // render element component into the DOM
-	      _reactDom2['default'].unstable_renderSubtreeIntoContainer(this, elementComponent, this._elementParentNode, function () {
-	        // don't update Tether until the subtree has finished rendering
-	        _this._updateTether();
-	      });
-	    }
-	  }, {
-	    key: '_updateTether',
-	    value: function _updateTether() {
-	      var _this2 = this;
-
-	      var _props2 = this.props;
-	      var children = _props2.children;
-	      var renderElementTag = _props2.renderElementTag;
-	      var renderElementTo = _props2.renderElementTo;
-	      var id = _props2.id;
-	      var className = _props2.className;
-	      var style = _props2.style;
-
-	      var options = _objectWithoutProperties(_props2, ['children', 'renderElementTag', 'renderElementTo', 'id', 'className', 'style']);
-
-	      var tetherOptions = _extends({
-	        target: this._targetNode,
-	        element: this._elementParentNode
-	      }, options);
-
-	      if (id) {
-	        this._elementParentNode.id = id;
-	      }
-
-	      if (className) {
-	        this._elementParentNode.className = className;
-	      }
-
-	      if (style) {
-	        Object.keys(style).forEach(function (key) {
-	          _this2._elementParentNode.style[key] = style[key];
-	        });
-	      }
-
-	      if (!this._tether) {
-	        this._tether = new _tether2['default'](tetherOptions);
-	      } else {
-	        this._tether.setOptions(tetherOptions);
-	      }
-
-	      this._tether.position();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var children = this.props.children;
-
-	      var firstChild = null;
-
-	      // we use forEach because the second child could be null
-	      // causing children to not be an array
-	      _react.Children.forEach(children, function (child, index) {
-	        if (index === 0) {
-	          firstChild = child;
-	          return;
-	        }
-	      });
-
-	      return firstChild;
-	    }
-	  }], [{
-	    key: 'propTypes',
-	    value: {
-	      renderElementTag: _react.PropTypes.string,
-	      renderElementTo: _react.PropTypes.string,
-	      attachment: _react.PropTypes.oneOf(attachmentPositions).isRequired,
-	      targetAttachment: _react.PropTypes.oneOf(attachmentPositions),
-	      offset: _react.PropTypes.string,
-	      targetOffset: _react.PropTypes.string,
-	      targetModifier: _react.PropTypes.string,
-	      enabled: _react.PropTypes.bool,
-	      classes: _react.PropTypes.object,
-	      classPrefix: _react.PropTypes.string,
-	      optimizations: _react.PropTypes.object,
-	      constraints: _react.PropTypes.array,
-	      id: _react.PropTypes.string,
-	      className: _react.PropTypes.string,
-	      style: _react.PropTypes.object,
-	      children: childrenPropType
-	    },
-	    enumerable: true
-	  }, {
-	    key: 'defaultProps',
-	    value: {
+	  getDefaultProps: function getDefaultProps() {
+	    return {
 	      renderElementTag: 'div',
 	      renderElementTo: null
-	    },
-	    enumerable: true
-	  }]);
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this._targetNode = _reactDom2.default.findDOMNode(this);
+	    this._update();
+	  },
+	  componentDidUpdate: function componentDidUpdate() {
+	    this._update();
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    this._destroy();
+	  },
+	  disable: function disable() {
+	    this._tether.disable();
+	  },
+	  enable: function enable() {
+	    this._tether.enable();
+	  },
+	  position: function position() {
+	    this._tether.position();
+	  },
+	  _destroy: function _destroy() {
+	    if (this._elementParentNode) {
+	      _reactDom2.default.unmountComponentAtNode(this._elementParentNode);
+	      this._elementParentNode.parentNode.removeChild(this._elementParentNode);
+	    }
 
-	  return TetherComponent;
-	})(_react.Component);
+	    if (this._tether) {
+	      this._tether.destroy();
+	    }
 
-	exports['default'] = TetherComponent;
-	module.exports = exports['default'];
+	    this._elementParentNode = null;
+	    this._tether = null;
+	  },
+	  _update: function _update() {
+	    var _this = this;
+
+	    var _props = this.props;
+	    var children = _props.children;
+	    var renderElementTag = _props.renderElementTag;
+	    var renderElementTo = _props.renderElementTo;
+
+	    var elementComponent = children[1];
+
+	    // if no element component provided, bail out
+	    if (!elementComponent) {
+	      // destroy Tether elements if they have been created
+	      if (this._tether) {
+	        this._destroy();
+	      }
+	      return;
+	    }
+
+	    // create element node container if it hasn't been yet
+	    if (!this._elementParentNode) {
+	      // create a node that we can stick our content Component in
+	      this._elementParentNode = document.createElement(renderElementTag);
+
+	      // append node to the end of the body
+	      var renderTo = renderElementTo || document.body;
+	      renderTo.appendChild(this._elementParentNode);
+	    }
+
+	    // render element component into the DOM
+	    _reactDom2.default.unstable_renderSubtreeIntoContainer(this, elementComponent, this._elementParentNode, function () {
+	      // don't update Tether until the subtree has finished rendering
+	      _this._updateTether();
+	    });
+	  },
+	  _updateTether: function _updateTether() {
+	    var _props2 = this.props;
+	    var renderElementTag = _props2.renderElementTag;
+	    var renderElementTo = _props2.renderElementTo;
+
+	    var options = _objectWithoutProperties(_props2, ['renderElementTag', 'renderElementTo']); // eslint-disable-line no-unused-vars
+
+
+	    var tetherOptions = _extends({
+	      target: this._targetNode,
+	      element: this._elementParentNode
+	    }, options);
+
+	    if (!this._tether) {
+	      this._tether = new _tether2.default(tetherOptions);
+	    } else {
+	      this._tether.setOptions(tetherOptions);
+	    }
+
+	    this._tether.position();
+	  },
+	  render: function render() {
+	    var children = this.props.children;
+
+	    var firstChild = null;
+
+	    // we use forEach because the second child could be null
+	    // causing children to not be an array
+	    _react.Children.forEach(children, function (child, index) {
+	      if (index === 0) {
+	        firstChild = child;
+	        return;
+	      }
+	    });
+
+	    return firstChild;
+	  }
+	});
+
+	module.exports = TetherComponent;
 
 /***/ },
-/* 445 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.3.1 */
@@ -53682,7 +52993,7 @@
 
 
 /***/ },
-/* 446 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53721,7 +53032,7 @@
 	});
 
 /***/ },
-/* 447 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53738,7 +53049,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -53796,7 +53107,7 @@
 	});
 
 /***/ },
-/* 448 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53813,7 +53124,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -53868,7 +53179,7 @@
 	});
 
 /***/ },
-/* 449 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53913,7 +53224,7 @@
 	});
 
 /***/ },
-/* 450 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53930,7 +53241,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54000,7 +53311,7 @@
 	});
 
 /***/ },
-/* 451 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54075,7 +53386,7 @@
 	});
 
 /***/ },
-/* 452 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54092,7 +53403,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54154,7 +53465,7 @@
 	});
 
 /***/ },
-/* 453 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54171,7 +53482,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54233,7 +53544,7 @@
 	});
 
 /***/ },
-/* 454 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54312,7 +53623,7 @@
 	});
 
 /***/ },
-/* 455 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54388,7 +53699,7 @@
 	});
 
 /***/ },
-/* 456 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54405,7 +53716,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54463,7 +53774,7 @@
 	});
 
 /***/ },
-/* 457 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54579,7 +53890,7 @@
 	});
 
 /***/ },
-/* 458 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54596,7 +53907,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54658,14 +53969,14 @@
 	});
 
 /***/ },
-/* 459 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(2);
 	var DatePicker = __webpack_require__(325);
-	var moment = __webpack_require__(327);
+	var moment = __webpack_require__(326);
 
 	var DateRange = React.createClass({
 	  displayName: 'DateRange',
@@ -54762,7 +54073,7 @@
 	module.exports = DateRange;
 
 /***/ },
-/* 460 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54779,7 +54090,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54833,7 +54144,7 @@
 	});
 
 /***/ },
-/* 461 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54850,7 +54161,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54910,7 +54221,7 @@
 	});
 
 /***/ },
-/* 462 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54927,7 +54238,7 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -54978,15 +54289,7 @@
 	});
 
 /***/ },
-/* 463 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 464 */
-463,
-/* 465 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55003,7 +54306,156 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _moment = __webpack_require__(327);
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Inline',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: (0, _moment2.default)()
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "inline",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "selected={this.state.startDate}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onChange={this.handleChange} />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          inline: true,
+	          selected: this.state.startDate,
+	          onChange: this.handleChange })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 455 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(325);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'OpenToDate',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: null
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          "openToDate={moment('1993-09-28')}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "selected={this.state.startDate}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onChange={this.handleChange} />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          openToDate: (0, _moment2.default)('1993-09-28'),
+	          selected: this.state.startDate,
+	          onChange: this.handleChange })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 456 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 457 */
+456,
+/* 458 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(325);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -55030,7 +54482,7 @@
 	});
 
 /***/ },
-/* 466 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55043,37 +54495,70 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDatepicker = __webpack_require__(325);
+	var _example_components = __webpack_require__(169);
 
-	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+	var _example_components2 = _interopRequireDefault(_example_components);
 
-	var _moment = __webpack_require__(327);
+	var _hero_example = __webpack_require__(458);
+
+	var _hero_example2 = _interopRequireDefault(_hero_example);
+
+	var _moment = __webpack_require__(326);
 
 	var _moment2 = _interopRequireDefault(_moment);
+
+	var _calendar = __webpack_require__(427);
+
+	var _calendar2 = _interopRequireDefault(_calendar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'VccExample',
-	  handleChange: function handleChange(date) {
-	    console.log('on change test: ' + date.format());
+	  displayName: 'DateTimePickerExample',
+
+	  componentDidMount: function componentDidMount() {
+	    window.insertDatepicker(function () {}, (0, _moment2.default)(), { dateFormat: 'L LT', locale: 'en_us', showTime: true, showSeconds: true, showConfirm: true, todayButton: 'Today', yearDropdown: true }, document.getElementById('insertDatepicker'));
 	  },
-	  render: function render() {
+	  handleCalendarSelect: function handleCalendarSelect(date) {
+	    console.log(date.format());
+	  },
+	  renderCalendar: function renderCalendar() {
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_reactDatepicker2.default, {
+	      _react2.default.createElement(_calendar2.default, {
+	        locale: 'fr',
+	        dateFormat: 'MMMM',
 	        selected: (0, _moment2.default)(),
-	        onChange: this.handleChange,
-	        dateFormatCalendar: 'MMMM',
-	        dateFormat: "DD/MM/YYYY h:mm:ss a",
-	        locale: 'en-gb',
-	        showSeconds: true,
-	        showTime: true,
+	        onSelect: this.handleCalendarSelect,
 	        showYearDropdown: true,
-	        readOnly: true,
 	        todayButton: 'Today'
 	      })
+	    );
+	  },
+	  render: function render() {
+	    var exampleStyles = {
+	      textAlign: 'center',
+	      padding: '30px',
+	      minHeight: '500px'
+	    };
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Datetimepicker'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        'Test insertDatepicker method:',
+	        _react2.default.createElement('div', {
+	          id: 'insertDatepicker',
+	          style: { display: 'inline-block' } }),
+	        this.renderCalendar()
+	      )
 	    );
 	  }
 	});

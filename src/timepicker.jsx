@@ -10,6 +10,7 @@ var TimePicker = React.createClass({
     dateFormat: React.PropTypes.string,
     hour24: React.PropTypes.bool,
     onChangeTime: React.PropTypes.func.isRequired,
+    nowButton: React.PropTypes.string,
     showSeconds: React.PropTypes.bool
   },
   getDefaultProps () {
@@ -178,12 +179,21 @@ var TimePicker = React.createClass({
 
     </div>
   )},
+  renderNowButton(){
+      if (!this.props.nowButton) {
+        return
+      }
+      return (
+        <div className="react-datepicker__now-button">
+          <span onClick={this.handleNowClick}>{this.props.nowButton}</span>
+        </div>
+      )
+  },
   render () {
     return (
       <div className="react-datepicker__time">
         {this.renderGrid()}
-        <div className="react-datepicker__time-label">{this.props.date.format(this.props.dateFormat)}</div>
-        <div className="react-datepicker__now-button" onClick={this.handleNowClick}>Now</div>
+        {this.renderNowButton()}
       </div>
     )
   }

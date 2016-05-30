@@ -1,11 +1,12 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-import Calendar from './calendar'
-import DateInput from './date_input'
-import TetherComponent from 'react-tether'
 import moment from 'moment';
+import DateInput from './date_input'
+import Calendar from './calendar'
+import React from 'react'
+import TetherComponent from './tether_component'
 import classnames from 'classnames'
 import { isSameDay } from './date_utils'
+import DateTimePicker from './datetimepicker'
 
 var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
 
@@ -17,6 +18,7 @@ var DatePicker = React.createClass({
   displayName: 'DatePicker',
 
   propTypes: {
+    autoComplete: React.PropTypes.string,
     className: React.PropTypes.string,
     dateFormat: React.PropTypes.string,
     dateFormatCalendar: React.PropTypes.string,
@@ -27,6 +29,7 @@ var DatePicker = React.createClass({
     hour24: React.PropTypes.bool,
     id: React.PropTypes.string,
     includeDates: React.PropTypes.array,
+    inline: React.PropTypes.bool,
     isClearable: React.PropTypes.bool,
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
@@ -35,6 +38,7 @@ var DatePicker = React.createClass({
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func.isRequired,
     onFocus: React.PropTypes.func,
+    openToDate: React.PropTypes.object,
     placeholderText: React.PropTypes.string,
     popoverAttachment: React.PropTypes.string,
     popoverTargetAttachment: React.PropTypes.string,
@@ -78,11 +82,13 @@ var DatePicker = React.createClass({
     return {
       open: false,
       selected: this.props.selected || moment(),
-      currentDate: this.props.selected || null
+      currentDate: this.props.selected,
+      someDateTest: this.props.selected
     }
   },
 
   componentWillReceiveProps (newProps){
+    console.log('componentWillReceiveProps');
     if(newProps.selected){
       this.setState({selected: newProps.selected, currentDate: newProps.selected});
     }
@@ -112,20 +118,15 @@ var DatePicker = React.createClass({
 
   handleSelect (date) {
     this.setState({selected: new moment(date)});
-
-    if(!this.props.showConfirmButtons){
-      this.setSelected(date)
-      if(!this.props.showTime){
-        this.setOpen(false)
-      }
-    }
+    //this.setSelected(date);
   },
 
   setSelected (date) {
     this.setState({
       currentDate: date
-    })
+    });
     this.props.onChange(date);
+    this.setOpen(false);
   },
   onInputClick () {
     if (!this.props.disabled) {
@@ -145,45 +146,77 @@ var DatePicker = React.createClass({
     event.preventDefault()
     this.setSelected(null);
   },
-  handleOkClick (){
-    this.setSelected(this.state.selected);
-    this.setOpen(false)
+  handleOkClick (date){
+    console.log(date, 'OK');
+    this.setState({someDateTest: moment(date)});
+    console.log(this.state.someDateTest, 'test');
+    this.setState({ currentDate: date
+    });
+    this.props.onChange(date);
+    this.setOpen(false);
   },
   handleCancelClick (){
     this.setState({selected: this.state.currentDate || moment()});
     this.setOpen(false);
   },
+  renderDatetimepicker(){
+    if (!this.props.inline && (!this.state.open || this.props.disabled)) {
+      return null
+    }
+    return (
+      <div>
+        <div className="react-datepicker__triangle"></div>
+          <DateTimePicker
+              locale={this.props.locale}
+              dateFormat={this.props.dateFormatCalendar}
+              selected={this.state.selected}
+              onSelect={this.handleSelect}
+              openToDate={this.props.openToDate}
+              minDate={this.props.minDate}
+              maxDate={this.props.maxDate}
+              startDate={this.props.startDate}
+              endDate={this.props.endDate}
+              excludeDates={this.props.excludeDates}
+              filterDate={this.props.filterDate}
+              hour24={this.props.hour24}
+              onClickOutside={this.handleCalendarClickOutside }
+              onClickOk={this.handleOkClick}
+              onClickCancel={this.handleCancelClick}
+              includeDates={this.props.includeDates}
+              showSeconds={this.props.showSeconds}
+              showYearDropdown={this.props.showYearDropdown}
+              todayButton={this.props.todayButton}
+              outsideClickIgnoreClass={outsideClickIgnoreClass} />
+      </div>
+    );
+
+  },
   renderCalendar () {
-    if (!this.state.open || this.props.disabled) {
+    if (!this.props.inline && (!this.state.open || this.props.disabled)) {
       return null
     }
     return <Calendar
         ref="calendar"
         locale={this.props.locale}
-        dateFormat={this.props.dateFormat}
-        dateFormatCalendar={this.props.dateFormatCalendar}
+        dateFormat={this.props.dateFormatCalendar}
         selected={this.state.selected}
         onSelect={this.handleSelect}
+        openToDate={this.props.openToDate}
         minDate={this.props.minDate}
         maxDate={this.props.maxDate}
         startDate={this.props.startDate}
         endDate={this.props.endDate}
         excludeDates={this.props.excludeDates}
         filterDate={this.props.filterDate}
-        hour24={this.props.hour24}
-        onClickOutside={this.handleCalendarClickOutside}
-        onClickOk={this.handleOkClick}
-        onClickCancel={this.handleCancelClick}
+        onClickOutside={this.handleCalendarClickOutside }
         includeDates={this.props.includeDates}
-        showConfirmButtons={this.props.showConfirmButtons}
-        showTime={this.props.showTime}
-        showSeconds={this.props.showSeconds}
         showYearDropdown={this.props.showYearDropdown}
         todayButton={this.props.todayButton}
         outsideClickIgnoreClass={outsideClickIgnoreClass} />
   },
 
   renderDateInput () {
+    console.log('render input');
     var className = classnames(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
@@ -206,6 +239,7 @@ var DatePicker = React.createClass({
         onChangeDate={this.setSelected}
         placeholder={this.props.placeholderText}
         disabled={this.props.disabled}
+        autoComplete={this.props.autoComplete}
         className={className}
         title={this.props.title}
         readOnly={this.props.readOnly}
@@ -222,22 +256,29 @@ var DatePicker = React.createClass({
     }
   },
   render () {
-    return (
-        <TetherComponent
-            classPrefix={"react-datepicker__tether"}
-            attachment={this.props.popoverAttachment}
-            targetAttachment={this.props.popoverTargetAttachment}
-            targetOffset={this.props.popoverTargetOffset}
-            renderElementTo={this.props.renderCalendarTo}
-            constraints={this.props.tetherConstraints}>
-          <div className="react-datepicker__input-container">
-            {this.renderDateInput()}
-            {this.renderClearButton()}
-          </div>
-          {this.renderCalendar()}
-        </TetherComponent>
-      )
-  }
+      const calendar = this.renderCalendar()
+
+      if (this.props.inline) {
+        return calendar
+      } else {
+        return (
+          <TetherComponent
+              classPrefix={"react-datepicker__tether"}
+              attachment={this.props.popoverAttachment}
+              targetAttachment={this.props.popoverTargetAttachment}
+              targetOffset={this.props.popoverTargetOffset}
+              renderElementTo={this.props.renderCalendarTo}
+              constraints={this.props.tetherConstraints}>
+            <div className="react-datepicker__input-container">
+              {this.renderDateInput()}
+              {this.renderClearButton()}
+            </div>
+            {/*calendar*/}
+            {this.renderDatetimepicker()}
+          </TetherComponent>
+        )
+      }
+    }
 })
 
 module.exports = DatePicker;
@@ -250,7 +291,7 @@ window.insertDatepicker = function(onChangeCallback, date, options, el) {
     dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
     disabled={options.disabled || false}
     endDate={options.endDate || null}
-    hour24={options.hour24 || false}
+
     isClearable={options.isClearable || false}
     locale={options.locale || moment().locale()}
     maxDate={options.maxDate || null}

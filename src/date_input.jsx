@@ -31,7 +31,7 @@ var DateInput = React.createClass({
 
   getInitialState () {
     return {
-      maybeDate: this.safeDateFormat(this.props)
+      value: this.safeDateFormat(this.props)
     }
   },
 
@@ -74,20 +74,18 @@ var DateInput = React.createClass({
         this.props.onChangeDate(null)
       }
     }
-    this.setState({
-      maybeDate: value
-    })
+    this.setState({value})
   },
 
   safeDateFormat (props) {
     return props.date && props.date.clone()
-     .locale(props.locale || moment().locale())
-     .format(props.dateFormat) || ''
+      .locale(props.locale || moment.locale())
+      .format(props.dateFormat) || ''
   },
 
   handleBlur (event) {
     this.setState({
-      maybeDate: this.safeDateFormat(this.props)
+      value: this.safeDateFormat(this.props)
     })
     if (this.props.onBlur) {
       this.props.onBlur(event)
@@ -103,7 +101,7 @@ var DateInput = React.createClass({
         ref='input'
         type='text'
         {...this.props}
-        value={this.state.maybeDate}
+        value={this.state.value}
         onBlur={this.handleBlur}
         onChange={this.handleChange} />
   }

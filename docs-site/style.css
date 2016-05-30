@@ -47,7 +47,7 @@
     margin-right: 5px; }
   .react-datepicker__time .react-datepicker__time-label {
     margin: 4%;
-    font-size: 0.7rem; }
+    font-size: 1rem; }
   .react-datepicker__time .grid {
     display: flex;
     flex-direction: row;
@@ -366,18 +366,22 @@
   font-weight: bold;
   display: flex;
   display: -webkit-flex; }
-  .react-datepicker__tabs-calIcon svg, .react-datepicker__tabs-timeIcon svg {
-    height: 15px; }
   .react-datepicker__tabs .react-datepicker__tab-calendar, .react-datepicker__tabs .react-datepicker__tab-time {
     background-color: #f0f0f0;
     padding: 10px;
     flex-grow: 1;
-    align-self: center; }
+    align-self: center;
+    border-bottom: 1px solid #626262; }
+    .react-datepicker__tabs .react-datepicker__tab-calendar svg, .react-datepicker__tabs .react-datepicker__tab-time svg {
+      height: 15px; }
     .react-datepicker__tabs .react-datepicker__tab-calendar:hover, .react-datepicker__tabs .react-datepicker__tab-time:hover {
       cursor: pointer; }
     .react-datepicker__tabs .react-datepicker__tab-calendar--selected, .react-datepicker__tabs .react-datepicker__tab-time--selected {
-      background: #F27200;
+      background: #626262;
       color: #fff; }
+      .react-datepicker__tabs .react-datepicker__tab-calendar--selected svg, .react-datepicker__tabs .react-datepicker__tab-time--selected svg {
+        height: 15px;
+        fill: #f0f0f0; }
 
 .react-datepicker__confirm-btn {
   background: #626262;

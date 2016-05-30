@@ -7,6 +7,15 @@
   z-index: 2500;
 }
 
+.react-datetimepicker{
+  display: inline-block;
+  position: relative;
+
+  .react-datepicker{
+      display: block;
+  }
+}
+
 .react-datepicker {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
@@ -329,7 +338,7 @@
   }
 }
 
-.react-datepicker__today-button, .react-datepicker__now-button{
+.react-datepicker__today-button{
    background: $color-profile-12;
    border-top: 1px solid #909090;
    color: $color-profile-11;
@@ -386,29 +395,28 @@
   .react-datepicker__cancel-btn, .react-datepicker__ok-btn{
     cursor: pointer;
     font-weight: bold;
-    width: 100px;
+    width: $button-width;
     text-decoration: none;
     padding: 5px 12px 5px 12px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
   }
 
   .react-datepicker__cancel-btn{
-      color: $color-profile-11;
-      background: #ffffff;
+      color: $color-profile-10;
+      background: $color-profile-13;
       border: solid $color-profile-11 1px;
       text-decoration: none;
-      margin-right: 15px;
+      margin-right: 10px;
 
       &:hover{
-        background: darken(#ffffff, 5%);
+        background: darken($color-profile-13, 5%);
       }
   }
 
   .react-datepicker__ok-btn{
-    color: #ffffff;
+    color: $color-profile-13;
     background: $color-profile-1;
     border: solid $color-profile-1 1px;
-    width: 100px;
 
     &:hover{
       background: lighten($color-profile-1, 5%);;

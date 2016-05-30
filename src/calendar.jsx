@@ -1,10 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import TimePicker from './timepicker';
 import Month from './month';
 import YearDropdown from './year_dropdown';
-import calendarIcon from './images/calendar.svg';
-import timeIcon from './images/time.svg';
 import classnames from 'classnames';
 import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
@@ -12,25 +9,18 @@ var Calendar = React.createClass({
   displayName: 'Calendar',
 
   propTypes: {
-    dateFormat: React.PropTypes.string,
-    dateFormatCalendar: React.PropTypes.string.isRequired,
+    dateFormat: React.PropTypes.string.isRequired,
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
-    hour24: React.PropTypes.bool,
     includeDates: React.PropTypes.array,
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
-    onChangeTime: React.PropTypes.func,
     onClickOutside: React.PropTypes.func.isRequired,
-    onClickOk: React.PropTypes.func.isRequired,
-    onClickCancel: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
+    openToDate: React.PropTypes.object,
     selected: React.PropTypes.object,
-    showConfirmButtons: React.PropTypes.bool,
-    showTime: React.PropTypes.bool,
-    showSeconds: React.PropTypes.bool,
     showYearDropdown: React.PropTypes.bool,
     startDate: React.PropTypes.object,
     todayButton: React.PropTypes.string
@@ -40,18 +30,15 @@ var Calendar = React.createClass({
 
   getInitialState () {
     return {
-      date: this.localizeMoment(this.getDateInView()),
-      calendarActive: true
+      date: this.localizeMoment(this.getDateInView())
     }
   },
   getDefaultProps () {
     return {
       dateFormat: 'L',
       locale: moment().locale(),
-      showTime: false
     }
   },
-
   componentWillReceiveProps (nextProps) {
     if ((nextProps.selected && !isSameDay(nextProps.selected, this.props.selected)) ||
           nextProps.locale !== this.props.locale ||
@@ -67,7 +54,7 @@ var Calendar = React.createClass({
   },
 
   getDateInView () {
-    const { selected } = this.props
+    const { selected, openToDate } = this.props
     const minDate = getEffectiveMinDate(this.props)
     const maxDate = getEffectiveMaxDate(this.props)
     const current = moment();
@@ -77,6 +64,8 @@ var Calendar = React.createClass({
       return minDate
     } else if (maxDate && maxDate.isBefore(current)) {
       return maxDate
+    } else if (openToDate) {
+      return openToDate
     } else {
       return current
     }
@@ -111,12 +100,6 @@ var Calendar = React.createClass({
   handleDayClick (day) {
       this.props.onSelect(day)
   },
-  handleOkClick (){
-      this.props.onClickOk();
-  },
-  handleCancelClick (){
-      this.props.onClickCancel();
-  },
   handleChangeTime(date){
     this.props.onSelect(date);
   },
@@ -124,30 +107,6 @@ var Calendar = React.createClass({
     this.setState({
       date: this.state.date.clone().set('year', year)
     })
-  },
-  handleCalendarTabClick(){
-    this.setState({
-        calendarActive: true
-    });
-  },
-  handleCalendarTimeClick(){
-    this.setState({
-        calendarActive: false
-    });
-  },
-  handleTodayClick(){
-    if(this.props.showTime){
-      var now = moment();
-      var newDate = this.state.date.clone().year(now.year()).month(now.month()).date(now.date());
-      this.setState({
-        date: newDate
-      });
-      this.props.onSelect(newDate);
-    }
-    else{
-        this.setState({date: moment()});
-        this.props.onSelect(moment());
-    }
   },
   header () {
     const startOfWeek = this.state.date.clone().startOf('week')
@@ -186,7 +145,7 @@ var Calendar = React.createClass({
     }
     return (
       <div className={classes.join(' ')}>
-        {this.state.date.format(this.props.dateFormatCalendar)}
+        {this.state.date.format(this.props.dateFormat)}
       </div>
     )
   },
@@ -212,43 +171,14 @@ var Calendar = React.createClass({
       return
     }
     return (
-      <div className="react-datepicker__today-button" onClick={this.handleTodayClick}>
+      <div className="react-datepicker__today-button" onClick={() => this.props.onSelect(moment())}>
         {this.props.todayButton}
       </div>
     )
   },
-  renderTime(){
-    if(!this.props.showTime){
-      return
-    }
-    else{
-      return (
-        <TimePicker
-          date={this.props.selected}
-          dateFormat={this.props.dateFormat}
-          hour24={this.props.hour24}
-          onChangeTime={this.handleChangeTime}
-          showSeconds={this.props.showSeconds}
-        />
-      )
-    }
-  },
-  renderConfirmButton(){
-    if(this.props.showConfirmButtons){
-      return (
-        <div className="react-datepicker__confirm-btn">
-          <button className="react-datepicker__cancel-btn" onClick={this.handleCancelClick}>CANCEL</button>
-          <button className="react-datepicker__ok-btn" onClick={this.handleOkClick}>OK</button>
-        </div>
-      )
-    }
-    else {
-      return
-    }
-  },
-  renderCalendarView(){
-    return(
-      <div>
+  render () {
+    return (
+      <div className="react-datepicker">
         <div className="react-datepicker__header">
           {this.renderPreviousMonthButton()}
           {this.renderCurrentMonth()}
@@ -270,31 +200,6 @@ var Calendar = React.createClass({
             startDate={this.props.startDate}
             endDate={this.props.endDate} />
           {this.renderTodayButton()}
-      </div>
-    )
-  },
-  getClassNames () {
-    return classnames('react-datepicker__day', {
-      'react-datepicker__day--disabled': this.isDisabled(),
-    })
-  },
-  render () {
-    return (
-      <div className="react-datepicker">
-        <div className="react-datepicker__triangle"></div>
-        {this.props.showTime ?
-          <div className="react-datepicker__tabs">
-            <span className={classnames('react-datepicker__tab-calendar', {'react-datepicker__tab-calendar--selected': this.state.calendarActive})} onClick={this.handleCalendarTabClick}>
-              <span dangerouslySetInnerHTML={{__html: calendarIcon}}/>
-            </span>
-            <span className={classnames('react-datepicker__tab-time', {'react-datepicker__tab-time--selected': !this.state.calendarActive})} onClick={this.handleCalendarTimeClick}>
-              <span dangerouslySetInnerHTML={{__html: timeIcon}}/>
-            </span>
-          </div>
-        : false}
-        {this.state.calendarActive ? this.renderCalendarView() : this.renderTime()}
-
-        {this.renderConfirmButton()}
       </div>
     )
   }

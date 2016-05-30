@@ -1,19 +1,19 @@
 import React from 'react';
 import moment from 'moment';
 import TimePicker from './timepicker';
-import Month from './month';
-import YearDropdown from './year_dropdown';
+import Calendar from './calendar';
 import calendarIcon from './images/calendar.svg';
 import timeIcon from './images/time.svg';
 import classnames from 'classnames';
 import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
+var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
+
 var DateTimePicker = React.createClass({
   displayName: 'DateTimePicker',
 
   propTypes: {
-    dateFormat: React.PropTypes.string,
-    dateFormatCalendar: React.PropTypes.string.isRequired,
+    dateFormat: React.PropTypes.string.isRequired,
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
@@ -23,277 +23,130 @@ var DateTimePicker = React.createClass({
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
     onChangeTime: React.PropTypes.func,
-    onClickOutside: React.PropTypes.func.isRequired,
+    onClickOutside: React.PropTypes.func,
     onClickOk: React.PropTypes.func.isRequired,
     onClickCancel: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
     selected: React.PropTypes.object,
-    showConfirmButtons: React.PropTypes.bool,
-    showTime: React.PropTypes.bool,
     showSeconds: React.PropTypes.bool,
     showYearDropdown: React.PropTypes.bool,
     startDate: React.PropTypes.object,
-    todayButton: React.PropTypes.string
+    todayButton: React.PropTypes.string,
+    nowButton: React.PropTypes.string
   },
 
   mixins: [require('react-onclickoutside')],
 
   getInitialState () {
     return {
-      date: this.localizeMoment(this.getDateInView()),
+      selectedDate: this.props.selected || moment(),
       calendarActive: true
     }
   },
   getDefaultProps () {
     return {
       dateFormat: 'L',
-      locale: moment().locale(),
-      showTime: false
+      locale: moment().locale()
     }
   },
 
   componentWillReceiveProps (nextProps) {
-    if ((nextProps.selected && !isSameDay(nextProps.selected, this.props.selected)) ||
-          nextProps.locale !== this.props.locale ||
-          nextProps.dateFormat !== this.props.dateFormat) {
+    if (nextProps.selected && !isSameDay(nextProps.selected, this.props.selected)) {
       this.setState({
-        date: this.localizeMoment(nextProps.selected)
+        selectedDate: nextProps.selected
       })
     }
   },
-
-  handleClickOutside (event) {
-    this.props.onClickOutside(event)
+  handleCalendarChange (day) {
+      var newDate = this.state.selectedDate.clone().year(day.year()).month(day.month()).date(day.date());
+      this.setState({selectedDate: newDate});
+      if(this.props.onSelect){
+          this.props.onSelect(newDate);
+      }
   },
-
-  getDateInView () {
-    const { selected } = this.props
-    const minDate = getEffectiveMinDate(this.props)
-    const maxDate = getEffectiveMaxDate(this.props)
-    const current = moment();
-    if (selected) {
-      return selected
-    } else if (minDate && minDate.isAfter(current)) {
-      return minDate
-    } else if (maxDate && maxDate.isBefore(current)) {
-      return maxDate
-    } else {
-      return current
+  handleTimeChange(date){
+    this.setState({selectedDate: date});
+    if(this.props.onSelect){
+      this.props.onSelect(date);
     }
   },
-
-  localizeMoment (date) {
-    return date.clone().locale(this.props.locale || moment.locale());
-  },
-
-  increaseMonth () {
-    this.setState({
-      date: this.state.date.clone().add(1, 'month')
-    })
-  },
-
-  decreaseMonth () {
-    this.setState({
-      date: this.state.date.clone().subtract(1, 'month')
-    })
-  },
-
-  increaseYear () {
-    this.setState({
-      date: this.state.date.clone().add(1, 'year')
-    })
-  },
-  decreaseYear () {
-    this.setState({
-      date: this.state.date.clone().subtract(1, 'year')
-    })
-  },
-  handleDayClick (day) {
-      this.props.onSelect(day)
-  },
   handleOkClick (){
-      this.props.onClickOk();
+      this.props.onClickOk(this.state.selectedDate);
   },
   handleCancelClick (){
+      this.setState({selectedDate: this.props.selected || moment()});
       this.props.onClickCancel();
-  },
-  handleChangeTime(date){
-    this.props.onSelect(date);
-  },
-  changeYear (year) {
-    this.setState({
-      date: this.state.date.clone().set('year', year)
-    })
   },
   handleCalendarTabClick(){
     this.setState({
         calendarActive: true
     });
   },
-  handleCalendarTimeClick(){
+  handleTimeTabClick(){
     this.setState({
         calendarActive: false
     });
   },
-  handleTodayClick(){
-    if(this.props.showTime){
-      var now = moment();
-      var newDate = this.state.date.clone().year(now.year()).month(now.month()).date(now.date());
-      this.setState({
-        date: newDate
-      });
-      this.props.onSelect(newDate);
-    }
-    else{
-        this.setState({date: moment()});
-        this.props.onSelect(moment());
-    }
+  handleClickOutside (event){
+    this.props.onClickOutside(event);
   },
-  header () {
-    const startOfWeek = this.state.date.clone().startOf('week')
-    return [0, 1, 2, 3, 4, 5, 6].map(offset => {
-      const day = startOfWeek.clone().add(offset, 'days')
-      return (
-        <div key={offset} className="react-datepicker__day-name">
-          {day.localeData().weekdaysMin(day)}
-        </div>
-      )
-    })
-  },
-
-  renderPreviousMonthButton () {
-    if (allDaysDisabledBefore(this.state.date, 'month', this.props)) {
-      return
-    }
-    return <a
-        className='react-datepicker__navigation react-datepicker__navigation--previous'
-        onClick={this.decreaseMonth} />
-  },
-
-  renderNextMonthButton () {
-    if (allDaysDisabledAfter(this.state.date, 'month', this.props)) {
-      return
-    }
-    return <a
-        className='react-datepicker__navigation react-datepicker__navigation--next'
-        onClick={this.increaseMonth} />
-  },
-
-  renderCurrentMonth () {
-    var classes = ['react-datepicker__current-month']
-    if (this.props.showYearDropdown) {
-      classes.push('react-datepicker__current-month--hasYearDropdown')
-    }
-    return (
-      <div className={classes.join(' ')}>
-        {this.state.date.format(this.props.dateFormatCalendar)}
-      </div>
-    )
-  },
-
-  renderYearDropdown () {
-    if (!this.props.showYearDropdown) {
-      return
-    }
-    return (
-      <div>
-      <YearDropdown
-          currentDate={this.state.date}
-          onChange={this.changeYear}
-          year={this.state.date.year()}
-          minDate={this.props.minDate}
-          maxDate={this.props.maxDate}
-          includeDates={this.props.includeDates} />
-      </div>
-    )
-  },
-  renderTodayButton () {
-    if (!this.props.todayButton) {
-      return
-    }
-    return (
-      <div className="react-datepicker__today-button" onClick={this.handleTodayClick}>
-        {this.props.todayButton}
-      </div>
-    )
+  handleClickOutsideCalendar (event) {
   },
   renderTime(){
-    if(!this.props.showTime){
-      return
-    }
-    else{
       return (
         <TimePicker
-          date={this.props.selected}
+          date={this.state.selectedDate}
           dateFormat={this.props.dateFormat}
           hour24={this.props.hour24}
-          onChangeTime={this.handleChangeTime}
+          nowButton={this.props.nowButton}
+          onChangeTime={this.handleTimeChange}
           showSeconds={this.props.showSeconds}
         />
       )
-    }
+  },
+  renderCalendarView(){
+    return(
+      <Calendar
+          locale={this.props.locale}
+          dateFormat={this.props.dateFormat}
+          selected={this.state.selectedDate}
+          onSelect={this.handleCalendarChange}
+          openToDate={this.props.openToDate}
+          minDate={this.props.minDate}
+          maxDate={this.props.maxDate}
+          startDate={this.props.startDate}
+          endDate={this.props.endDate}
+          excludeDates={this.props.excludeDates}
+          filterDate={this.props.filterDate}
+          onClickOutside={this.handleClickOutsideCalendar}
+          onClickOk={this.handleOkClick}
+          onClickCancel={this.handleCancelClick}
+          includeDates={this.props.includeDates}
+          showYearDropdown={this.props.showYearDropdown}
+          todayButton={this.props.todayButton}
+          outsideClickIgnoreClass={outsideClickIgnoreClass} />
+    )
   },
   renderConfirmButton(){
-    if(this.props.showConfirmButtons){
       return (
         <div className="react-datepicker__confirm-btn">
           <button className="react-datepicker__cancel-btn" onClick={this.handleCancelClick}>CANCEL</button>
           <button className="react-datepicker__ok-btn" onClick={this.handleOkClick}>OK</button>
         </div>
       )
-    }
-    else {
-      return
-    }
-  },
-  renderCalendarView(){
-    return(
-      <div>
-        <div className="react-datepicker__header">
-          {this.renderPreviousMonthButton()}
-          {this.renderCurrentMonth()}
-          {this.renderYearDropdown()}
-          {this.renderNextMonthButton()}
-          <div>
-            {this.header()}
-          </div>
-        </div>
-        <Month
-            day={this.state.date}
-            onDayClick={this.handleDayClick}
-            minDate={this.props.minDate}
-            maxDate={this.props.maxDate}
-            excludeDates={this.props.excludeDates}
-            includeDates={this.props.includeDates}
-            filterDate={this.props.filterDate}
-            selected={this.props.selected}
-            startDate={this.props.startDate}
-            endDate={this.props.endDate} />
-          {this.renderTodayButton()}
-      </div>
-    )
-  },
-  getClassNames () {
-    return classnames('react-datepicker__day', {
-      'react-datepicker__day--disabled': this.isDisabled(),
-    })
   },
   render () {
     return (
-      <div className="react-datepicker">
-        <div className="react-datepicker__triangle"></div>
-        {this.props.showTime ?
-          <div className="react-datepicker__tabs">
-            <span className={classnames('react-datepicker__tab-calendar', {'react-datepicker__tab-calendar--selected': this.state.calendarActive})} onClick={this.handleCalendarTabClick}>
-              <span dangerouslySetInnerHTML={{__html: calendarIcon}}/>
-            </span>
-            <span className={classnames('react-datepicker__tab-time', {'react-datepicker__tab-time--selected': !this.state.calendarActive})} onClick={this.handleCalendarTimeClick}>
-              <span dangerouslySetInnerHTML={{__html: timeIcon}}/>
-            </span>
-          </div>
-        : false}
+      <div className="react-datetimepicker">
+        <div className="react-datepicker__tabs">
+          <span className={classnames('react-datepicker__tab-calendar', {'react-datepicker__tab-calendar--selected': this.state.calendarActive})} onClick={this.handleCalendarTabClick}>
+            <span dangerouslySetInnerHTML={{__html: calendarIcon}}/>
+          </span>
+          <span className={classnames('react-datepicker__tab-time', {'react-datepicker__tab-time--selected': !this.state.calendarActive})} onClick={this.handleTimeTabClick}>
+            <span dangerouslySetInnerHTML={{__html: timeIcon}}/>
+          </span>
+        </div>
         {this.state.calendarActive ? this.renderCalendarView() : this.renderTime()}
-
         {this.renderConfirmButton()}
       </div>
     )
