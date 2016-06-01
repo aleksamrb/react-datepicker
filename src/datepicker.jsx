@@ -207,7 +207,6 @@ var DatePicker = React.createClass({
   },
 
   renderDateInput () {
-    console.log('render date input: ', this.props.selected);
     var className = classnames(this.props.className, {
       [outsideClickIgnoreClass]: this.state.open
     })
@@ -272,30 +271,3 @@ var DatePicker = React.createClass({
 })
 
 module.exports = DatePicker;
-
-window.insertDatepicker = function(onChangeCallback, date, options, el) {
-  ReactDOM.render(<DatePicker
-    onChange={onChangeCallback}
-    selected={date ? moment(date) : null}
-    dateFormatCalendar={options.yearDropdown ? 'MMMM' : 'MMMM YYYY'}
-    dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
-    disabled={options.disabled || false}
-    endDate={options.endDate || null}
-    isClearable={options.isClearable || false}
-    locale={options.locale || moment().locale()}
-    maxDate={options.maxDate || null}
-    minDate={options.minDate || null}
-    placeholderText={options.placeholder || 'Select date'}
-    popoverAttachment={options.popoverAttachment || 'top left'}
-    popoverTargetAttachment={options.popoverTargetAttachment || 'bottom left'}
-    popoverTargetOffset={options.popoverTargetOffset || '10px 0'}
-    showConfirmButtons={options.showConfirm || false}
-    showSeconds={options.showSeconds || false}
-    showTime={options.showTime || false}
-    showYearDropdown={options.yearDropdown || false}
-    startDate={options.startDate || null}
-    readOnly={options.readOnly || false}
-    tetherConstraints={options.tetherConstraints || [{to: 'window', attachment: 'together'}]}
-    todayButton={options.todayButton || null}
-  />, el);
-}

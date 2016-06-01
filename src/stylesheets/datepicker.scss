@@ -149,6 +149,10 @@
 .react-datepicker__day {
   cursor: pointer;
 
+  &--outside-month{
+    color: darken($color-profile-12, 20%);
+  }
+
   &:hover {
     border-radius: 20px;
     background-color: $background-color;
