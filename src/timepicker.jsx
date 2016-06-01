@@ -7,7 +7,6 @@ var TimePicker = React.createClass({
   displayName: 'TimePicker',
   propTypes: {
     date: React.PropTypes.object,
-    dateFormat: React.PropTypes.string,
     hour24: React.PropTypes.bool,
     onChangeTime: React.PropTypes.func.isRequired,
     nowButton: React.PropTypes.string,
@@ -15,8 +14,7 @@ var TimePicker = React.createClass({
   },
   getDefaultProps () {
     return {
-      date: moment(),
-      dateFormat: "DD/MM/YYYY HH:mm:ss"
+      date: moment()
     }
   },
   getInitialState () {

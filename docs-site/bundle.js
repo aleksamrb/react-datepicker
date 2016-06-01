@@ -88,7 +88,7 @@
 
 	var _root2 = _interopRequireDefault(_root);
 
-	var _datetimepicker_example = __webpack_require__(459);
+	var _datetimepicker_example = __webpack_require__(465);
 
 	var _datetimepicker_example2 = _interopRequireDefault(_datetimepicker_example);
 
@@ -98,7 +98,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_datetimepicker_example2.default, null), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_root2.default, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -20041,7 +20041,7 @@
 
 	var _example_components2 = _interopRequireDefault(_example_components);
 
-	var _hero_example = __webpack_require__(458);
+	var _hero_example = __webpack_require__(464);
 
 	var _hero_example2 = _interopRequireDefault(_hero_example);
 
@@ -20175,85 +20175,85 @@
 
 	var _default2 = _interopRequireDefault(_default);
 
-	var _code_example_component = __webpack_require__(437);
+	var _code_example_component = __webpack_require__(443);
 
 	var _code_example_component2 = _interopRequireDefault(_code_example_component);
 
-	var _custom_date_format = __webpack_require__(438);
+	var _custom_date_format = __webpack_require__(444);
 
 	var _custom_date_format2 = _interopRequireDefault(_custom_date_format);
 
-	var _custom_class_name = __webpack_require__(439);
+	var _custom_class_name = __webpack_require__(445);
 
 	var _custom_class_name2 = _interopRequireDefault(_custom_class_name);
 
-	var _placeholder_text = __webpack_require__(440);
+	var _placeholder_text = __webpack_require__(446);
 
 	var _placeholder_text2 = _interopRequireDefault(_placeholder_text);
 
-	var _specific_date_range = __webpack_require__(441);
+	var _specific_date_range = __webpack_require__(447);
 
 	var _specific_date_range2 = _interopRequireDefault(_specific_date_range);
 
-	var _locale = __webpack_require__(442);
+	var _locale = __webpack_require__(448);
 
 	var _locale2 = _interopRequireDefault(_locale);
 
-	var _exclude_dates = __webpack_require__(443);
+	var _exclude_dates = __webpack_require__(449);
 
 	var _exclude_dates2 = _interopRequireDefault(_exclude_dates);
 
-	var _include_dates = __webpack_require__(444);
+	var _include_dates = __webpack_require__(450);
 
 	var _include_dates2 = _interopRequireDefault(_include_dates);
 
-	var _filter_dates = __webpack_require__(445);
+	var _filter_dates = __webpack_require__(451);
 
 	var _filter_dates2 = _interopRequireDefault(_filter_dates);
 
-	var _disabled = __webpack_require__(446);
+	var _disabled = __webpack_require__(452);
 
 	var _disabled2 = _interopRequireDefault(_disabled);
 
-	var _clear_input = __webpack_require__(447);
+	var _clear_input = __webpack_require__(453);
 
 	var _clear_input2 = _interopRequireDefault(_clear_input);
 
-	var _on_blur_callbacks = __webpack_require__(448);
+	var _on_blur_callbacks = __webpack_require__(454);
 
 	var _on_blur_callbacks2 = _interopRequireDefault(_on_blur_callbacks);
 
-	var _placement = __webpack_require__(449);
+	var _placement = __webpack_require__(455);
 
 	var _placement2 = _interopRequireDefault(_placement);
 
-	var _date_range = __webpack_require__(450);
+	var _date_range = __webpack_require__(456);
 
 	var _date_range2 = _interopRequireDefault(_date_range);
 
-	var _tab_index = __webpack_require__(451);
+	var _tab_index = __webpack_require__(457);
 
 	var _tab_index2 = _interopRequireDefault(_tab_index);
 
-	var _year_dropdown = __webpack_require__(452);
+	var _year_dropdown = __webpack_require__(458);
 
 	var _year_dropdown2 = _interopRequireDefault(_year_dropdown);
 
-	var _today = __webpack_require__(453);
+	var _today = __webpack_require__(459);
 
 	var _today2 = _interopRequireDefault(_today);
 
-	var _inline = __webpack_require__(454);
+	var _inline = __webpack_require__(460);
 
 	var _inline2 = _interopRequireDefault(_inline);
 
-	var _open_to_date = __webpack_require__(455);
+	var _open_to_date = __webpack_require__(461);
 
 	var _open_to_date2 = _interopRequireDefault(_open_to_date);
 
-	__webpack_require__(456);
+	__webpack_require__(462);
 
-	__webpack_require__(457);
+	__webpack_require__(463);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36898,6 +36898,10 @@
 
 	var _date_utils = __webpack_require__(426);
 
+	var _datetimepicker = __webpack_require__(437);
+
+	var _datetimepicker2 = _interopRequireDefault(_datetimepicker);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -36942,7 +36946,6 @@
 	    required: _react2.default.PropTypes.bool,
 	    selected: _react2.default.PropTypes.object,
 	    showConfirmButtons: _react2.default.PropTypes.bool,
-	    showTime: _react2.default.PropTypes.bool,
 	    showSeconds: _react2.default.PropTypes.bool,
 	    showYearDropdown: _react2.default.PropTypes.bool,
 	    startDate: _react2.default.PropTypes.object,
@@ -36958,7 +36961,6 @@
 	      onChange: function onChange() {},
 
 	      disabled: false,
-	      locale: (0, _moment2.default)().locale(),
 	      onFocus: function onFocus() {},
 	      onBlur: function onBlur() {},
 
@@ -36973,16 +36975,10 @@
 	  },
 	  getInitialState: function getInitialState() {
 	    return {
-	      open: false,
-	      selected: this.props.selected || (0, _moment2.default)(),
-	      currentDate: this.props.selected || null
+	      open: false
 	    };
 	  },
-	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	    if (newProps.selected) {
-	      this.setState({ selected: newProps.selected, currentDate: newProps.selected });
-	    }
-	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {},
 	  setOpen: function setOpen(open) {
 	    this.setState({ open: open });
 	  },
@@ -36998,23 +36994,14 @@
 	    }
 	  },
 	  handleCalendarClickOutside: function handleCalendarClickOutside(event) {
-	    this.setState({ selected: this.state.currentDate || (0, _moment2.default)() });
+	    //TODO in datetimepicker and calendar
 	    this.setOpen(false);
 	  },
 	  handleSelect: function handleSelect(date) {
-	    this.setState({ selected: new _moment2.default(date) });
-
-	    if (!this.props.showConfirmButtons) {
-	      this.setSelected(date);
-	      if (!this.props.showTime) {
-	        this.setOpen(false);
-	      }
-	    }
+	    this.setSelected(date);
+	    //this.setOpen(false);
 	  },
 	  setSelected: function setSelected(date) {
-	    this.setState({
-	      currentDate: date
-	    });
 	    this.props.onChange(date);
 	  },
 	  onInputClick: function onInputClick() {
@@ -37034,13 +37021,44 @@
 	    event.preventDefault();
 	    this.setSelected(null);
 	  },
-	  handleOkClick: function handleOkClick() {
-	    this.setSelected(this.state.selected);
+	  handleOkClick: function handleOkClick(date) {
+	    this.props.onChange(date);
 	    this.setOpen(false);
 	  },
 	  handleCancelClick: function handleCancelClick() {
-	    this.setState({ selected: this.state.currentDate || (0, _moment2.default)() });
+	    //TODO
 	    this.setOpen(false);
+	  },
+	  renderDatetimepicker: function renderDatetimepicker() {
+	    if (!this.props.inline && (!this.state.open || this.props.disabled)) {
+	      return null;
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement('div', { className: 'react-datepicker__triangle' }),
+	      _react2.default.createElement(_datetimepicker2.default, {
+	        locale: this.props.locale,
+	        dateFormat: this.props.dateFormatCalendar,
+	        selected: this.props.selected,
+	        onSelect: this.handleSelect,
+	        openToDate: this.props.openToDate,
+	        minDate: this.props.minDate,
+	        maxDate: this.props.maxDate,
+	        startDate: this.props.startDate,
+	        endDate: this.props.endDate,
+	        excludeDates: this.props.excludeDates,
+	        filterDate: this.props.filterDate,
+	        hour24: this.props.hour24,
+	        onClickOutside: this.handleCalendarClickOutside,
+	        onClickOk: this.handleOkClick,
+	        onClickCancel: this.handleCancelClick,
+	        includeDates: this.props.includeDates,
+	        showSeconds: this.props.showSeconds,
+	        showYearDropdown: this.props.showYearDropdown,
+	        todayButton: this.props.todayButton,
+	        outsideClickIgnoreClass: outsideClickIgnoreClass })
+	    );
 	  },
 	  renderCalendar: function renderCalendar() {
 	    if (!this.props.inline && (!this.state.open || this.props.disabled)) {
@@ -37050,7 +37068,7 @@
 	      ref: 'calendar',
 	      locale: this.props.locale,
 	      dateFormat: this.props.dateFormatCalendar,
-	      selected: this.state.selected,
+	      selected: this.props.selected,
 	      onSelect: this.handleSelect,
 	      openToDate: this.props.openToDate,
 	      minDate: this.props.minDate,
@@ -37059,25 +37077,20 @@
 	      endDate: this.props.endDate,
 	      excludeDates: this.props.excludeDates,
 	      filterDate: this.props.filterDate,
-	      hour24: this.props.hour24,
 	      onClickOutside: this.handleCalendarClickOutside,
-	      onClickOk: this.handleOkClick,
-	      onClickCancel: this.handleCancelClick,
 	      includeDates: this.props.includeDates,
-	      showConfirmButtons: this.props.showConfirmButtons,
-	      showTime: this.props.showTime,
-	      showSeconds: this.props.showSeconds,
 	      showYearDropdown: this.props.showYearDropdown,
 	      todayButton: this.props.todayButton,
 	      outsideClickIgnoreClass: outsideClickIgnoreClass });
 	  },
 	  renderDateInput: function renderDateInput() {
+	    console.log('render input');
 	    var className = (0, _classnames3.default)(this.props.className, _defineProperty({}, outsideClickIgnoreClass, this.state.open));
 	    return _react2.default.createElement(_date_input2.default, {
 	      ref: 'input',
 	      id: this.props.id,
 	      name: this.props.name,
-	      date: this.state.currentDate,
+	      date: this.props.selected,
 	      locale: this.props.locale,
 	      minDate: this.props.minDate,
 	      maxDate: this.props.maxDate,
@@ -37101,7 +37114,7 @@
 	      showTime: this.props.showTime });
 	  },
 	  renderClearButton: function renderClearButton() {
-	    if (this.props.isClearable && this.state.currentDate != null) {
+	    if (this.props.isClearable && this.props.selected != null) {
 	      return _react2.default.createElement('a', { className: 'react-datepicker__close-icon', href: '#', onClick: this.onClearClick });
 	    } else {
 	      return null;
@@ -50034,14 +50047,17 @@
 	    };
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    console.log('will receive props input');
 	    if (this.props.showTime) {
 	      if (!(0, _date_utils.isSameTime)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
+	        console.log('update input');
 	        this.setState({
 	          maybeDate: this.safeDateFormat(newProps)
 	        });
 	      }
 	    } else {
 	      if (!(0, _date_utils.isSameDay)(newProps.date, this.props.date) || newProps.locale !== this.props.locale || newProps.dateFormat !== this.props.dateFormat) {
+	        console.log('update cal input');
 	        this.setState({
 	          maybeDate: this.safeDateFormat(newProps)
 	        });
@@ -50403,7 +50419,6 @@
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'react-datepicker' },
-	      _react2.default.createElement('div', { className: 'react-datepicker__triangle' }),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'react-datepicker__header' },
@@ -52998,6 +53013,668 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _timepicker = __webpack_require__(438);
+
+	var _timepicker2 = _interopRequireDefault(_timepicker);
+
+	var _calendar = __webpack_require__(427);
+
+	var _calendar2 = _interopRequireDefault(_calendar);
+
+	var _calendar3 = __webpack_require__(441);
+
+	var _calendar4 = _interopRequireDefault(_calendar3);
+
+	var _time = __webpack_require__(442);
+
+	var _time2 = _interopRequireDefault(_time);
+
+	var _classnames = __webpack_require__(431);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _date_utils = __webpack_require__(426);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside';
+
+	var DateTimePicker = _react2.default.createClass({
+	  displayName: 'DateTimePicker',
+
+	  propTypes: {
+	    dateFormat: _react2.default.PropTypes.string.isRequired,
+	    endDate: _react2.default.PropTypes.object,
+	    excludeDates: _react2.default.PropTypes.array,
+	    filterDate: _react2.default.PropTypes.func,
+	    hour24: _react2.default.PropTypes.bool,
+	    includeDates: _react2.default.PropTypes.array,
+	    locale: _react2.default.PropTypes.string,
+	    maxDate: _react2.default.PropTypes.object,
+	    minDate: _react2.default.PropTypes.object,
+	    onChangeTime: _react2.default.PropTypes.func,
+	    onClickOutside: _react2.default.PropTypes.func,
+	    onClickOk: _react2.default.PropTypes.func.isRequired,
+	    onClickCancel: _react2.default.PropTypes.func.isRequired,
+	    onSelect: _react2.default.PropTypes.func.isRequired,
+	    selected: _react2.default.PropTypes.object,
+	    showSeconds: _react2.default.PropTypes.bool,
+	    showYearDropdown: _react2.default.PropTypes.bool,
+	    startDate: _react2.default.PropTypes.object,
+	    todayButton: _react2.default.PropTypes.string,
+	    nowButton: _react2.default.PropTypes.string
+	  },
+
+	  mixins: [__webpack_require__(434)],
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      selectedDate: this.props.selected || (0, _moment2.default)(),
+	      calendarActive: true
+	    };
+	  },
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      dateFormat: 'L',
+	      locale: (0, _moment2.default)().locale()
+	    };
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if (nextProps.selected && !(0, _date_utils.isSameDay)(nextProps.selected, this.props.selected)) {
+	      this.setState({
+	        selectedDate: nextProps.selected
+	      });
+	    }
+	  },
+	  handleCalendarChange: function handleCalendarChange(day) {
+	    var newDate = this.state.selectedDate.clone().year(day.year()).month(day.month()).date(day.date());
+	    this.setState({ selectedDate: newDate });
+	    if (this.props.onSelect) {
+	      this.props.onSelect(newDate);
+	    }
+	  },
+	  handleTimeChange: function handleTimeChange(date) {
+	    this.setState({ selectedDate: date });
+	    if (this.props.onSelect) {
+	      this.props.onSelect(date);
+	    }
+	  },
+	  handleOkClick: function handleOkClick() {
+	    this.props.onClickOk(this.state.selectedDate);
+	  },
+	  handleCancelClick: function handleCancelClick() {
+	    this.setState({ selectedDate: this.props.selected || (0, _moment2.default)() });
+	    this.props.onClickCancel();
+	  },
+	  handleCalendarTabClick: function handleCalendarTabClick() {
+	    this.setState({
+	      calendarActive: true
+	    });
+	  },
+	  handleTimeTabClick: function handleTimeTabClick() {
+	    this.setState({
+	      calendarActive: false
+	    });
+	  },
+	  handleClickOutside: function handleClickOutside(event) {
+	    this.props.onClickOutside(event);
+	  },
+	  handleClickOutsideCalendar: function handleClickOutsideCalendar(event) {},
+	  renderTime: function renderTime() {
+	    return _react2.default.createElement(_timepicker2.default, {
+	      date: this.state.selectedDate,
+	      dateFormat: this.props.dateFormat,
+	      hour24: this.props.hour24,
+	      nowButton: this.props.nowButton,
+	      onChangeTime: this.handleTimeChange,
+	      showSeconds: this.props.showSeconds
+	    });
+	  },
+	  renderCalendarView: function renderCalendarView() {
+	    return _react2.default.createElement(_calendar2.default, {
+	      locale: this.props.locale,
+	      dateFormat: this.props.dateFormat,
+	      selected: this.state.selectedDate,
+	      onSelect: this.handleCalendarChange,
+	      openToDate: this.props.openToDate,
+	      minDate: this.props.minDate,
+	      maxDate: this.props.maxDate,
+	      startDate: this.props.startDate,
+	      endDate: this.props.endDate,
+	      excludeDates: this.props.excludeDates,
+	      filterDate: this.props.filterDate,
+	      onClickOutside: this.handleClickOutsideCalendar,
+	      onClickOk: this.handleOkClick,
+	      onClickCancel: this.handleCancelClick,
+	      includeDates: this.props.includeDates,
+	      showYearDropdown: this.props.showYearDropdown,
+	      todayButton: this.props.todayButton,
+	      outsideClickIgnoreClass: outsideClickIgnoreClass });
+	  },
+	  renderConfirmButton: function renderConfirmButton() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__confirm-btn' },
+	      _react2.default.createElement(
+	        'button',
+	        { className: 'react-datepicker__cancel-btn', onClick: this.handleCancelClick },
+	        'CANCEL'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { className: 'react-datepicker__ok-btn', onClick: this.handleOkClick },
+	        'OK'
+	      )
+	    );
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datetimepicker' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'react-datepicker__tabs' },
+	        _react2.default.createElement(
+	          'span',
+	          { className: (0, _classnames2.default)('react-datepicker__tab-calendar', { 'react-datepicker__tab-calendar--selected': this.state.calendarActive }), onClick: this.handleCalendarTabClick },
+	          _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: _calendar4.default } })
+	        ),
+	        _react2.default.createElement(
+	          'span',
+	          { className: (0, _classnames2.default)('react-datepicker__tab-time', { 'react-datepicker__tab-time--selected': !this.state.calendarActive }), onClick: this.handleTimeTabClick },
+	          _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: _time2.default } })
+	        )
+	      ),
+	      this.state.calendarActive ? this.renderCalendarView() : this.renderTime(),
+	      this.renderConfirmButton()
+	    );
+	  }
+	});
+
+	module.exports = DateTimePicker;
+
+/***/ },
+/* 438 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _moment = __webpack_require__(326);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(431);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _time_dropdown = __webpack_require__(439);
+
+	var _time_dropdown2 = _interopRequireDefault(_time_dropdown);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TimePicker = _react2.default.createClass({
+	  displayName: 'TimePicker',
+	  propTypes: {
+	    date: _react2.default.PropTypes.object,
+	    dateFormat: _react2.default.PropTypes.string,
+	    hour24: _react2.default.PropTypes.bool,
+	    onChangeTime: _react2.default.PropTypes.func.isRequired,
+	    nowButton: _react2.default.PropTypes.string,
+	    showSeconds: _react2.default.PropTypes.bool
+	  },
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      date: (0, _moment2.default)(),
+	      dateFormat: "DD/MM/YYYY HH:mm:ss"
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    return {};
+	  },
+	  handleNowClick: function handleNowClick() {
+	    var now = (0, _moment2.default)();
+	    var temp = this.props.date.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
+	    this.props.onChangeTime(temp);
+	  },
+	  onIncreaseHour: function onIncreaseHour() {
+	    if (this.props.hour24) {
+	      if (this.props.date.hour() < 23) {
+	        this.props.onChangeTime(this.props.date.clone().add(1, 'h'));
+	      }
+	    } else {
+	      if (this.props.date.format('hh') < 12) {
+	        if (this.props.date.hour() === 11) {
+	          this.props.onChangeTime(this.props.date.clone().hour(0));
+	        } else if (this.props.date.hour() === 23) {
+	          this.props.onChangeTime(this.props.date.clone().hour(12));
+	        } else {
+	          this.props.onChangeTime(this.props.date.clone().add(1, 'h'));
+	        }
+	      }
+	    }
+	  },
+	  onDecreaseHour: function onDecreaseHour() {
+	    if (this.props.hour24) {
+	      if (this.props.date.hour() > 0) {
+	        this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
+	      }
+	    } else {
+	      if (this.props.date.format('hh') > 1) {
+	        if (this.props.date.hour() === 12) {
+	          this.props.onChangeTime(this.props.date.clone().hour(23));
+	        } else if (this.props.date.hour() === 0) {
+	          this.props.onChangeTime(this.props.date.clone().hour(11));
+	        } else {
+	          this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
+	        }
+	      }
+	    }
+	  },
+	  onIncreaseMinute: function onIncreaseMinute() {
+	    if (this.props.date.minute() < 59) {
+	      this.props.onChangeTime(this.props.date.clone().add(1, 'm'));
+	    }
+	  },
+	  onDecreaseMinute: function onDecreaseMinute() {
+	    if (this.props.date.minute() > 0) {
+	      this.props.onChangeTime(this.props.date.clone().subtract(1, 'm'));
+	    }
+	  },
+	  onIncreaseSecond: function onIncreaseSecond() {
+	    if (this.props.date.second() < 59) {
+	      this.props.onChangeTime(this.props.date.clone().add(1, 's'));
+	    }
+	  },
+	  onDecreaseSecond: function onDecreaseSecond() {
+	    if (this.props.date.second() > 0) {
+	      this.props.onChangeTime(this.props.date.clone().subtract(1, 's'));
+	    }
+	  },
+	  onAmpmChange: function onAmpmChange() {
+	    if (this.props.date.hour() === 12) {
+
+	      this.props.onChangeTime(this.props.date.clone().hour(0));
+	    } else if (this.props.date.hour() < 12) {
+	      this.props.onChangeTime(this.props.date.clone().add(12, 'h'));
+	    } else {
+	      this.props.onChangeTime(this.props.date.clone().subtract(12, 'h'));
+	    }
+	  },
+	  onOptionHourChange: function onOptionHourChange(hour) {
+	    if (this.props.hour24) {
+	      this.props.onChangeTime(this.props.date.clone().hour(hour));
+	    } else {
+	      if (this.props.date.hour() < 12) {
+	        //AM
+	        if (hour === 12) {
+	          this.props.onChangeTime(this.props.date.clone().hour(0));
+	        } else {
+	          this.props.onChangeTime(this.props.date.clone().hour(hour));
+	        }
+	      } else {
+	        //PM
+	        if (hour === 12) {
+	          this.props.onChangeTime(this.props.date.clone().hour(12));
+	        } else {
+	          this.props.onChangeTime(this.props.date.clone().hour(hour + 12));
+	        }
+	      }
+	    }
+	  },
+	  onOptionMinuteChange: function onOptionMinuteChange(minute) {
+	    this.props.onChangeTime(this.props.date.clone().minute(minute));
+	  },
+	  onOptionSecondChange: function onOptionSecondChange(second) {
+	    this.props.onChangeTime(this.props.date.clone().second(second));
+	  },
+	  renderGrid: function renderGrid() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'grid' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseHour })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(_time_dropdown2.default, { value: this.props.hour24 ? parseInt(this.props.date.format('HH')) : parseInt(this.props.date.format('hh')), minValue: this.props.hour24 ? 0 : 1, maxValue: this.props.hour24 ? 23 : 12, onChange: this.onOptionHourChange })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseHour })
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column--small' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ':'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseMinute })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(_time_dropdown2.default, { value: parseInt(this.props.date.format('mm')), minValue: 0, maxValue: 59, onChange: this.onOptionMinuteChange })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseMinute })
+	        )
+	      ),
+	      this.props.showSeconds ? _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column--small' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            ':'
+	          )
+	        )
+	      ) : false,
+	      this.props.showSeconds ? _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onIncreaseSecond })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(_time_dropdown2.default, { value: parseInt(this.props.date.format('ss')), minValue: 0, maxValue: 59, onChange: this.onOptionSecondChange })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onDecreaseSecond })
+	        )
+	      ) : false,
+	      !this.props.hour24 ? _react2.default.createElement(
+	        'div',
+	        { className: 'grid__column' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-up-time', onClick: this.onAmpmChange })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'amPm-label' },
+	            this.props.date.hour() >= 12 ? "PM" : "AM"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'grid__item' },
+	          _react2.default.createElement('div', { className: 'triangle-down-time', onClick: this.onAmpmChange })
+	        )
+	      ) : false
+	    );
+	  },
+	  renderNowButton: function renderNowButton() {
+	    if (!this.props.nowButton) {
+	      return;
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__now-button' },
+	      _react2.default.createElement(
+	        'span',
+	        { onClick: this.handleNowClick },
+	        this.props.nowButton
+	      )
+	    );
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'react-datepicker__time' },
+	      this.renderGrid(),
+	      this.renderNowButton()
+	    );
+	  }
+	});
+	module.exports = TimePicker;
+
+/***/ },
+/* 439 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _time_dropdown_options = __webpack_require__(440);
+
+	var _time_dropdown_options2 = _interopRequireDefault(_time_dropdown_options);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TimeDropdown = _react2.default.createClass({
+	  displayName: 'TimeDropdown',
+
+	  propTypes: {
+	    minValue: _react2.default.PropTypes.number,
+	    maxValue: _react2.default.PropTypes.number,
+	    onChange: _react2.default.PropTypes.func.isRequired,
+	    value: _react2.default.PropTypes.number.isRequired
+	  },
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      dropdownVisible: false
+	    };
+	  },
+	  renderReadView: function renderReadView() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'span',
+	        { className: 'time-dropdown_label', onClick: this.toggleDropdown },
+	        this.props.value > 9 ? this.props.value.toString() : '0' + this.props.value.toString()
+	      )
+	    );
+	  },
+	  renderDropdown: function renderDropdown() {
+	    if (!this.state.dropdownVisible) {
+	      return;
+	    } else {
+	      return _react2.default.createElement(_time_dropdown_options2.default, {
+	        value: this.props.value,
+	        minValue: this.props.minValue,
+	        maxValue: this.props.maxValue,
+	        onChange: this.onChange,
+	        onCancel: this.toggleDropdown });
+	    }
+	  },
+	  onChange: function onChange(option) {
+	    this.toggleDropdown();
+	    if (option === this.props.value) return;
+	    this.props.onChange(option);
+	  },
+	  toggleDropdown: function toggleDropdown() {
+	    this.setState({
+	      dropdownVisible: !this.state.dropdownVisible
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'time-dropdown_main' },
+	      this.renderReadView(),
+	      this.renderDropdown()
+	    );
+	  }
+	});
+
+	module.exports = TimeDropdown;
+
+/***/ },
+/* 440 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function generateOptions(min, max) {
+	  var list = [];
+	  for (var i = min; i <= max; i++) {
+	    list.push(i);
+	  }
+	  return list;
+	}
+
+	var TimeDropdownOptions = _react2.default.createClass({
+	  displayName: 'TimeDropdownOptions',
+
+	  propTypes: {
+	    minValue: _react2.default.PropTypes.number,
+	    maxValue: _react2.default.PropTypes.number,
+	    onCancel: _react2.default.PropTypes.func.isRequired,
+	    onChange: _react2.default.PropTypes.func.isRequired,
+	    value: _react2.default.PropTypes.number.isRequired
+	  },
+
+	  mixins: [__webpack_require__(434)],
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      optionsList: generateOptions(this.props.minValue, this.props.maxValue)
+	    };
+	  },
+	  renderOptions: function renderOptions() {
+	    var _this = this;
+
+	    var selectedValue = this.props.value;
+	    var options = this.state.optionsList.map(function (option) {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: selectedValue === option ? "time-dropdown_option--selected" : "time-dropdown_option",
+	          key: option,
+	          onClick: _this.onChange.bind(_this, option) },
+	        option
+	      );
+	    });
+
+	    /*options.unshift(
+	      <div className="react-datepicker__year-option"
+	          ref={"upcoming"}
+	          key={"upcoming"}
+	          onClick={this.incrementYears}>
+	        <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-upcoming"></a>
+	      </div>
+	    )
+	    options.push(
+	      <div className="react-datepicker__year-option"
+	          ref={"previous"}
+	          key={"previous"}
+	          onClick={this.decrementYears}>
+	        <a className="react-datepicker__navigation react-datepicker__navigation--years react-datepicker__navigation--years-previous"></a>
+	      </div>
+	    )*/
+	    return options;
+	  },
+	  onChange: function onChange(value) {
+	    this.props.onChange(value);
+	  },
+	  handleClickOutside: function handleClickOutside() {
+	    this.props.onCancel();
+	  },
+
+
+	  /*shiftYears (amount) {
+	    var years = this.state.yearsList.map(function (year) {
+	      return year + amount
+	    })
+	     this.setState({
+	      yearsList: years
+	    })
+	  },
+	   incrementYears () {
+	    return this.shiftYears(1)
+	  },
+	   decrementYears () {
+	    return this.shiftYears(-1)
+	  },*/
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'time-dropdown_dropdown' },
+	      this.renderOptions()
+	    );
+	  }
+	});
+
+	module.exports = TimeDropdownOptions;
+
+/***/ },
+/* 441 */
+/***/ function(module, exports) {
+
+	module.exports = "<svg fill=\"#444444\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z\"></path></svg>"
+
+/***/ },
+/* 442 */
+/***/ function(module, exports) {
+
+	module.exports = "<svg fill=\"#444444\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z\"></path><path d=\"M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z\"></path></svg>"
+
+/***/ },
+/* 443 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -53032,7 +53709,7 @@
 	});
 
 /***/ },
-/* 438 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53107,7 +53784,7 @@
 	});
 
 /***/ },
-/* 439 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53179,7 +53856,7 @@
 	});
 
 /***/ },
-/* 440 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53224,7 +53901,7 @@
 	});
 
 /***/ },
-/* 441 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53311,7 +53988,7 @@
 	});
 
 /***/ },
-/* 442 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53386,7 +54063,7 @@
 	});
 
 /***/ },
-/* 443 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53465,7 +54142,7 @@
 	});
 
 /***/ },
-/* 444 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53544,7 +54221,7 @@
 	});
 
 /***/ },
-/* 445 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53623,7 +54300,7 @@
 	});
 
 /***/ },
-/* 446 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53699,7 +54376,7 @@
 	});
 
 /***/ },
-/* 447 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53774,7 +54451,7 @@
 	});
 
 /***/ },
-/* 448 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53890,7 +54567,7 @@
 	});
 
 /***/ },
-/* 449 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53969,7 +54646,7 @@
 	});
 
 /***/ },
-/* 450 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54073,7 +54750,7 @@
 	module.exports = DateRange;
 
 /***/ },
-/* 451 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54144,7 +54821,7 @@
 	});
 
 /***/ },
-/* 452 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54221,7 +54898,7 @@
 	});
 
 /***/ },
-/* 453 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54289,7 +54966,7 @@
 	});
 
 /***/ },
-/* 454 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54360,7 +55037,7 @@
 	});
 
 /***/ },
-/* 455 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54430,15 +55107,15 @@
 	});
 
 /***/ },
-/* 456 */
+/* 462 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 457 */
-456,
-/* 458 */
+/* 463 */
+462,
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54482,7 +55159,7 @@
 	});
 
 /***/ },
-/* 459 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54499,7 +55176,7 @@
 
 	var _example_components2 = _interopRequireDefault(_example_components);
 
-	var _hero_example = __webpack_require__(458);
+	var _hero_example = __webpack_require__(464);
 
 	var _hero_example2 = _interopRequireDefault(_hero_example);
 
@@ -54511,16 +55188,56 @@
 
 	var _calendar2 = _interopRequireDefault(_calendar);
 
+	var _datetimepicker = __webpack_require__(437);
+
+	var _datetimepicker2 = _interopRequireDefault(_datetimepicker);
+
+	var _datepicker = __webpack_require__(325);
+
+	var _datepicker2 = _interopRequireDefault(_datepicker);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
 	  displayName: 'DateTimePickerExample',
 
+	  getInitialState: function getInitialState() {
+	    return {
+	      currentDate: (0, _moment2.default)()
+	    };
+	  },
 	  componentDidMount: function componentDidMount() {
-	    window.insertDatepicker(function () {}, (0, _moment2.default)(), { dateFormat: 'L LT', locale: 'en_us', showTime: true, showSeconds: true, showConfirm: true, todayButton: 'Today', yearDropdown: true }, document.getElementById('insertDatepicker'));
+	    /*window.insertDatepicker(
+	      function(){},
+	      Moment(),
+	      {dateFormat:'L LT', locale: 'en_us', showTime: true, showSeconds: true, showConfirm: true, todayButton: 'Today', readOnly: true, yearDropdown: true},
+	      document.getElementById('insertDatepicker')
+	    );*/
 	  },
 	  handleCalendarSelect: function handleCalendarSelect(date) {
 	    console.log(date.format());
+	  },
+	  handleDatetimepickerSelect: function handleDatetimepickerSelect(date) {
+	    console.log(date, 'example on select');
+	  },
+	  handleOkClick: function handleOkClick() {},
+	  handleCancelClick: function handleCancelClick() {},
+	  renderDatetimepicker: function renderDatetimepicker() {
+	    return _react2.default.createElement(_datetimepicker2.default, {
+	      locale: 'en',
+	      dateFormat: 'MMMM',
+	      selected: (0, _moment2.default)(),
+	      onSelect: this.handleDatetimepickerSelect,
+	      onClickOk: this.handleOkClick,
+	      onClickCancel: this.handleCancelClick,
+	      onClickOutside: function onClickOutside() {
+	        console.log('click outside picker example');
+	      },
+	      showYearDropdown: true,
+	      showSeconds: true,
+	      todayButton: 'Today',
+	      nowButton: 'Now'
+	    });
 	  },
 	  renderCalendar: function renderCalendar() {
 	    return _react2.default.createElement(
@@ -54531,20 +55248,21 @@
 	        dateFormat: 'MMMM',
 	        selected: (0, _moment2.default)(),
 	        onSelect: this.handleCalendarSelect,
+	        onClickOutside: function onClickOutside() {},
 	        showYearDropdown: true,
+	        showSeconds: true,
 	        todayButton: 'Today'
 	      })
 	    );
 	  },
+	  onChange: function onChange(date) {
+	    console.log(date, 'example');
+	    this.setState({ currentDate: date });
+	  },
 	  render: function render() {
-	    var exampleStyles = {
-	      textAlign: 'center',
-	      padding: '30px',
-	      minHeight: '500px'
-	    };
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { id: 'datetimepicker_example--main' },
 	      _react2.default.createElement(
 	        'h1',
 	        null,
@@ -54553,11 +55271,20 @@
 	      _react2.default.createElement(
 	        'div',
 	        null,
-	        'Test insertDatepicker method:',
-	        _react2.default.createElement('div', {
-	          id: 'insertDatepicker',
-	          style: { display: 'inline-block' } }),
-	        this.renderCalendar()
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'datetimepicker_example--popup' },
+	          _react2.default.createElement('div', { id: 'insertDatepicker' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_datepicker2.default, {
+	            selected: this.state.currentDate,
+	            showYearDropdown: true,
+	            onChange: this.onChange
+	          })
+	        )
 	      )
 	    );
 	  }

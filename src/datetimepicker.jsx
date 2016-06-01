@@ -5,7 +5,7 @@ import Calendar from './calendar';
 import calendarIcon from './images/calendar.svg';
 import timeIcon from './images/time.svg';
 import classnames from 'classnames';
-import { isSameDay, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
+import { isSameDay, isSameTime, allDaysDisabledBefore, allDaysDisabledAfter, getEffectiveMinDate, getEffectiveMaxDate } from './date_utils'
 
 var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
 
@@ -39,7 +39,7 @@ var DateTimePicker = React.createClass({
 
   getInitialState () {
     return {
-      selectedDate: this.props.selected || moment(),
+      selectedDate: this.props.selected || moment().startOf('day'),
       calendarActive: true
     }
   },
@@ -51,7 +51,7 @@ var DateTimePicker = React.createClass({
   },
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.selected && !isSameDay(nextProps.selected, this.props.selected)) {
+    if (nextProps.selected && !isSameTime(nextProps.selected, this.props.selected)) {
       this.setState({
         selectedDate: nextProps.selected
       })
@@ -94,6 +94,7 @@ var DateTimePicker = React.createClass({
   },
   renderTime(){
       return (
+        <div className="react-datepicker__timepicker">
         <TimePicker
           date={this.state.selectedDate}
           dateFormat={this.props.dateFormat}
@@ -102,6 +103,7 @@ var DateTimePicker = React.createClass({
           onChangeTime={this.handleTimeChange}
           showSeconds={this.props.showSeconds}
         />
+        </div>
       )
   },
   renderCalendarView(){
@@ -137,7 +139,7 @@ var DateTimePicker = React.createClass({
   },
   render () {
     return (
-      <div className="react-datetimepicker">
+      <div className="react-datepicker">
         <div className="react-datepicker__tabs">
           <span className={classnames('react-datepicker__tab-calendar', {'react-datepicker__tab-calendar--selected': this.state.calendarActive})} onClick={this.handleCalendarTabClick}>
             <span dangerouslySetInnerHTML={{__html: calendarIcon}}/>

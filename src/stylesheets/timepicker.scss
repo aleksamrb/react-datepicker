@@ -1,3 +1,8 @@
+.react-datepicker__timepicker{
+  background-color: $color-profile-10;
+  padding: 1.7rem 0.1rem 0.7rem 0.1rem;
+}
+
 .react-datepicker__time{
     text-align: center;
     background-color: $color-profile-10;
@@ -15,7 +20,8 @@
 
    .react-datepicker__now-button{
      text-align: center;
-     padding-bottom: 1rem;
+     padding-top: 1rem;
+     padding-bottom: 0.2rem;
      span{
        border: 1px solid $color-profile-13;
        padding: 0.1em 1.8em;
@@ -31,7 +37,6 @@
    .grid{
      display: flex;
      flex-direction: row;
-     padding: 1.5rem 0.1rem 0.7rem 0.1rem;
    }
 
    .grid__column{

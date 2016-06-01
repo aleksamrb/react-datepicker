@@ -171,14 +171,14 @@ var Calendar = React.createClass({
       return
     }
     return (
-      <div className="react-datepicker__today-button" onClick={() => this.props.onSelect(moment())}>
-        {this.props.todayButton}
+      <div className="react-datepicker__today-button">
+        <span onClick={() => this.props.onSelect(moment())}>{this.props.todayButton}</span>
       </div>
     )
   },
   render () {
     return (
-      <div className="react-datepicker">
+      <div className="react-datepicker__calendar">
         <div className="react-datepicker__header">
           {this.renderPreviousMonthButton()}
           {this.renderCurrentMonth()}
