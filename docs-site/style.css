@@ -130,6 +130,9 @@
       background: #EF6C00;
       color: #fff; }
 
+.react-datepicker__tether-out-of-bounds-top {
+  display: none; }
+
 .react-datepicker__tether-element {
   z-index: 2500; }
 
@@ -331,8 +334,7 @@
   .react-datepicker__year-option:hover {
     background-color: #f0f0f0; }
   .react-datepicker__year-option--selected {
-    position: absolute;
-    left: 30px; }
+    background-color: #d7d7d7; }
 
 .react-datepicker__close-icon {
   background-color: transparent;

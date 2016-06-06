@@ -37006,7 +37006,11 @@
 	    this.setOpen(false);
 	  },
 	  setSelected: function setSelected(date) {
-	    this.props.onChange(date);
+	    if (this.props.calendarOnly && !(0, _date_utils.isSameDay)(this.props.selected, date)) {
+	      this.props.onChange(date);
+	    } else if (!this.props.calendarOnly && !(0, _date_utils.isSameTime)(this.props.selected, date)) {
+	      this.props.onChange(date);
+	    }
 	  },
 	  onInputClick: function onInputClick() {
 	    if (!this.props.disabled) {
@@ -37029,8 +37033,7 @@
 	    this.props.onChange(date);
 	    this.setOpen(false);
 	  },
-	  handleCancelClick: function handleCancelClick() {
-	    this.props.onChange(this.props.selected || (0, _moment2.default)());
+	  handleCancelClick: function handleCancelClick(event) {
 	    this.setOpen(false);
 	  },
 	  renderDatetimepicker: function renderDatetimepicker() {
@@ -37045,9 +37048,7 @@
 	        locale: this.props.locale,
 	        dateFormat: this.props.dateFormatCalendar,
 	        selected: this.props.selected,
-	        onSelect: function onSelect() {
-	          console.log('on select');
-	        },
+	        onSelect: function onSelect() {},
 	        openToDate: this.props.openToDate,
 	        minDate: this.props.minDate,
 	        maxDate: this.props.maxDate,

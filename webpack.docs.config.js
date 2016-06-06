@@ -8,7 +8,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve('./docs-site/'),
-    filename: 'bundle.js',
+    filename: 'react-datetimepicker.js',
     publicPath: '/'
   },
   resolve: {

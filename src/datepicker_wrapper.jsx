@@ -55,17 +55,17 @@ var DatePickerWrapper = React.createClass({
   },
 
   onChangeDate(date){
-    this.setState({selected: date});
-    if(this.props.onChange){
+    if(this.props.onChange && !isSame(this.state.selected, date)){
       this.props.onChange(date);
     }
+    this.setState({selected: date});
   },
-
   render () {
     return(
       <DatePicker
         {...this.props}
         selected={this.state.selected}
+        onCancel={this.onCancelDate}
         onChange={this.onChangeDate}
       />
     )
@@ -84,6 +84,7 @@ window.insertDatepicker = function(onChangeCallback, date, options, el) {
     dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
     disabled={options.disabled || false}
     endDate={options.endDate || null}
+    hour24={options.hour24 || false}
     isClearable={options.isClearable || false}
     locale={options.locale || moment().locale()}
     maxDate={options.maxDate || null}

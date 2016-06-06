@@ -2,7 +2,9 @@
 @import "mixins";
 @import "timepicker";
 
-
+.react-datepicker__tether-out-of-bounds-top{
+    display: none;
+}
 .react-datepicker__tether-element {
   z-index: 2500;
 }
@@ -298,8 +300,7 @@
   }
 
   &--selected {
-    position: absolute;
-    left: 30px;
+    background-color: darken($color-profile-12, 10%);
   }
 }
 

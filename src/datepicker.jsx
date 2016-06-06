@@ -5,7 +5,7 @@ import Calendar from './calendar'
 import React from 'react'
 import TetherComponent from './tether_component'
 import classnames from 'classnames'
-import { isSameDay } from './date_utils'
+import { isSameDay, isSameTime } from './date_utils'
 import DateTimePicker from './datetimepicker'
 
 var outsideClickIgnoreClass = 'react-datepicker-ignore-onclickoutside'
@@ -111,9 +111,13 @@ var DatePicker = React.createClass({
     this.setSelected(date);
     this.setOpen(false);
   },
-
   setSelected (date) {
-    this.props.onChange(date);
+    if (this.props.calendarOnly && !isSameDay(this.props.selected, date)) {
+      this.props.onChange(date);
+    }
+    else if (!this.props.calendarOnly && !isSameTime(this.props.selected, date)) {
+      this.props.onChange(date);
+    }
   },
 
   onInputClick () {
@@ -138,8 +142,7 @@ var DatePicker = React.createClass({
     this.props.onChange(date);
     this.setOpen(false);
   },
-  handleCancelClick (){
-    this.props.onChange(this.props.selected || moment());
+  handleCancelClick (event){
     this.setOpen(false);
   },
   renderDatetimepicker(){
@@ -153,7 +156,7 @@ var DatePicker = React.createClass({
               locale={this.props.locale}
               dateFormat={this.props.dateFormatCalendar}
               selected={this.props.selected}
-              onSelect={function(){console.log('on select');}}
+              onSelect={function(){}}
               openToDate={this.props.openToDate}
               minDate={this.props.minDate}
               maxDate={this.props.maxDate}
