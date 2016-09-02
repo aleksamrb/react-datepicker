@@ -1,9 +1,8 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
-import moment from 'moment'
 
 export default React.createClass({
-  displayName: 'OpenToDate',
+  displayName: 'Default',
 
   getInitialState () {
     return {
@@ -22,14 +21,16 @@ export default React.createClass({
       <pre className="column example__code">
         <code className="jsx">
           {"<DatePicker"}<br />
-              {"openToDate={moment('1993-09-28')}"}<br />
-              {"selected={this.state.startDate}"}<br />
-              {"onChange={this.handleChange} />"}
+              {"utcOffset='1320'"}<br />
+              {"todayButton='Today'"}<br />
+              {"onChange={this.handleChange} />"}
         </code>
       </pre>
       <div className="column">
         <DatePicker
-            openToDate={moment('1993-09-28')}
+            utcOffset={1320}
+            dateFormat="DD-MMM HH:mm"
+            todayButton="Today in Farawayland"
             selected={this.state.startDate}
             onChange={this.handleChange} />
       </div>

@@ -164,6 +164,16 @@
     font-weight: bold;
   }
 
+  &--highlighted {
+    border-radius: $border-radius;
+    background-color: $highlighted-color;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($highlighted-color, 5%);
+    }
+  }
+
   &--selected,
   &--in-range {
     border-radius: 20px;

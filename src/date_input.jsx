@@ -6,8 +6,12 @@ var DateInput = React.createClass({
   displayName: 'DateInput',
 
   propTypes: {
+    customInput: React.PropTypes.element,
     date: React.PropTypes.object,
-    dateFormat: React.PropTypes.string,
+    dateFormat: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+    ]),
     disabled: React.PropTypes.bool,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
@@ -63,7 +67,7 @@ var DateInput = React.createClass({
   safeDateFormat (props) {
     return props.date && props.date.clone()
       .locale(props.locale || moment.locale())
-      .format(props.dateFormat) || ''
+      .format(Array.isArray(props.dateFormat) ? props.dateFormat[0] : props.dateFormat) || ''
   },
 
   handleBlur (event) {
@@ -80,7 +84,7 @@ var DateInput = React.createClass({
   },
 
   render () {
-    const { customInput, date, locale, minDate, maxDate, excludeDates, includeDates, filterDate, dateFormat, onChangeDate, timezone, ...rest } = this.props // eslint-disable-line no-unused-vars
+    const { customInput, date, locale, minDate, maxDate, excludeDates, includeDates, filterDate, dateFormat, onChangeDate, ...rest } = this.props // eslint-disable-line no-unused-vars
 
     if (customInput) {
       return React.cloneElement(customInput, {

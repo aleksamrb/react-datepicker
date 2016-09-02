@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 
 export default React.createClass({
-  displayName: 'OpenToDate',
+  displayName: 'highlightDates',
 
   getInitialState () {
     return {
@@ -22,16 +22,18 @@ export default React.createClass({
       <pre className="column example__code">
         <code className="jsx">
           {"<DatePicker"}<br />
-              {"openToDate={moment('1993-09-28')}"}<br />
               {"selected={this.state.startDate}"}<br />
-              {"onChange={this.handleChange} />"}
+              {"onChange={this.handleChange}"}<br />
+        <strong>    {"highlightDates={[moment().subtract(7, 'days'), moment().add(7, 'days')]}"}</strong><br />
+              {"placeholderText=\"This highlights a week ago and a week from today\" />"}
         </code>
       </pre>
       <div className="column">
         <DatePicker
-            openToDate={moment('1993-09-28')}
             selected={this.state.startDate}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+            highlightDates={[moment().subtract(7, 'days'), moment().add(7, 'days')]}
+            placeholderText="This highlights a week ago and a week from today" />
       </div>
     </div>
   }

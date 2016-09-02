@@ -21,13 +21,19 @@ var DatePicker = React.createClass({
     autoComplete: React.PropTypes.string,
     calendarOnly: React.PropTypes.bool,
     className: React.PropTypes.string,
-    dateFormat: React.PropTypes.string,
+    customInput: React.PropTypes.element,
+    dateFormat: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+    ]),
     dateFormatCalendar: React.PropTypes.string,
     disabled: React.PropTypes.bool,
     endDate: React.PropTypes.object,
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
     hour24: React.PropTypes.bool,
+    fixedHeight: React.PropTypes.bool,
+    highlightDates: React.PropTypes.array,
     id: React.PropTypes.string,
     includeDates: React.PropTypes.array,
     inline: React.PropTypes.bool,
@@ -57,7 +63,8 @@ var DatePicker = React.createClass({
     tetherConstraints: React.PropTypes.array,
     timezone: React.PropTypes.string,
     title: React.PropTypes.string,
-    todayButton: React.PropTypes.string
+    todayButton: React.PropTypes.string,
+    utcOffset: React.PropTypes.number
   },
 
   getDefaultProps () {
@@ -76,7 +83,8 @@ var DatePicker = React.createClass({
           to: 'window',
           attachment: 'together'
         }
-      ]
+      ],
+      utcOffset: moment.utc().utcOffset()
     }
   },
 
@@ -203,12 +211,15 @@ var DatePicker = React.createClass({
           filterDate={this.props.filterDate}
           onClickOutside={this.handleCalendarClickOutside }
           onClearClick={this.onClearClick}
+          highlightDates={this.props.highlightDates}
           includeDates={this.props.includeDates}
           isClearable={this.props.isClearable}
           showYearDropdown={this.props.showYearDropdown}
           todayButton={this.props.todayButton}
+          utcOffset={this.props.utcOffset}
           outsideClickIgnoreClass={outsideClickIgnoreClass}
           className={className}
+          fixedHeight={this.props.fixedHeight}
       />
     </div>
   );
@@ -243,7 +254,8 @@ var DatePicker = React.createClass({
         readOnly={this.props.readOnly}
         required={this.props.required}
         tabIndex={this.props.tabIndex}
-        timezone={this.props.timezone}/>
+        timezone={this.props.timezone}
+        customInput={this.props.customInput} />
   },
 
   renderClearButton () {
