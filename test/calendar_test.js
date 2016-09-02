@@ -1,6 +1,6 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import Calendar from '../src/calendar'
 import YearDropdown from '../src/year_dropdown'
 

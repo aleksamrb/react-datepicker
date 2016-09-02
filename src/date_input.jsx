@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import { isSameDay, isDayDisabled, isSameTime } from './date_utils'
 
 var DateInput = React.createClass({
@@ -17,15 +17,13 @@ var DateInput = React.createClass({
     minDate: React.PropTypes.object,
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func,
-    onChangeDate: React.PropTypes.func,
-    showTime: React.PropTypes.bool
+    onChangeDate: React.PropTypes.func
   },
 
   getDefaultProps () {
     return {
       dateFormat: 'L',
-      locale: moment().locale(),
-      showTime: false
+      locale: moment().locale()
     }
   },
 
@@ -82,13 +80,25 @@ var DateInput = React.createClass({
   },
 
   render () {
-    return <input
+    const { customInput, date, locale, minDate, maxDate, excludeDates, includeDates, filterDate, dateFormat, onChangeDate, timezone, ...rest } = this.props // eslint-disable-line no-unused-vars
+
+    if (customInput) {
+      return React.cloneElement(customInput, {
+        ...rest,
+        ref: 'input',
+        value: this.state.value,
+        onBlur: this.handleBlur,
+        onChange: this.handleChange
+      })
+    }
+
+    return (<input
         ref='input'
         type='text'
-        {...this.props}
+        {...rest}
         value={this.state.value}
         onBlur={this.handleBlur}
-        onChange={this.handleChange} />
+        onChange={this.handleChange} />);
   }
 })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TestUtils from 'react-addons-test-utils'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import Day from '../src/day'
 
 function renderDay (day, props = {}) {

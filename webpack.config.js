@@ -17,6 +17,10 @@ module.exports = {
       {
           test: /\.svg$/,
           loader: 'svg-inline'
+      },
+      {
+        include: /\.json$/,
+        loaders: ['json-loader']
       }
     ]
   },

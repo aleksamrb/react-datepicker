@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import moment from 'moment';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import moment from 'moment-timezone'
 import DatePicker from './datepicker'
 import {isSame} from './date_utils'
 
@@ -44,6 +44,7 @@ var DatePickerWrapper = React.createClass({
     startDate: React.PropTypes.object,
     tabIndex: React.PropTypes.number,
     tetherConstraints: React.PropTypes.array,
+    timezone: React.PropTypes.string,
     title: React.PropTypes.string,
     todayButton: React.PropTypes.string
   },
@@ -99,6 +100,7 @@ window.insertDatepicker = function(onChangeCallback, date, options, el) {
     startDate={options.startDate || null}
     readOnly={options.readOnly || false}
     tetherConstraints={options.tetherConstraints || [{to: 'window', attachment: 'together'}]}
+    timezone={options.timezone || null}
     todayButton={options.todayButton || null}
   />, el);
 }

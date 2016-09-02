@@ -1,5 +1,5 @@
 import React from 'react'
-import Moment from 'moment'
+import moment from 'moment-timezone'
 import Calendar from '../../src/calendar.jsx'
 import DateTimePicker from '../../src/datetimepicker.jsx'
 import DatePicker from '../../src/datepicker.jsx'
@@ -10,23 +10,23 @@ export default React.createClass({
 
   getInitialState () {
     return{
-        currentDate: Moment("2016-01-01")
+        currentDate: moment("2016-01-01")
     };
   },
 
     componentDidMount(){
       var calendarOptions = {
         dateFormat:'L LT',
-        locale: 'en_us',
+        locale: 'nb_no',
         showSeconds: true,
-        todayButton: 'Today',
-        nowButton: 'Now',
         readOnly: true,
-        yearDropdown: true
+        yearDropdown: true,
+        isClearable: true,
+        timezone: 'America/Los_Angeles'
       };
       window.insertDatepicker(
-        function(){},
-        "10/12/2016 14:00",
+        function(date){ console.log('callback', date)},
+        "10/07/2016",
         calendarOptions,
         document.getElementById('insertDatepicker')
       );
@@ -52,7 +52,7 @@ export default React.createClass({
           onSelect={this.handleDatetimepickerSelect}
           onClickOk={this.handleOkClick}
           onClickCancel={this.handleCancelClick}
-          onClickOutside={function(){console.log('click outside picker example');}}
+          onClickOutside={function(){}}
           showYearDropdown
           showSeconds
           todayButton={'Today'}
@@ -86,30 +86,6 @@ export default React.createClass({
           <h1>Datetimepicker</h1>
           <div>
             <div id="datetimepicker_example--popup"><div id="insertDatepicker"></div></div>
-            <div>
-              {/*<DatePicker
-                selected={this.state.currentDate}
-                dateFormat={"DD/MM/YYYY HH:mm:ss a"}
-                dateFormatCalendar="MMMM"
-                showYearDropdown
-                todayButton={'Today'}
-                nowButton={'Now'}
-                onChange={this.onChange}
-                />*/}
-                {/*
-                  <DatePickerWrapper
-                  selected={Moment()}
-                  dateFormat={"DD/MM/YYYY HH:mm:ss a"}
-                  dateFormatCalendar="MMMM"
-                  showYearDropdown
-                  todayButton={'Today'}
-                  nowButton={'Now'}
-                  onChange={function(date){console.log(date, 'wrapper test')}}/>
-                  */}
-            </div>
-
-            {/*<div id="datetimepicker_example--onlyCalendar">{this.renderCalendar()}</div>
-          <div>{this.renderDatetimepicker()}</div>*/}
           </div>
         </div>
     )

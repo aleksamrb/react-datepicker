@@ -160,7 +160,7 @@
     background-color: $background-color;
   }
 
-  &--today {
+  &-- {
     font-weight: bold;
   }
 
@@ -343,6 +343,7 @@
     color: $color-profile-10;
     font-size: 0.8rem;
     font-weight: bold;
+    margin-left: 0.2rem;
   }
   span:hover{
     cursor: pointer;

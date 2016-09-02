@@ -6,7 +6,7 @@ import {
   getEffectiveMinDate,
   getEffectiveMaxDate
 } from '../src/date_utils'
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 describe('date_utils', function () {
   describe('isSameDay', function () {

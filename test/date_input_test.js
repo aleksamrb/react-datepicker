@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import ReactDOM from 'react-dom'
 import TestUtils from 'react-addons-test-utils'
 import DateInput from '../src/date_input.jsx'

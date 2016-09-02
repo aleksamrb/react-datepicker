@@ -102,6 +102,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	_reactDom2.default.render(_react2.default.createElement(_datetimepicker_example2.default, null), document.getElementById('app'));
+
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
@@ -36998,7 +37000,6 @@
 	    }
 	  },
 	  handleCalendarClickOutside: function handleCalendarClickOutside(event) {
-	    this.props.onChange(this.props.selected || (0, _moment2.default)());
 	    this.setOpen(false);
 	  },
 	  handleSelect: function handleSelect(date) {
@@ -53107,6 +53108,7 @@
 	    });
 	  },
 	  handleClickOutside: function handleClickOutside(event) {
+	    this.setState({ selectedDate: this.props.selected || (0, _moment2.default)() });
 	    this.props.onClickOutside(event);
 	  },
 	  handleClickOutsideCalendar: function handleClickOutsideCalendar(event) {},

@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import TimePicker from './timepicker';
 import Calendar from './calendar';
 import calendarIcon from './images/calendar.svg';
@@ -19,6 +19,7 @@ var DateTimePicker = React.createClass({
     filterDate: React.PropTypes.func,
     hour24: React.PropTypes.bool,
     includeDates: React.PropTypes.array,
+    isClearable: React.PropTypes.bool,
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
@@ -26,20 +27,22 @@ var DateTimePicker = React.createClass({
     onClickOutside: React.PropTypes.func,
     onClickOk: React.PropTypes.func.isRequired,
     onClickCancel: React.PropTypes.func.isRequired,
+    onClearClick: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
     selected: React.PropTypes.object,
     showSeconds: React.PropTypes.bool,
     showYearDropdown: React.PropTypes.bool,
     startDate: React.PropTypes.object,
     todayButton: React.PropTypes.string,
-    nowButton: React.PropTypes.string
+    nowButton: React.PropTypes.string,
+    timezone: React.PropTypes.string
   },
 
   mixins: [require('react-onclickoutside')],
 
   getInitialState () {
     return {
-      selectedDate: this.props.selected || moment().startOf('day'),
+      selectedDate: this.props.selected,
       calendarActive: true
     }
   },
@@ -58,7 +61,12 @@ var DateTimePicker = React.createClass({
     }
   },
   handleCalendarChange (day) {
-      var newDate = this.state.selectedDate.clone().year(day.year()).month(day.month()).date(day.date());
+      if(this.state.selectedDate){
+          var newDate = this.state.selectedDate.clone().year(day.year()).month(day.month()).date(day.date());
+      }
+      else{
+        var newDate = day.startOf('day');
+      }
       this.setState({selectedDate: newDate});
       if(this.props.onSelect){
           this.props.onSelect(newDate);
@@ -88,7 +96,11 @@ var DateTimePicker = React.createClass({
     });
   },
   handleClickOutside (event){
+    this.setState({selectedDate: this.props.selected || moment()});
     this.props.onClickOutside(event);
+  },
+  onClearClick(event){
+    this.setState({selectedDate: null});
   },
   handleClickOutsideCalendar (event) {
   },
@@ -102,6 +114,7 @@ var DateTimePicker = React.createClass({
           nowButton={this.props.nowButton}
           onChangeTime={this.handleTimeChange}
           showSeconds={this.props.showSeconds}
+          timezone={this.props.timezone}
         />
         </div>
       )
@@ -123,7 +136,9 @@ var DateTimePicker = React.createClass({
           onClickOutside={this.handleClickOutsideCalendar}
           onClickOk={this.handleOkClick}
           onClickCancel={this.handleCancelClick}
+          onClearClick={this.onClearClick}
           includeDates={this.props.includeDates}
+          isClearable={this.props.isClearable}
           showYearDropdown={this.props.showYearDropdown}
           todayButton={this.props.todayButton}
           outsideClickIgnoreClass={outsideClickIgnoreClass} />

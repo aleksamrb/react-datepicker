@@ -8,7 +8,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve('./docs-site/'),
-    filename: 'react-datetimepicker.js',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
@@ -29,6 +29,10 @@ module.exports = {
       {
           test: /\.svg$/,
           loader: 'svg-inline'
+      },
+      {
+        include: /\.json$/,
+        loaders: ['json-loader']
       }
     ]
   },

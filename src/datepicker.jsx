@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import moment from 'moment';
+import moment from 'moment-timezone';
 import DateInput from './date_input'
 import Calendar from './calendar'
 import React from 'react'
@@ -55,6 +55,7 @@ var DatePicker = React.createClass({
     startDate: React.PropTypes.object,
     tabIndex: React.PropTypes.number,
     tetherConstraints: React.PropTypes.array,
+    timezone: React.PropTypes.string,
     title: React.PropTypes.string,
     todayButton: React.PropTypes.string
   },
@@ -103,7 +104,6 @@ var DatePicker = React.createClass({
   },
 
   handleCalendarClickOutside (event) {
-    this.props.onChange(this.props.selected || moment());
     this.setOpen(false)
   },
 
@@ -169,9 +169,12 @@ var DatePicker = React.createClass({
               onClickOutside={this.handleCalendarClickOutside }
               onClickOk={this.handleOkClick}
               onClickCancel={this.handleCancelClick}
+              onClearClick={this.onClearClick}
               includeDates={this.props.includeDates}
+              isClearable={this.props.isClearable}
               showSeconds={this.props.showSeconds}
               showYearDropdown={this.props.showYearDropdown}
+              timezone={this.props.timezone}
               todayButton={this.props.todayButton}
               outsideClickIgnoreClass={outsideClickIgnoreClass} />
       </div>
@@ -199,7 +202,9 @@ var DatePicker = React.createClass({
           excludeDates={this.props.excludeDates}
           filterDate={this.props.filterDate}
           onClickOutside={this.handleCalendarClickOutside }
+          onClearClick={this.onClearClick}
           includeDates={this.props.includeDates}
+          isClearable={this.props.isClearable}
           showYearDropdown={this.props.showYearDropdown}
           todayButton={this.props.todayButton}
           outsideClickIgnoreClass={outsideClickIgnoreClass}
@@ -238,7 +243,7 @@ var DatePicker = React.createClass({
         readOnly={this.props.readOnly}
         required={this.props.required}
         tabIndex={this.props.tabIndex}
-        showTime={this.props.showTime} />
+        timezone={this.props.timezone}/>
   },
 
   renderClearButton () {
@@ -264,7 +269,7 @@ var DatePicker = React.createClass({
               constraints={this.props.tetherConstraints}>
             <div className="react-datepicker__input-container">
               {this.renderDateInput()}
-              {this.renderClearButton()}
+              {/*this.renderClearButton()*/}
             </div>
             {this.props.calendarOnly ? calendar : this.renderDatetimepicker()}
           </TetherComponent>

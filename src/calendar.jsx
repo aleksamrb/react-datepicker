@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Month from './month';
 import YearDropdown from './year_dropdown';
 import classnames from 'classnames';
@@ -14,10 +14,12 @@ var Calendar = React.createClass({
     excludeDates: React.PropTypes.array,
     filterDate: React.PropTypes.func,
     includeDates: React.PropTypes.array,
+    isClearable: React.PropTypes.bool,
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
     onClickOutside: React.PropTypes.func.isRequired,
+    onClearClick: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
     openToDate: React.PropTypes.object,
     selected: React.PropTypes.object,
@@ -171,10 +173,24 @@ var Calendar = React.createClass({
       return
     }
     return (
-      <div className="react-datepicker__today-button">
         <span onClick={() => this.props.onSelect(moment())}>{this.props.todayButton}</span>
-      </div>
     )
+  },
+  renderClearButton(){
+    if(!this.props.isClearable){
+      return
+    }
+    return (
+        <span onClick={this.props.onClearClick}>Clear</span>
+    )
+  },
+  renderButtons(){
+    return (
+      <div className="react-datepicker__today-button">
+          {this.renderTodayButton()}
+          {this.renderClearButton()}
+      </div>
+    );
   },
   render () {
     return (
@@ -199,7 +215,7 @@ var Calendar = React.createClass({
             selected={this.props.selected}
             startDate={this.props.startDate}
             endDate={this.props.endDate} />
-          {this.renderTodayButton()}
+          {this.renderButtons()}
       </div>
     )
   }

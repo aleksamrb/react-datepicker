@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-timezone'
 import React from 'react'
 import classnames from 'classnames'
 import TimeDropdown from './time_dropdown'
@@ -10,129 +10,138 @@ var TimePicker = React.createClass({
     hour24: React.PropTypes.bool,
     onChangeTime: React.PropTypes.func.isRequired,
     nowButton: React.PropTypes.string,
-    showSeconds: React.PropTypes.bool
+    showSeconds: React.PropTypes.bool,
+    timezone: React.PropTypes.string
   },
   getDefaultProps () {
     return {
-      date: moment()
+      date: moment().startOf('day')
     }
   },
   getInitialState () {
-    return {};
+    return {
+      selectedDate: this.props.date || moment().startOf('day')
+    };
+  },
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      selectedDate: nextProps.date || moment().startOf('day')
+    });
   },
   handleNowClick(){
     var now = moment();
-    var temp = this.props.date.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
+    var temp = this.state.selectedDate.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
     this.props.onChangeTime(temp);
   },
   onIncreaseHour(){
     if(this.props.hour24){
-      if(this.props.date.hour() < 23){
-        this.props.onChangeTime(this.props.date.clone().add(1,'h'));
+      if(this.state.selectedDate.hour() < 23){
+        this.props.onChangeTime(this.state.selectedDate.clone().add(1,'h'));
       }
     }
     else{
-      if(this.props.date.format('hh') < 12){
-        if(this.props.date.hour() === 11){
-          this.props.onChangeTime(this.props.date.clone().hour(0));
+      if(this.state.selectedDate.format('hh') < 12){
+        if(this.state.selectedDate.hour() === 11){
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(0));
         }
-        else if(this.props.date.hour() === 23){
-          this.props.onChangeTime(this.props.date.clone().hour(12));
+        else if(this.state.selectedDate.hour() === 23){
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(12));
         }
         else{
-            this.props.onChangeTime(this.props.date.clone().add(1,'h'));
+            this.props.onChangeTime(this.state.selectedDate.clone().add(1,'h'));
         }
       }
     }
   },
   onDecreaseHour(){
     if(this.props.hour24){
-      if(this.props.date.hour() > 0){
-        this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
+      if(this.state.selectedDate.hour() > 0){
+        this.props.onChangeTime(this.state.selectedDate.clone().subtract(1, 'h'));
       }
     }
     else{
-      if(this.props.date.format('hh') > 1){
-        if(this.props.date.hour() === 12){
-          this.props.onChangeTime(this.props.date.clone().hour(23));
+      if(this.state.selectedDate.format('hh') > 1){
+        if(this.state.selectedDate.hour() === 12){
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(23));
         }
-        else if(this.props.date.hour() === 0){
-          this.props.onChangeTime(this.props.date.clone().hour(11));
+        else if(this.state.selectedDate.hour() === 0){
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(11));
         }
         else{
-            this.props.onChangeTime(this.props.date.clone().subtract(1, 'h'));
+            this.props.onChangeTime(this.state.selectedDate.clone().subtract(1, 'h'));
         }
       }
     }
   },
   onIncreaseMinute(){
-    if(this.props.date.minute() < 59){
-      this.props.onChangeTime(this.props.date.clone().add(1, 'm'));
+    if(this.state.selectedDate.minute() < 59){
+      this.props.onChangeTime(this.state.selectedDate.clone().add(1, 'm'));
     }
   },
   onDecreaseMinute(){
-      if(this.props.date.minute() > 0){
-        this.props.onChangeTime(this.props.date.clone().subtract(1, 'm'));
+      if(this.state.selectedDate.minute() > 0){
+        this.props.onChangeTime(this.state.selectedDate.clone().subtract(1, 'm'));
       }
   },
   onIncreaseSecond(){
-    if(this.props.date.second() < 59){
-      this.props.onChangeTime(this.props.date.clone().add(1, 's'));
+    if(this.state.selectedDate.second() < 59){
+      this.props.onChangeTime(this.state.selectedDate.clone().add(1, 's'));
     }
   },
   onDecreaseSecond(){
-      if(this.props.date.second() > 0){
-        this.props.onChangeTime(this.props.date.clone().subtract(1, 's'));
+      if(this.state.selectedDate.second() > 0){
+        this.props.onChangeTime(this.state.selectedDate.clone().subtract(1, 's'));
       }
   },
   onAmpmChange(){
-    if(this.props.date.hour() === 12){
+    if(this.state.selectedDate.hour() === 12){
 
-      this.props.onChangeTime(this.props.date.clone().hour(0));
+      this.props.onChangeTime(this.state.selectedDate.clone().hour(0));
     }
-    else if(this.props.date.hour() < 12){
-      this.props.onChangeTime(this.props.date.clone().add(12, 'h'));
+    else if(this.state.selectedDate.hour() < 12){
+      this.props.onChangeTime(this.state.selectedDate.clone().add(12, 'h'));
     }
     else{
-      this.props.onChangeTime(this.props.date.clone().subtract(12, 'h'));
+      this.props.onChangeTime(this.state.selectedDate.clone().subtract(12, 'h'));
     }
   },
   onOptionHourChange(hour){
     if(this.props.hour24){
-      this.props.onChangeTime(this.props.date.clone().hour(hour));
+      this.props.onChangeTime(this.state.selectedDate.clone().hour(hour));
     }
     else{
-      if(this.props.date.hour() < 12){ //AM
+      if(this.state.selectedDate.hour() < 12){ //AM
         if(hour === 12){
-          this.props.onChangeTime(this.props.date.clone().hour(0));
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(0));
         }
         else{
-          this.props.onChangeTime(this.props.date.clone().hour(hour));
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(hour));
         }
       }
       else { //PM
         if(hour === 12){
-          this.props.onChangeTime(this.props.date.clone().hour(12));
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(12));
         }
         else{
-          this.props.onChangeTime(this.props.date.clone().hour(hour + 12));
+          this.props.onChangeTime(this.state.selectedDate.clone().hour(hour + 12));
         }
       }
     }
   },
   onOptionMinuteChange(minute){
-    this.props.onChangeTime(this.props.date.clone().minute(minute));
+    this.props.onChangeTime(this.state.selectedDate.clone().minute(minute));
   },
   onOptionSecondChange(second){
-    this.props.onChangeTime(this.props.date.clone().second(second));
+    this.props.onChangeTime(this.state.selectedDate.clone().second(second));
   },
   renderGrid(){
+    var currentDate = this.state.selectedDate;
     return(
     <div className="grid">
       <div className="grid__column">
           <div className="grid__item"><div className="triangle-up-time" onClick={this.onIncreaseHour}></div></div>
           <div className="grid__item">
-            <TimeDropdown value={this.props.hour24 ? parseInt(this.props.date.format('HH')) : parseInt(this.props.date.format('hh'))} minValue={this.props.hour24 ? 0 : 1} maxValue={this.props.hour24 ? 23 : 12} onChange={this.onOptionHourChange}/>
+            <TimeDropdown value={this.props.hour24 ? parseInt(currentDate.format('HH')) : parseInt(currentDate.format('hh'))} minValue={this.props.hour24 ? 0 : 1} maxValue={this.props.hour24 ? 23 : 12} onChange={this.onOptionHourChange}/>
           </div>
           <div className="grid__item"><div className="triangle-down-time" onClick={this.onDecreaseHour}></div></div>
       </div>
@@ -144,7 +153,7 @@ var TimePicker = React.createClass({
       <div className="grid__column">
         <div className="grid__item"><div className="triangle-up-time" onClick={this.onIncreaseMinute}></div></div>
         <div className="grid__item">
-          <TimeDropdown value={parseInt(this.props.date.format('mm'))} minValue={0} maxValue={59} onChange={this.onOptionMinuteChange}/>
+          <TimeDropdown value={parseInt(currentDate.format('mm'))} minValue={0} maxValue={59} onChange={this.onOptionMinuteChange}/>
         </div>
         <div className="grid__item"><div className="triangle-down-time" onClick={this.onDecreaseMinute}></div></div>
       </div>
@@ -159,7 +168,7 @@ var TimePicker = React.createClass({
       <div className="grid__column">
         <div className="grid__item"><div className="triangle-up-time" onClick={this.onIncreaseSecond}></div></div>
         <div className="grid__item">
-          <TimeDropdown value={parseInt(this.props.date.format('ss'))} minValue={0} maxValue={59} onChange={this.onOptionSecondChange}/>
+          <TimeDropdown value={parseInt(currentDate.format('ss'))} minValue={0} maxValue={59} onChange={this.onOptionSecondChange}/>
         </div>
         <div className="grid__item"><div className="triangle-down-time" onClick={this.onDecreaseSecond}></div></div>
       </div>
@@ -169,7 +178,7 @@ var TimePicker = React.createClass({
       <div className="grid__column">
         <div className="grid__item"><div className="triangle-up-time" onClick={this.onAmpmChange}></div></div>
         <div className="grid__item">
-          <span className="amPm-label">{(this.props.date.hour() >= 12) ? "PM" : "AM"}</span>
+          <span className="amPm-label">{(currentDate.hour() >= 12) ? "PM" : "AM"}</span>
         </div>
         <div className="grid__item"><div className="triangle-down-time" onClick={this.onAmpmChange}></div></div>
       </div>
