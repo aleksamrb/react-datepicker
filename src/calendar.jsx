@@ -20,8 +20,8 @@ var Calendar = React.createClass({
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
-    onClickOutside: React.PropTypes.func.isRequired,
     onClearClick: React.PropTypes.func.isRequired,
+    onClickOutside: React.PropTypes.func.isRequired,
     onSelect: React.PropTypes.func.isRequired,
     openToDate: React.PropTypes.object,
     selected: React.PropTypes.object,
@@ -35,6 +35,8 @@ var Calendar = React.createClass({
 
   getDefaultProps () {
     return {
+      dateFormat: 'L',
+      locale: moment().locale(),
       utcOffset: moment.utc().utcOffset()
     }
   },
@@ -44,12 +46,7 @@ var Calendar = React.createClass({
       date: this.localizeMoment(this.getDateInView())
     }
   },
-  getDefaultProps () {
-    return {
-      dateFormat: 'L',
-      locale: moment().locale(),
-    }
-  },
+
   componentWillReceiveProps (nextProps) {
     if ((nextProps.selected && !isSameDay(nextProps.selected, this.props.selected)) ||
           nextProps.locale !== this.props.locale ||
@@ -188,10 +185,9 @@ var Calendar = React.createClass({
       return
     }
     return (
-      <div className="react-datepicker__today-button" onClick={() => this.props.onSelect(moment.utc().utcOffset(this.props.utcOffset).startOf('date'))}>
+      <span onClick={() => this.props.onSelect(moment.utc().utcOffset(this.props.utcOffset).startOf('date'))}>
         {this.props.todayButton}
-      </div>
-
+      </span>
     )
   },
   renderClearButton(){

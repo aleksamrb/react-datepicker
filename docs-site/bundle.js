@@ -88,7 +88,7 @@
 
 	var _root2 = _interopRequireDefault(_root);
 
-	var _datetimepicker_example = __webpack_require__(492);
+	var _datetimepicker_example = __webpack_require__(496);
 
 	var _datetimepicker_example2 = _interopRequireDefault(_datetimepicker_example);
 
@@ -96,13 +96,11 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _datepicker_wrapper = __webpack_require__(493);
+	var _datepicker_wrapper = __webpack_require__(497);
 
 	var _datepicker_wrapper2 = _interopRequireDefault(_datepicker_wrapper);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	_reactDom2.default.render(_react2.default.createElement(_datetimepicker_example2.default, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -21422,7 +21420,7 @@
 
 	var _example_components2 = _interopRequireDefault(_example_components);
 
-	var _hero_example = __webpack_require__(491);
+	var _hero_example = __webpack_require__(495);
 
 	var _hero_example2 = _interopRequireDefault(_hero_example);
 
@@ -21584,57 +21582,73 @@
 
 	var _exclude_dates2 = _interopRequireDefault(_exclude_dates);
 
-	var _include_dates = __webpack_require__(477);
+	var _highlight_dates = __webpack_require__(477);
+
+	var _highlight_dates2 = _interopRequireDefault(_highlight_dates);
+
+	var _include_dates = __webpack_require__(478);
 
 	var _include_dates2 = _interopRequireDefault(_include_dates);
 
-	var _filter_dates = __webpack_require__(478);
+	var _filter_dates = __webpack_require__(479);
 
 	var _filter_dates2 = _interopRequireDefault(_filter_dates);
 
-	var _disabled = __webpack_require__(479);
+	var _disabled = __webpack_require__(480);
 
 	var _disabled2 = _interopRequireDefault(_disabled);
 
-	var _clear_input = __webpack_require__(480);
+	var _clear_input = __webpack_require__(481);
 
 	var _clear_input2 = _interopRequireDefault(_clear_input);
 
-	var _on_blur_callbacks = __webpack_require__(481);
+	var _on_blur_callbacks = __webpack_require__(482);
 
 	var _on_blur_callbacks2 = _interopRequireDefault(_on_blur_callbacks);
 
-	var _placement = __webpack_require__(482);
+	var _placement = __webpack_require__(483);
 
 	var _placement2 = _interopRequireDefault(_placement);
 
-	var _date_range = __webpack_require__(483);
+	var _date_range = __webpack_require__(484);
 
 	var _date_range2 = _interopRequireDefault(_date_range);
 
-	var _tab_index = __webpack_require__(484);
+	var _tab_index = __webpack_require__(485);
 
 	var _tab_index2 = _interopRequireDefault(_tab_index);
 
-	var _year_dropdown = __webpack_require__(485);
+	var _year_dropdown = __webpack_require__(486);
 
 	var _year_dropdown2 = _interopRequireDefault(_year_dropdown);
 
-	var _today = __webpack_require__(486);
+	var _today = __webpack_require__(487);
 
 	var _today2 = _interopRequireDefault(_today);
 
-	var _inline = __webpack_require__(487);
+	var _timezone_date = __webpack_require__(488);
+
+	var _timezone_date2 = _interopRequireDefault(_timezone_date);
+
+	var _inline = __webpack_require__(489);
 
 	var _inline2 = _interopRequireDefault(_inline);
 
-	var _open_to_date = __webpack_require__(488);
+	var _open_to_date = __webpack_require__(490);
 
 	var _open_to_date2 = _interopRequireDefault(_open_to_date);
 
-	__webpack_require__(489);
+	var _fixed_calendar = __webpack_require__(491);
 
-	__webpack_require__(490);
+	var _fixed_calendar2 = _interopRequireDefault(_fixed_calendar);
+
+	var _custom_input = __webpack_require__(492);
+
+	var _custom_input2 = _interopRequireDefault(_custom_input);
+
+	__webpack_require__(493);
+
+	__webpack_require__(494);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21659,6 +21673,9 @@
 	    title: 'Today button',
 	    component: _react2.default.createElement(_today2.default, null)
 	  }, {
+	    title: 'TimeZone date',
+	    component: _react2.default.createElement(_timezone_date2.default, null)
+	  }, {
 	    title: 'Placeholder text',
 	    component: _react2.default.createElement(_placeholder_text2.default, null)
 	  }, {
@@ -21670,6 +21687,9 @@
 	  }, {
 	    title: 'Exclude dates',
 	    component: _react2.default.createElement(_exclude_dates2.default, null)
+	  }, {
+	    title: 'Highlight dates',
+	    component: _react2.default.createElement(_highlight_dates2.default, null)
 	  }, {
 	    title: 'Include dates',
 	    component: _react2.default.createElement(_include_dates2.default, null)
@@ -21703,6 +21723,12 @@
 	  }, {
 	    title: 'Open to date',
 	    component: _react2.default.createElement(_open_to_date2.default, null)
+	  }, {
+	    title: 'Fixed height of Calendar',
+	    component: _react2.default.createElement(_fixed_calendar2.default, null)
+	  }, {
+	    title: 'Custom input',
+	    component: _react2.default.createElement(_custom_input2.default, null)
 	  }],
 
 	  renderExamples: function renderExamples() {
@@ -38110,13 +38136,16 @@
 	    autoComplete: _react2.default.PropTypes.string,
 	    calendarOnly: _react2.default.PropTypes.bool,
 	    className: _react2.default.PropTypes.string,
-	    dateFormat: _react2.default.PropTypes.string,
+	    customInput: _react2.default.PropTypes.element,
+	    dateFormat: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.array]),
 	    dateFormatCalendar: _react2.default.PropTypes.string,
 	    disabled: _react2.default.PropTypes.bool,
 	    endDate: _react2.default.PropTypes.object,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
 	    hour24: _react2.default.PropTypes.bool,
+	    fixedHeight: _react2.default.PropTypes.bool,
+	    highlightDates: _react2.default.PropTypes.array,
 	    id: _react2.default.PropTypes.string,
 	    includeDates: _react2.default.PropTypes.array,
 	    inline: _react2.default.PropTypes.bool,
@@ -38144,9 +38173,9 @@
 	    startDate: _react2.default.PropTypes.object,
 	    tabIndex: _react2.default.PropTypes.number,
 	    tetherConstraints: _react2.default.PropTypes.array,
-	    timezone: _react2.default.PropTypes.string,
 	    title: _react2.default.PropTypes.string,
-	    todayButton: _react2.default.PropTypes.string
+	    todayButton: _react2.default.PropTypes.string,
+	    utcOffset: _react2.default.PropTypes.number
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
@@ -38165,7 +38194,8 @@
 	      tetherConstraints: [{
 	        to: 'window',
 	        attachment: 'together'
-	      }]
+	      }],
+	      utcOffset: _momentTimezone2.default.utc().utcOffset()
 	    };
 	  },
 	  getInitialState: function getInitialState() {
@@ -38255,8 +38285,8 @@
 	        isClearable: this.props.isClearable,
 	        showSeconds: this.props.showSeconds,
 	        showYearDropdown: this.props.showYearDropdown,
-	        timezone: this.props.timezone,
 	        todayButton: this.props.todayButton,
+	        utcOffset: this.props.utcOffset,
 	        outsideClickIgnoreClass: outsideClickIgnoreClass })
 	    );
 	  },
@@ -38284,12 +38314,15 @@
 	        filterDate: this.props.filterDate,
 	        onClickOutside: this.handleCalendarClickOutside,
 	        onClearClick: this.onClearClick,
+	        highlightDates: this.props.highlightDates,
 	        includeDates: this.props.includeDates,
 	        isClearable: this.props.isClearable,
 	        showYearDropdown: this.props.showYearDropdown,
 	        todayButton: this.props.todayButton,
+	        utcOffset: this.props.utcOffset,
 	        outsideClickIgnoreClass: outsideClickIgnoreClass,
-	        className: className
+	        className: className,
+	        fixedHeight: this.props.fixedHeight
 	      })
 	    );
 	  },
@@ -38320,7 +38353,7 @@
 	      readOnly: this.props.readOnly,
 	      required: this.props.required,
 	      tabIndex: this.props.tabIndex,
-	      timezone: this.props.timezone });
+	      customInput: this.props.customInput });
 	  },
 	  renderClearButton: function renderClearButton() {
 	    if (this.props.isClearable && this.props.selected != null) {
@@ -53640,12 +53673,15 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 	var DateInput = _react2.default.createClass({
 	  displayName: 'DateInput',
 
 	  propTypes: {
+	    customInput: _react2.default.PropTypes.element,
 	    date: _react2.default.PropTypes.object,
-	    dateFormat: _react2.default.PropTypes.string,
+	    dateFormat: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.array]),
 	    disabled: _react2.default.PropTypes.bool,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
@@ -53655,8 +53691,7 @@
 	    minDate: _react2.default.PropTypes.object,
 	    onBlur: _react2.default.PropTypes.func,
 	    onChange: _react2.default.PropTypes.func,
-	    onChangeDate: _react2.default.PropTypes.func,
-	    timezone: _react2.default.PropTypes.string
+	    onChangeDate: _react2.default.PropTypes.func
 	  },
 
 	  getDefaultProps: function getDefaultProps() {
@@ -53695,7 +53730,7 @@
 	    this.setState({ value: value });
 	  },
 	  safeDateFormat: function safeDateFormat(props) {
-	    return props.date && props.date.clone().locale(props.locale || _momentTimezone2.default.locale()).format(props.dateFormat) || '';
+	    return props.date && props.date.clone().locale(props.locale || _momentTimezone2.default.locale()).format(Array.isArray(props.dateFormat) ? props.dateFormat[0] : props.dateFormat) || '';
 	  },
 	  handleBlur: function handleBlur(event) {
 	    this.setState({
@@ -53709,10 +53744,33 @@
 	    this.refs.input.focus();
 	  },
 	  render: function render() {
+	    var _props = this.props;
+	    var customInput = _props.customInput;
+	    var date = _props.date;
+	    var locale = _props.locale;
+	    var minDate = _props.minDate;
+	    var maxDate = _props.maxDate;
+	    var excludeDates = _props.excludeDates;
+	    var includeDates = _props.includeDates;
+	    var filterDate = _props.filterDate;
+	    var dateFormat = _props.dateFormat;
+	    var onChangeDate = _props.onChangeDate;
+
+	    var rest = _objectWithoutProperties(_props, ['customInput', 'date', 'locale', 'minDate', 'maxDate', 'excludeDates', 'includeDates', 'filterDate', 'dateFormat', 'onChangeDate']); // eslint-disable-line no-unused-vars
+
+	    if (customInput) {
+	      return _react2.default.cloneElement(customInput, _extends({}, rest, {
+	        ref: 'input',
+	        value: this.state.value,
+	        onBlur: this.handleBlur,
+	        onChange: this.handleChange
+	      }));
+	    }
+
 	    return _react2.default.createElement('input', _extends({
 	      ref: 'input',
 	      type: 'text'
-	    }, this.props, {
+	    }, rest, {
 	      value: this.state.value,
 	      onBlur: this.handleBlur,
 	      onChange: this.handleChange }));
@@ -53877,32 +53935,36 @@
 	    endDate: _react2.default.PropTypes.object,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
+	    fixedHeight: _react2.default.PropTypes.bool,
+	    highlightDates: _react2.default.PropTypes.array,
 	    includeDates: _react2.default.PropTypes.array,
 	    isClearable: _react2.default.PropTypes.bool,
 	    locale: _react2.default.PropTypes.string,
 	    maxDate: _react2.default.PropTypes.object,
 	    minDate: _react2.default.PropTypes.object,
-	    onClickOutside: _react2.default.PropTypes.func.isRequired,
 	    onClearClick: _react2.default.PropTypes.func.isRequired,
+	    onClickOutside: _react2.default.PropTypes.func.isRequired,
 	    onSelect: _react2.default.PropTypes.func.isRequired,
 	    openToDate: _react2.default.PropTypes.object,
 	    selected: _react2.default.PropTypes.object,
 	    showYearDropdown: _react2.default.PropTypes.bool,
 	    startDate: _react2.default.PropTypes.object,
-	    todayButton: _react2.default.PropTypes.string
+	    todayButton: _react2.default.PropTypes.string,
+	    utcOffset: _react2.default.PropTypes.number
 	  },
 
 	  mixins: [__webpack_require__(461)],
 
-	  getInitialState: function getInitialState() {
-	    return {
-	      date: this.localizeMoment(this.getDateInView())
-	    };
-	  },
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      dateFormat: 'L',
-	      locale: (0, _momentTimezone2.default)().locale()
+	      locale: (0, _momentTimezone2.default)().locale(),
+	      utcOffset: _momentTimezone2.default.utc().utcOffset()
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    return {
+	      date: this.localizeMoment(this.getDateInView())
 	    };
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -53919,14 +53981,21 @@
 	    var _props = this.props;
 	    var selected = _props.selected;
 	    var openToDate = _props.openToDate;
+	    var utcOffset = _props.utcOffset;
 
 	    var minDate = (0, _date_utils.getEffectiveMinDate)(this.props);
 	    var maxDate = (0, _date_utils.getEffectiveMaxDate)(this.props);
-	    var current = (0, _momentTimezone2.default)();
+	    var current = _momentTimezone2.default.utc().utcOffset(utcOffset);
 	    if (selected) {
 	      return selected;
+	    } else if (minDate && maxDate && openToDate && openToDate.isBetween(minDate, maxDate)) {
+	      return openToDate;
+	    } else if (minDate && openToDate && openToDate.isAfter(minDate)) {
+	      return openToDate;
 	    } else if (minDate && minDate.isAfter(current)) {
 	      return minDate;
+	    } else if (maxDate && openToDate && openToDate.isBefore(maxDate)) {
+	      return openToDate;
 	    } else if (maxDate && maxDate.isBefore(current)) {
 	      return maxDate;
 	    } else if (openToDate) {
@@ -54032,7 +54101,7 @@
 	    return _react2.default.createElement(
 	      'span',
 	      { onClick: function onClick() {
-	          return _this.props.onSelect((0, _momentTimezone2.default)());
+	          return _this.props.onSelect(_momentTimezone2.default.utc().utcOffset(_this.props.utcOffset).startOf('date'));
 	        } },
 	      this.props.todayButton
 	    );
@@ -54068,7 +54137,7 @@
 	        this.renderNextMonthButton(),
 	        _react2.default.createElement(
 	          'div',
-	          null,
+	          { className: 'react-datepicker__day-names' },
 	          this.header()
 	        )
 	      ),
@@ -54078,11 +54147,14 @@
 	        minDate: this.props.minDate,
 	        maxDate: this.props.maxDate,
 	        excludeDates: this.props.excludeDates,
+	        highlightDates: this.props.highlightDates,
 	        includeDates: this.props.includeDates,
+	        fixedHeight: this.props.fixedHeight,
 	        filterDate: this.props.filterDate,
 	        selected: this.props.selected,
 	        startDate: this.props.startDate,
-	        endDate: this.props.endDate }),
+	        endDate: this.props.endDate,
+	        utcOffset: this.props.utcOffset }),
 	      this.renderButtons()
 	    );
 	  }
@@ -54114,12 +54186,15 @@
 	    endDate: _react2.default.PropTypes.object,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
+	    fixedHeight: _react2.default.PropTypes.bool,
+	    highlightDates: _react2.default.PropTypes.array,
 	    includeDates: _react2.default.PropTypes.array,
 	    maxDate: _react2.default.PropTypes.object,
 	    minDate: _react2.default.PropTypes.object,
 	    onDayClick: _react2.default.PropTypes.func,
 	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
+	    startDate: _react2.default.PropTypes.object,
+	    utcOffset: _react2.default.PropTypes.number
 	  },
 
 	  handleDayClick: function handleDayClick(day) {
@@ -54140,7 +54215,7 @@
 	    return [0, 1, 2, 3, 4, 5].map(function (offset) {
 	      return startOfMonth.clone().add(offset, 'weeks');
 	    }).filter(function (startOfWeek) {
-	      return _this.isWeekInMonth(startOfWeek);
+	      return _this.props.fixedHeight || _this.isWeekInMonth(startOfWeek);
 	    }).map(function (startOfWeek, offset) {
 	      return _react2.default.createElement(_week2.default, {
 	        key: offset,
@@ -54151,16 +54226,18 @@
 	        maxDate: _this.props.maxDate,
 	        excludeDates: _this.props.excludeDates,
 	        includeDates: _this.props.includeDates,
+	        highlightDates: _this.props.highlightDates,
 	        filterDate: _this.props.filterDate,
 	        selected: _this.props.selected,
 	        startDate: _this.props.startDate,
-	        endDate: _this.props.endDate });
+	        endDate: _this.props.endDate,
+	        utcOffset: _this.props.utcOffset });
 	    });
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'react-datepicker__month' },
+	      { className: 'react-datepicker__month', role: 'listbox' },
 	      this.renderWeeks()
 	    );
 	  }
@@ -54192,13 +54269,15 @@
 	    endDate: _react2.default.PropTypes.object,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
+	    highlightDates: _react2.default.PropTypes.array,
 	    includeDates: _react2.default.PropTypes.array,
 	    maxDate: _react2.default.PropTypes.object,
 	    minDate: _react2.default.PropTypes.object,
 	    month: _react2.default.PropTypes.number,
 	    onDayClick: _react2.default.PropTypes.func,
 	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
+	    startDate: _react2.default.PropTypes.object,
+	    utcOffset: _react2.default.PropTypes.number
 	  },
 
 	  handleDayClick: function handleDayClick(day) {
@@ -54221,10 +54300,12 @@
 	        maxDate: _this.props.maxDate,
 	        excludeDates: _this.props.excludeDates,
 	        includeDates: _this.props.includeDates,
+	        highlightDates: _this.props.highlightDates,
 	        filterDate: _this.props.filterDate,
 	        selected: _this.props.selected,
 	        startDate: _this.props.startDate,
-	        endDate: _this.props.endDate });
+	        endDate: _this.props.endDate,
+	        utcOffset: _this.props.utcOffset });
 	    });
 	  },
 	  render: function render() {
@@ -54268,15 +54349,21 @@
 	    endDate: _react2.default.PropTypes.object,
 	    excludeDates: _react2.default.PropTypes.array,
 	    filterDate: _react2.default.PropTypes.func,
+	    highlightDates: _react2.default.PropTypes.array,
 	    includeDates: _react2.default.PropTypes.array,
 	    maxDate: _react2.default.PropTypes.object,
 	    minDate: _react2.default.PropTypes.object,
 	    month: _react2.default.PropTypes.number,
 	    onClick: _react2.default.PropTypes.func,
 	    selected: _react2.default.PropTypes.object,
-	    startDate: _react2.default.PropTypes.object
+	    startDate: _react2.default.PropTypes.object,
+	    utcOffset: _react2.default.PropTypes.number
 	  },
-
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      utcOffset: _momentTimezone2.default.utc().utcOffset()
+	    };
+	  },
 	  handleClick: function handleClick(event) {
 	    if (!this.isDisabled() && this.props.onClick) {
 	      this.props.onClick(event);
@@ -54288,17 +54375,45 @@
 	  isDisabled: function isDisabled() {
 	    return (0, _date_utils.isDayDisabled)(this.props.day, this.props);
 	  },
-	  isInRange: function isInRange() {
+	  isHighlighted: function isHighlighted() {
 	    var _props = this.props;
 	    var day = _props.day;
-	    var startDate = _props.startDate;
-	    var endDate = _props.endDate;
+	    var highlightDates = _props.highlightDates;
+
+	    if (!highlightDates) return false;
+	    return highlightDates.some(function (testDay) {
+	      return (0, _date_utils.isSameDay)(day, testDay);
+	    });
+	  },
+	  isInRange: function isInRange() {
+	    var _props2 = this.props;
+	    var day = _props2.day;
+	    var startDate = _props2.startDate;
+	    var endDate = _props2.endDate;
 
 	    if (!startDate || !endDate) return false;
 
 	    var before = startDate.clone().startOf('day').subtract(1, 'seconds');
 	    var after = endDate.clone().startOf('day').add(1, 'seconds');
 	    return day.clone().startOf('day').isBetween(before, after);
+	  },
+	  isRangeStart: function isRangeStart() {
+	    var _props3 = this.props;
+	    var day = _props3.day;
+	    var startDate = _props3.startDate;
+	    var endDate = _props3.endDate;
+
+	    if (!startDate || !endDate) return false;
+	    return (0, _date_utils.isSameDay)(startDate, day);
+	  },
+	  isRangeEnd: function isRangeEnd() {
+	    var _props4 = this.props;
+	    var day = _props4.day;
+	    var startDate = _props4.startDate;
+	    var endDate = _props4.endDate;
+
+	    if (!startDate || !endDate) return false;
+	    return (0, _date_utils.isSameDay)(endDate, day);
 	  },
 	  isWeekend: function isWeekend() {
 	    var weekday = this.props.day.day();
@@ -54311,8 +54426,11 @@
 	    return (0, _classnames2.default)('react-datepicker__day', {
 	      'react-datepicker__day--disabled': this.isDisabled(),
 	      'react-datepicker__day--selected': this.isSameDay(this.props.selected),
+	      'react-datepicker__day--highlighted': this.isHighlighted(),
+	      'react-datepicker__day--range-start': this.isRangeStart(),
+	      'react-datepicker__day--range-end': this.isRangeEnd(),
 	      'react-datepicker__day--in-range': this.isInRange(),
-	      'react-datepicker__day--today': this.isSameDay((0, _momentTimezone2.default)()),
+	      'react-datepicker__day--today': this.isSameDay(_momentTimezone2.default.utc().utcOffset(this.props.utcOffset)),
 	      'react-datepicker__day--weekend': this.isWeekend(),
 	      'react-datepicker__day--outside-month': this.isOutsideMonth()
 	    });
@@ -54320,7 +54438,11 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: this.getClassNames(), onClick: this.handleClick },
+	      {
+	        className: this.getClassNames(),
+	        onClick: this.handleClick,
+	        'aria-label': 'day-' + this.props.day.date(),
+	        role: 'option' },
 	      this.props.day.date()
 	    );
 	  }
@@ -54514,6 +54636,7 @@
 	        'div',
 	        { className: selectedYear === year ? "react-datepicker__year-option react-datepicker__year-option--selected" : "react-datepicker__year-option",
 	          key: year,
+	          ref: year,
 	          onClick: _this.onChange.bind(_this, year) },
 	        year
 	      );
@@ -56742,19 +56865,19 @@
 	    locale: _react2.default.PropTypes.string,
 	    maxDate: _react2.default.PropTypes.object,
 	    minDate: _react2.default.PropTypes.object,
+	    nowButton: _react2.default.PropTypes.string,
 	    onChangeTime: _react2.default.PropTypes.func,
-	    onClickOutside: _react2.default.PropTypes.func,
-	    onClickOk: _react2.default.PropTypes.func.isRequired,
-	    onClickCancel: _react2.default.PropTypes.func.isRequired,
 	    onClearClick: _react2.default.PropTypes.func.isRequired,
+	    onClickCancel: _react2.default.PropTypes.func.isRequired,
+	    onClickOk: _react2.default.PropTypes.func.isRequired,
+	    onClickOutside: _react2.default.PropTypes.func,
 	    onSelect: _react2.default.PropTypes.func.isRequired,
 	    selected: _react2.default.PropTypes.object,
 	    showSeconds: _react2.default.PropTypes.bool,
 	    showYearDropdown: _react2.default.PropTypes.bool,
 	    startDate: _react2.default.PropTypes.object,
 	    todayButton: _react2.default.PropTypes.string,
-	    nowButton: _react2.default.PropTypes.string,
-	    timezone: _react2.default.PropTypes.string
+	    utcOffset: _react2.default.PropTypes.number
 	  },
 
 	  mixins: [__webpack_require__(461)],
@@ -56768,7 +56891,8 @@
 	  getDefaultProps: function getDefaultProps() {
 	    return {
 	      dateFormat: 'L',
-	      locale: (0, _momentTimezone2.default)().locale()
+	      locale: (0, _momentTimezone2.default)().locale(),
+	      utcOffset: _momentTimezone2.default.utc().utcOffset()
 	    };
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -56799,7 +56923,7 @@
 	    this.props.onClickOk(this.state.selectedDate);
 	  },
 	  handleCancelClick: function handleCancelClick() {
-	    this.setState({ selectedDate: this.props.selected || (0, _momentTimezone2.default)() });
+	    this.setState({ selectedDate: this.props.selected || _momentTimezone2.default.utc().utcOffset(this.props.utcOffset) });
 	    this.props.onClickCancel();
 	  },
 	  handleCalendarTabClick: function handleCalendarTabClick() {
@@ -56813,7 +56937,7 @@
 	    });
 	  },
 	  handleClickOutside: function handleClickOutside(event) {
-	    this.setState({ selectedDate: this.props.selected || (0, _momentTimezone2.default)() });
+	    this.setState({ selectedDate: this.props.selected || _momentTimezone2.default.utc().utcOffset(this.props.utcOffset) });
 	    this.props.onClickOutside(event);
 	  },
 	  onClearClick: function onClearClick(event) {
@@ -56831,7 +56955,7 @@
 	        nowButton: this.props.nowButton,
 	        onChangeTime: this.handleTimeChange,
 	        showSeconds: this.props.showSeconds,
-	        timezone: this.props.timezone
+	        utcOffset: this.props.utcOffset
 	      })
 	    );
 	  },
@@ -56856,6 +56980,7 @@
 	      isClearable: this.props.isClearable,
 	      showYearDropdown: this.props.showYearDropdown,
 	      todayButton: this.props.todayButton,
+	      utcOffset: this.props.utcOffset,
 	      outsideClickIgnoreClass: outsideClickIgnoreClass });
 	  },
 	  renderConfirmButton: function renderConfirmButton() {
@@ -56932,25 +57057,21 @@
 	    onChangeTime: _react2.default.PropTypes.func.isRequired,
 	    nowButton: _react2.default.PropTypes.string,
 	    showSeconds: _react2.default.PropTypes.bool,
-	    timezone: _react2.default.PropTypes.string
+	    utcOffset: _react2.default.PropTypes.number
 	  },
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      date: (0, _momentTimezone2.default)().startOf('day')
-	    };
-	  },
+	  getDefaultProps: function getDefaultProps() {},
 	  getInitialState: function getInitialState() {
 	    return {
-	      selectedDate: this.props.date || (0, _momentTimezone2.default)().startOf('day')
+	      selectedDate: this.props.date || _momentTimezone2.default.utc().utcOffset(this.props.utcOffset).startOf('day')
 	    };
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    this.setState({
-	      selectedDate: nextProps.date || (0, _momentTimezone2.default)().startOf('day')
+	      selectedDate: nextProps.date || _momentTimezone2.default.utc().utcOffset(this.props.utcOffset).startOf('day')
 	    });
 	  },
 	  handleNowClick: function handleNowClick() {
-	    var now = (0, _momentTimezone2.default)();
+	    var now = _momentTimezone2.default.utc().utcOffset(this.props.utcOffset);
 	    var temp = this.state.selectedDate.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
 	    this.props.onChangeTime(temp);
 	  },
@@ -57865,6 +57986,85 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
+	var _moment = __webpack_require__(347);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'highlightDates',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: null
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "selected={this.state.startDate}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onChange={this.handleChange}",
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            '    ',
+	            "highlightDates={[moment().subtract(7, 'days'), moment().add(7, 'days')]}"
+	          ),
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "placeholderText=\"This highlights a week ago and a week from today\" />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          selected: this.state.startDate,
+	          onChange: this.handleChange,
+	          highlightDates: [(0, _moment2.default)().subtract(7, 'days'), (0, _moment2.default)().add(7, 'days')],
+	          placeholderText: 'This highlights a week ago and a week from today' })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 478 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(344);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
 	var _momentTimezone = __webpack_require__(345);
 
 	var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
@@ -57927,7 +58127,7 @@
 	});
 
 /***/ },
-/* 478 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58006,7 +58206,7 @@
 	});
 
 /***/ },
-/* 479 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58082,7 +58282,7 @@
 	});
 
 /***/ },
-/* 480 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58157,7 +58357,7 @@
 	});
 
 /***/ },
-/* 481 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58273,7 +58473,7 @@
 	});
 
 /***/ },
-/* 482 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58352,7 +58552,7 @@
 	});
 
 /***/ },
-/* 483 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58456,7 +58656,7 @@
 	module.exports = DateRange;
 
 /***/ },
-/* 484 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58527,7 +58727,7 @@
 	});
 
 /***/ },
-/* 485 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58604,7 +58804,7 @@
 	});
 
 /***/ },
-/* 486 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58672,7 +58872,7 @@
 	});
 
 /***/ },
-/* 487 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58689,9 +58889,75 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _momentTimezone = __webpack_require__(345);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
+	exports.default = _react2.default.createClass({
+	  displayName: 'Default',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: null
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          "utcOffset='1320'",
+	          _react2.default.createElement('br', null),
+	          "todayButton='Today'",
+	          _react2.default.createElement('br', null),
+	          "onChange={this.handleChange} />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          utcOffset: 1320,
+	          dateFormat: 'DD-MMM HH:mm',
+	          todayButton: 'Today in Farawayland',
+	          selected: this.state.startDate,
+	          onChange: this.handleChange })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(344);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
+	var _moment = __webpack_require__(347);
+
+	var _moment2 = _interopRequireDefault(_moment);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58700,7 +58966,7 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      startDate: (0, _momentTimezone2.default)()
+	      startDate: (0, _moment2.default)()
 	    };
 	  },
 	  handleChange: function handleChange(date) {
@@ -58743,7 +59009,7 @@
 	});
 
 /***/ },
-/* 488 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58760,9 +59026,9 @@
 
 	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
 
-	var _momentTimezone = __webpack_require__(345);
+	var _moment = __webpack_require__(347);
 
-	var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
+	var _moment2 = _interopRequireDefault(_moment);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58804,7 +59070,7 @@
 	        'div',
 	        { className: 'column' },
 	        _react2.default.createElement(_reactDatepicker2.default, {
-	          openToDate: (0, _momentTimezone2.default)('1993-09-28'),
+	          openToDate: (0, _moment2.default)('1993-09-28'),
 	          selected: this.state.startDate,
 	          onChange: this.handleChange })
 	      )
@@ -58813,15 +59079,225 @@
 	});
 
 /***/ },
-/* 489 */
+/* 491 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(344);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'FixedCalendar',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: null
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "fixedHeight",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "selected={this.state.startDate}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onChange={this.handleChange} />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          fixedHeight: true,
+	          selected: this.state.startDate,
+	          onChange: this.handleChange })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 492 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDatepicker = __webpack_require__(344);
+
+	var _reactDatepicker2 = _interopRequireDefault(_reactDatepicker);
+
+	var _moment = __webpack_require__(347);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* eslint-disable react/no-multi-comp */
+	var ExampleCustomInput = _react2.default.createClass({
+	  displayName: 'ExampleCustomInput',
+
+	  propTypes: {
+	    onClick: _react2.default.PropTypes.func,
+	    value: _react2.default.PropTypes.string
+	  },
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'button',
+	      {
+	        className: 'example-custom-input',
+	        onClick: this.props.onClick },
+	      this.props.value
+	    );
+	  }
+	});
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Custom Input',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      startDate: (0, _moment2.default)()
+	    };
+	  },
+	  handleChange: function handleChange(date) {
+	    this.setState({
+	      startDate: date
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'pre',
+	        { className: 'column example__code' },
+	        _react2.default.createElement(
+	          'code',
+	          { className: 'jsx' },
+	          "var ExampleCustomInput = React.createClass({",
+	          _react2.default.createElement('br', null),
+	          '  ',
+	          "displayName: 'ExampleCustomInput',",
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          '  ',
+	          "propTypes: {",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onClick: React.PropTypes.func,",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "value: React.PropTypes.string",
+	          _react2.default.createElement('br', null),
+	          '  ',
+	          "},",
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          '  ',
+	          "render () {",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "return (",
+	          _react2.default.createElement('br', null),
+	          '      ',
+	          "<button",
+	          _react2.default.createElement('br', null),
+	          '        ',
+	          "className=\"example-custom-input\"",
+	          _react2.default.createElement('br', null),
+	          '        ',
+	          "onClick={this.props.onClick}>",
+	          _react2.default.createElement('br', null),
+	          '        ',
+	          "{this.props.value}",
+	          _react2.default.createElement('br', null),
+	          '      ',
+	          "</button>",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          ")",
+	          _react2.default.createElement('br', null),
+	          '  ',
+	          "}",
+	          _react2.default.createElement('br', null),
+	          "})",
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          "...",
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          "<DatePicker",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "customInput={<ExampleCustomInput />}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "selected={this.state.startDate}",
+	          _react2.default.createElement('br', null),
+	          '    ',
+	          "onChange={this.handleChange} />"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'column' },
+	        _react2.default.createElement(_reactDatepicker2.default, {
+	          customInput: _react2.default.createElement(ExampleCustomInput, null),
+	          selected: this.state.startDate,
+	          onChange: this.handleChange })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 493 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 490 */
-489,
-/* 491 */
+/* 494 */
+493,
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58865,7 +59341,7 @@
 	});
 
 /***/ },
-/* 492 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58894,7 +59370,7 @@
 
 	var _datepicker2 = _interopRequireDefault(_datepicker);
 
-	var _datepicker_wrapper = __webpack_require__(493);
+	var _datepicker_wrapper = __webpack_require__(497);
 
 	var _datepicker_wrapper2 = _interopRequireDefault(_datepicker_wrapper);
 
@@ -58905,7 +59381,7 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      currentDate: Moment("2016-01-01")
+	      currentDate: (0, _momentTimezone2.default)("2016-01-01 00:00")
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
@@ -58913,14 +59389,16 @@
 	      dateFormat: 'L LT',
 	      locale: 'nb_no',
 	      showSeconds: true,
-	      todayButton: 'Today',
-	      nowButton: 'Now',
 	      readOnly: true,
 	      yearDropdown: true,
 	      isClearable: true,
-	      timezone: 'America/Los_Angeles'
+	      todayButton: 'Today',
+	      nowButton: 'Now',
+	      timezone: null
 	    };
-	    window.insertDatepicker(function () {}, "10/07/2016", calendarOptions, document.getElementById('insertDatepicker'));
+	    window.insertDatepicker(function (date) {
+	      var temp = date ? date.format() : 'null';console.log('callback', temp);
+	    }, "2016-09-09T00:00:00+00:00", calendarOptions, document.getElementById('insertDatepicker'));
 	  },
 	  handleCalendarSelect: function handleCalendarSelect(date) {},
 	  handleDatetimepickerSelect: function handleDatetimepickerSelect(date) {},
@@ -58977,11 +59455,6 @@
 	          'div',
 	          { id: 'datetimepicker_example--popup' },
 	          _react2.default.createElement('div', { id: 'insertDatepicker' })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          'test'
 	        )
 	      )
 	    );
@@ -58989,7 +59462,7 @@
 	});
 
 /***/ },
-/* 493 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59051,7 +59524,7 @@
 	    readOnly: _react2.default.PropTypes.bool,
 	    renderCalendarTo: _react2.default.PropTypes.any,
 	    required: _react2.default.PropTypes.bool,
-	    selected: _react2.default.PropTypes.object,
+	    selected: _react2.default.PropTypes.string,
 	    showConfirmButtons: _react2.default.PropTypes.bool,
 	    showSeconds: _react2.default.PropTypes.bool,
 	    showYearDropdown: _react2.default.PropTypes.bool,
@@ -59065,21 +59538,56 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      selected: this.props.selected || null
+	      selected: this.setDateTimezone(this.props)
 	    };
 	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if (nextProps.selected) {
+	      this.setState({ selected: this.setDateTimezone(nextProps) });
+	    }
+	  },
+	  setDateTimezone: function setDateTimezone(props) {
+	    if (props.selected) {
+	      var tempDate = _momentTimezone2.default.utc(props.selected);
+	      if (props.timezone) {
+	        tempDate.tz(props.timezone);
+	      } else {
+	        tempDate.local();
+	      }
+	      return tempDate;
+	    }
+	    return null;
+	  },
 	  onChangeDate: function onChangeDate(date) {
-	    if (this.props.onChange && !(0, _date_utils.isSame)(this.state.selected, date)) {
-	      this.props.onChange(date);
+	    if (this.props.onChange && (!(0, _date_utils.isSame)(this.state.selected, date) || !date)) {
+	      if (date) {
+	        var returnDate = date.clone();
+	        if (!this.state.selected && this.props.timezone) {
+	          returnDate.tz(this.props.timezone);
+	        }
+	        this.props.onChange(returnDate.utc());
+	      } else {
+	        this.props.onChange(date);
+	      }
 	    }
 	    this.setState({ selected: date });
+	  },
+	  getUtcOffset: function getUtcOffset() {
+	    if (this.state.selected) {
+	      return this.state.selected.utcOffset();
+	    } else {
+	      if (this.props.timezone) {
+	        return (0, _momentTimezone2.default)().tz(this.props.timezone).utcOffset();
+	      }
+	      return (0, _momentTimezone2.default)().utcOffset();
+	    }
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(_datepicker2.default, _extends({}, this.props, {
 	      selected: this.state.selected,
 	      onCancel: this.onCancelDate,
-	      onChange: this.onChangeDate
-	    }));
+	      onChange: this.onChangeDate,
+	      utcOffset: this.getUtcOffset() }));
 	  }
 	});
 
@@ -59088,7 +59596,7 @@
 	window.insertDatepicker = function (onChangeCallback, date, options, el) {
 	  _reactDom2.default.render(_react2.default.createElement(DatePickerWrapper, {
 	    onChange: onChangeCallback,
-	    selected: date ? (0, _momentTimezone2.default)(date) : null,
+	    selected: date || null,
 	    calendarOnly: options.calendarOnly || false,
 	    dateFormatCalendar: options.yearDropdown ? 'MMMM' : 'MMMM YYYY',
 	    dateFormat: options.dateFormat || 'DD/MM/YYYY HH:mm:ss',

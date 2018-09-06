@@ -164,6 +164,10 @@
     font-weight: bold;
   }
 
+  &--today {
+    font-weight: bold;
+  }
+
   &--highlighted {
     border-radius: $border-radius;
     background-color: $highlighted-color;

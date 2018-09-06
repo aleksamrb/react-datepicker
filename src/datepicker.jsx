@@ -61,7 +61,6 @@ var DatePicker = React.createClass({
     startDate: React.PropTypes.object,
     tabIndex: React.PropTypes.number,
     tetherConstraints: React.PropTypes.array,
-    timezone: React.PropTypes.string,
     title: React.PropTypes.string,
     todayButton: React.PropTypes.string,
     utcOffset: React.PropTypes.number
@@ -182,8 +181,8 @@ var DatePicker = React.createClass({
               isClearable={this.props.isClearable}
               showSeconds={this.props.showSeconds}
               showYearDropdown={this.props.showYearDropdown}
-              timezone={this.props.timezone}
               todayButton={this.props.todayButton}
+              utcOffset={this.props.utcOffset}
               outsideClickIgnoreClass={outsideClickIgnoreClass} />
       </div>
     );
@@ -254,7 +253,6 @@ var DatePicker = React.createClass({
         readOnly={this.props.readOnly}
         required={this.props.required}
         tabIndex={this.props.tabIndex}
-        timezone={this.props.timezone}
         customInput={this.props.customInput} />
   },
 

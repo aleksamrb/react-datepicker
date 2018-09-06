@@ -11,25 +11,22 @@ var TimePicker = React.createClass({
     onChangeTime: React.PropTypes.func.isRequired,
     nowButton: React.PropTypes.string,
     showSeconds: React.PropTypes.bool,
-    timezone: React.PropTypes.string
+    utcOffset: React.PropTypes.number
   },
   getDefaultProps () {
-    return {
-      date: moment().startOf('day')
-    }
   },
   getInitialState () {
     return {
-      selectedDate: this.props.date || moment().startOf('day')
+      selectedDate: this.props.date || moment.utc().utcOffset(this.props.utcOffset).startOf('day')
     };
   },
   componentWillReceiveProps(nextProps){
     this.setState({
-      selectedDate: nextProps.date || moment().startOf('day')
+      selectedDate: nextProps.date || moment.utc().utcOffset(this.props.utcOffset).startOf('day')
     });
   },
   handleNowClick(){
-    var now = moment();
+    var now = moment.utc().utcOffset(this.props.utcOffset);
     var temp = this.state.selectedDate.clone().hour(now.hour()).minute(now.minute()).second(now.second()).millisecond(now.millisecond());
     this.props.onChangeTime(temp);
   },

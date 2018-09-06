@@ -10,7 +10,7 @@ export default React.createClass({
 
   getInitialState () {
     return{
-        currentDate: moment("2016-01-01")
+        currentDate: moment("2016-01-01 00:00")
     };
   },
 
@@ -22,11 +22,15 @@ export default React.createClass({
         readOnly: true,
         yearDropdown: true,
         isClearable: true,
-        timezone: 'America/Los_Angeles'
+        todayButton: 'Today',
+        nowButton: 'Now',
+        timezone: null
       };
       window.insertDatepicker(
-        function(date){ console.log('callback', date)},
-        "10/07/2016",
+        function(date){
+          const temp = date ? date.format() : 'null'; console.log('callback', temp);
+        },
+        "2016-09-09T00:00:00+00:00",
         calendarOptions,
         document.getElementById('insertDatepicker')
       );

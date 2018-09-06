@@ -120,8 +120,6 @@ export default React.createClass({
     {
       title: 'Open to date',
       component: <OpenToDate />
-<<<<<<< HEAD
-=======
     },
     {
       title: 'Fixed height of Calendar',
@@ -130,7 +128,6 @@ export default React.createClass({
     {
       title: 'Custom input',
       component: <CustomInput />
->>>>>>> upstream/master
     }
   ],
 

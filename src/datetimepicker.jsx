@@ -23,19 +23,19 @@ var DateTimePicker = React.createClass({
     locale: React.PropTypes.string,
     maxDate: React.PropTypes.object,
     minDate: React.PropTypes.object,
+    nowButton: React.PropTypes.string,
     onChangeTime: React.PropTypes.func,
-    onClickOutside: React.PropTypes.func,
-    onClickOk: React.PropTypes.func.isRequired,
-    onClickCancel: React.PropTypes.func.isRequired,
     onClearClick: React.PropTypes.func.isRequired,
+    onClickCancel: React.PropTypes.func.isRequired,
+    onClickOk: React.PropTypes.func.isRequired,
+    onClickOutside: React.PropTypes.func,
     onSelect: React.PropTypes.func.isRequired,
     selected: React.PropTypes.object,
     showSeconds: React.PropTypes.bool,
     showYearDropdown: React.PropTypes.bool,
     startDate: React.PropTypes.object,
     todayButton: React.PropTypes.string,
-    nowButton: React.PropTypes.string,
-    timezone: React.PropTypes.string
+    utcOffset: React.PropTypes.number
   },
 
   mixins: [require('react-onclickoutside')],
@@ -49,10 +49,10 @@ var DateTimePicker = React.createClass({
   getDefaultProps () {
     return {
       dateFormat: 'L',
-      locale: moment().locale()
+      locale: moment().locale(),
+      utcOffset: moment.utc().utcOffset()
     }
   },
-
   componentWillReceiveProps (nextProps) {
     if (nextProps.selected && !isSameTime(nextProps.selected, this.props.selected)) {
       this.setState({
@@ -82,8 +82,8 @@ var DateTimePicker = React.createClass({
       this.props.onClickOk(this.state.selectedDate);
   },
   handleCancelClick (){
-      this.setState({selectedDate: this.props.selected || moment()});
-      this.props.onClickCancel();
+    this.setState({selectedDate: this.props.selected || moment.utc().utcOffset(this.props.utcOffset)});
+    this.props.onClickCancel();
   },
   handleCalendarTabClick(){
     this.setState({
@@ -96,7 +96,7 @@ var DateTimePicker = React.createClass({
     });
   },
   handleClickOutside (event){
-    this.setState({selectedDate: this.props.selected || moment()});
+    this.setState({selectedDate: this.props.selected || moment.utc().utcOffset(this.props.utcOffset)});
     this.props.onClickOutside(event);
   },
   onClearClick(event){
@@ -114,7 +114,7 @@ var DateTimePicker = React.createClass({
           nowButton={this.props.nowButton}
           onChangeTime={this.handleTimeChange}
           showSeconds={this.props.showSeconds}
-          timezone={this.props.timezone}
+          utcOffset={this.props.utcOffset}
         />
         </div>
       )
@@ -141,6 +141,7 @@ var DateTimePicker = React.createClass({
           isClearable={this.props.isClearable}
           showYearDropdown={this.props.showYearDropdown}
           todayButton={this.props.todayButton}
+          utcOffset={this.props.utcOffset}
           outsideClickIgnoreClass={outsideClickIgnoreClass} />
     )
   },

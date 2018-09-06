@@ -37,7 +37,7 @@ var DatePickerWrapper = React.createClass({
     readOnly: React.PropTypes.bool,
     renderCalendarTo: React.PropTypes.any,
     required: React.PropTypes.bool,
-    selected: React.PropTypes.object,
+    selected: React.PropTypes.string,
     showConfirmButtons: React.PropTypes.bool,
     showSeconds: React.PropTypes.bool,
     showYearDropdown: React.PropTypes.bool,
@@ -51,35 +51,72 @@ var DatePickerWrapper = React.createClass({
 
   getInitialState () {
     return {
-      selected: this.props.selected || null
+      selected: this.setDateTimezone(this.props)
     }
   },
 
-  onChangeDate(date){
-    if(this.props.onChange && !isSame(this.state.selected, date)){
-      this.props.onChange(date);
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.selected) {
+      this.setState({ selected: this.setDateTimezone(nextProps) })
     }
-    this.setState({selected: date});
+  },
+
+  setDateTimezone (props) {
+    if (props.selected) {
+      var tempDate = moment.utc(props.selected)
+      if (props.timezone) {
+        tempDate.tz(props.timezone)
+      }
+      else{
+        tempDate.local()
+      }
+      return tempDate
+    }
+    return null
+  },
+
+  onChangeDate (date) {
+    if (this.props.onChange && (!isSame(this.state.selected, date) || !date)) {
+      if (date) {
+        var returnDate = date.clone()
+        if (!this.state.selected && this.props.timezone) {
+          returnDate.tz(this.props.timezone)
+        }
+        this.props.onChange(returnDate.utc())
+      } else {
+        this.props.onChange(date)
+      }
+    }
+    this.setState({selected: date})
+  },
+  getUtcOffset () {
+    if (this.state.selected) {
+      return this.state.selected.utcOffset()
+    } else {
+      if (this.props.timezone) {
+        return moment().tz(this.props.timezone).utcOffset()
+      }
+      return moment().utcOffset()
+    }
   },
   render () {
-    return(
+    return (
       <DatePicker
-        {...this.props}
-        selected={this.state.selected}
-        onCancel={this.onCancelDate}
-        onChange={this.onChangeDate}
-      />
+          {...this.props}
+          selected={this.state.selected}
+          onCancel={this.onCancelDate}
+          onChange={this.onChangeDate}
+          utcOffset={this.getUtcOffset()}/>
     )
   }
-
-});
+})
 
 module.exports = DatePickerWrapper;
 
 window.insertDatepicker = function(onChangeCallback, date, options, el) {
   ReactDOM.render(<DatePickerWrapper
     onChange={onChangeCallback}
-    selected={date ? moment(date) : null}
+    selected={date || null}
     calendarOnly={options.calendarOnly || false}
     dateFormatCalendar={options.yearDropdown ? 'MMMM' : 'MMMM YYYY'}
     dateFormat={options.dateFormat || 'DD/MM/YYYY HH:mm:ss'}
